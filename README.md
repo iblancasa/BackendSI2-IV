@@ -9,3 +9,4 @@ Actualmente, integrantes del grupo:
 + Israel Blancas Álvarez
 + José Cristóbal López Zafra
 + Rafael Ortiz Cáceres
++ Pablo Casado Arenas
