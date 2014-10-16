@@ -7,6 +7,6 @@ Proyecto para el desarrollo de backend para empresa [Si2.info](http://si2.info/)
 Actualmente, integrantes del grupo:
 
 + Israel Blancas Álvarez
-+ José Cristóbal López Zafra
++ [José Cristóbal López Zafra](https://github.com/JCristobal)
 + Rafael Ortiz Cáceres
 + Pablo Casado Arenas
