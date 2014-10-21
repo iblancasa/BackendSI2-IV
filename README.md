@@ -1,4 +1,4 @@
-#RecApp#
+#RecApp - Backend server#
 ==============
 
 ##Proyecto para el desarrollo de backend de servicio de mensajería instantánea orientado a empresas.##
