@@ -1,4 +1,4 @@
-#Si2.infoGII-IV#
+#RecApp#
 ==============
 
 ##Proyecto para el desarrollo de backend de servicio de mensajería instantánea orientado a empresas.##
