@@ -14,6 +14,7 @@ El proyecto no tiene nombre ahora mismo por lo que nos referiremos a él como "B
 + Más adelante, se introducirán sistemas de cifrado como GPG u otro similar
 + Sería interesante añadir la certificación del envío de mensajes por parte de una tercera empresa (es decir, externa a nuestra aplicación)
 ![Diagrama1](Figura1.jpg)
+
 *Figura 1. Cómo ven los usuarios la interacción con nuestro backend*
 
 
@@ -30,4 +31,5 @@ Finalmente, siendo un poco más concisos, vamos a ayudarnos de "[Socket.io](http
 
 ##Una primera aproximación##
 ![Diagrama2](Figura2.jpg)
+
 *Figura 2. La aplicación y los sistemas utilizados*
