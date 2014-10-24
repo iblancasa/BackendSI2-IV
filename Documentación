@@ -1,0 +1,19 @@
+#Backend para sistema de comunicación SI2#
+##Descripción##
+Este proyecto pretende dar como resultado una aplicación servidor que permita la comunicación entre usuarios y entidades.  Además, se quiere que su desarrollo esté orientado a la nube.
+
+##Características##
++ La comunicación no se hará entre todos los usuarios. Solo se hará entre usuarios y entidades
++ Las conversaciones deben ser persistentes, es decir, deben de poder guardarse en el servidor
++ Deberá llevarse un registro de entidades, usuarios, relaciones entre estos, mensajes...
++ Se podrán enviar textos, ficheros de audios, imágenes...
+
+
+
+##Herramientas a utilizar##
+En primer lugar, en cuanto al lenguaje de programación, se planteaban algunas alternativas como puede ser "[Erlang](http://www.erlang.org/)" (utilizado por la compañía [WhatsApp](https://www.whatsapp.com/)). Finalmente, debido al gran auge que está teniendo y el [grado de concurrencia que soporta](http://strongloop.com/strongblog/node-js-is-faster-than-java/) (entre otros) decidimos optar por NodeJS.
+
+Como hay que gestionar persistencia (para)
+
+
+Es claro que un proyecto de estas características, donde será probable que necesitemos escalar (sobre todo a ciertas horas) y que ṕrecisará de álta disponibilidad, debe hacerse en una plataforma cloud. Tras estudiar algunos, finalmente decidimos elegir Heroku.
