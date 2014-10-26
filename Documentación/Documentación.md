@@ -33,3 +33,6 @@ Finalmente, siendo un poco más concisos, vamos a ayudarnos de "[Socket.io](http
 ![Diagrama2](Figura2.jpg)
 
 *Figura 2. La aplicación y los sistemas utilizados*
+
+
+También nos hemos registrado en el [Certamen de Proyectos Libres de la OSL](http://osl.ugr.es/2014/09/26/premios-a-proyectos-libres-de-la-ugr/)
