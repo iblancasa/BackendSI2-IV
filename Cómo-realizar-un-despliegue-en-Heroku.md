@@ -36,3 +36,8 @@ En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:
 5. Activamos el número de "dynos" que queremos tener en Heroku. `heroku ps:scale web=1`
 6. Abrimos nuestra aplicación recién desplegada con `heroku open`
 7. Cuando queramos desactivarla, ejecutaremos `heroku ps:scale web=1` en el directorio de la aplicación
+
+
+####Enlaces interesantes####
+* [Manejo de ramas en Git](http://www.genbetadev.com/herramientas/manejo-de-ramas-de-desarrollo-con-git)
+* [Getting started with NodeJS](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
