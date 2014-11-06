@@ -16,6 +16,13 @@ Para otros sistemas operativos, consultar la página web de [NodeJS](http://node
 
 
 
+###Git##
+Sistemas operativos Ubuntu/Debian
+
+```
+sudo apt-get update
+sudo apt-get install git
+```
 
 
 ##Editor de textos##
