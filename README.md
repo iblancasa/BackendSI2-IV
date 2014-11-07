@@ -12,7 +12,7 @@
 
 Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propuestas.md)
 
-
+<img src="https://github.com/iblancasa/BackendSI2-IV/tree/master/Documentaci%C3%B3n/logo.png">
 
 
 Integrantes del grupo:
