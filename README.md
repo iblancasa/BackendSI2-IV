@@ -12,7 +12,11 @@
 
 Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propuestas.md)
 
+
 <img src="https://github.com/iblancasa/BackendSI2-IV/tree/master/Documentaci%C3%B3n/logo.png">
+
+=======
+Todavía estamos trabajando en ello, pero puedes visitar [la wiki del proyecto](https://github.com/iblancasa/BackendSI2-IV/wiki) o el [sitio web](http://iblancasa.github.io/BackendSI2-IV/)
 
 
 Integrantes del grupo:
