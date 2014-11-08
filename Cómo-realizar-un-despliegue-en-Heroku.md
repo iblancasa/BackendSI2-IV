@@ -29,7 +29,7 @@ En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:
 =====
 ##Desplegando nuestra aplicación (solo para desarrolladores)##
 1. En primer lugar hacemos clone del repositorio.
-`git clone git clone https://github.com/iblancasa/BackendSI2-IV.git`
+`git clone https://github.com/iblancasa/BackendSI2-IV.git`
 2. Entramos en el directorio que se ha creado. En el caso del ejemplo, "BackendSI2-IV".
 3. Añadimos el repositorio remoto de Heroku  `heroku git:clone -a  backendsi2`
 4. Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un "commit". Tras esto, ejecutaremos `git push heroku master`.
