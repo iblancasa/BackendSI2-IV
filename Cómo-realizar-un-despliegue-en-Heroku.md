@@ -17,7 +17,7 @@ Durante alguno de estos pasos, se nos pedirá identificarnos con nuestros creden
 En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:
 
 1. En primer lugar hacemos clone de un repositorio. Ejemplo:
-`git clone git clone https://github.com/heroku/node-js-getting-started.git`
+`git clone https://github.com/heroku/node-js-getting-started.git`
 2. Entramos en el directorio que se ha creado. En el caso del ejemplo, "node-js-getting-started".
 3. Creamos la aplicación mediante `heroku create --http-git`. El nombre se seleccionará de forma automática. Podemos pasarle como argumento un nombre elegido por nosotros: `heroku create [nombre] --http-git`
 4. Al haber creado la aplicación en ese directorio, se habrá añadido automáticamente el repositorio remoto de Heroku. Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un "commit". Tras esto, ejecutaremos `git push heroku master`.
