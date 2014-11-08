@@ -36,3 +36,12 @@ sudo add-apt-repository ppa:webupd8team/atom
 sudo apt-get update
 sudo apt-get install atom
 ```
+
+##MongoDB##
+
+La instalación es fácil, con el comando: sudo apt-get install mongodb 
+
+Para gestionarla podemos usar un entorno visual, [Robomongo](http://robomongo.org/)
+
+Para introducir un poco en Robomongo os dejo un [tutorial](http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=PrimerosPasosMongoDB#07)
+
