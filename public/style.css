@@ -1,4 +1,5 @@
 /* Fix user-agent */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 
 * {
   box-sizing: border-box;
@@ -11,6 +12,7 @@ html {
 
 html, input {
   font-family:
+    "PT Sans Narrow",
     "HelveticaNeue-Light",
     "Helvetica Neue Light",
     "Helvetica Neue",
@@ -49,7 +51,7 @@ ul {
 /* Login Page */
 
 .login.page {
-  background-color: #666666;
+  background-color: #2F0B3A;
 }
 
 .login.page .form {
@@ -112,6 +114,9 @@ ul {
 /* Messages */
 
 .chatArea {
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100%;
   padding-bottom: 60px;
 }
@@ -138,7 +143,7 @@ ul {
 /* Input */
 
 .inputMessage {
-  border: 10px solid #000;
+  border: 10px solid #2F0B3A;
   bottom: 0;
   height: 60px;
   left: 0;
@@ -148,3 +153,4 @@ ul {
   right: 0;
   width: 100%;
 }
+
