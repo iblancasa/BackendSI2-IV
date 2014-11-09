@@ -1,10 +1,10 @@
 #Backend SI2#
 
 ##Inicio##
-* [Documentación](https://github.com/iblancasa/BackendSI2-IV/wiki/Documentaci%C3%B3n)
-* [Carpeta de la documentación completa](https://github.com/iblancasa/BackendSI2-IV/tree/master/Documentaci%C3%B3n)
+* [Documentación inicial](https://github.com/iblancasa/BackendSI2-IV/wiki/Documentaci%C3%B3n-inicial)
 * [Herramientas interesantes para instalar](https://github.com/iblancasa/BackendSI2-IV/wiki/Herramientas-interesantes-para-instalar)
 
+[Carpeta de la documentación completa](https://github.com/iblancasa/BackendSI2-IV/tree/master/Documentaci%C3%B3n)
 
 ##Heroku##
 * [Cómo realizar un despliegue en Heroku](https://github.com/iblancasa/BackendSI2-IV/wiki/C%C3%B3mo-realizar-un-despliegue-en-Heroku)
