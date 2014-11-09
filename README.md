@@ -12,6 +12,7 @@
 
 Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propuestas.md)
 
+La aplicación desplegada y funcionando la puedes ver en: https://backendsi2.herokuapp.com/
 
 ![Logo](logo.png)
 
