@@ -84,11 +84,29 @@ $(function() {
       $typingMessages.remove();
     }
 
+
+    /**Emoticonos**/
+    var lugar = data.message.search(":D");
+    var salida=data.message;
+    if(lugar>=0){
+      salida = data.message.substring(0,lugar) + "<img src=\"emoticons/risa.png\"/>"+data.message.substring(lugar+2);
+    }
+
+    lugar = salida.search(":P");
+    if(lugar>=0){
+      salida = salida.substring(0,lugar) + "<img src=\"emoticons/lengua.png\"/>"+salida.substring(lugar+2);
+    }
+
+    lugar = salida.search("xD");
+    if(lugar>=0){
+      salida = salida.substring(0,lugar) + "<img src=\"emoticons/xD.png\"/>"+salida.substring(lugar+2);
+    }
+
+
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
-    var $messageBodyDiv = $('<span class="messageBody">')
-      .text(data.message);
+    var $messageBodyDiv = $('<span class="messageBody">').html(salida);
 
     var typingClass = data.typing ? 'typing' : '';
     var $messageDiv = $('<li class="message"/>')
@@ -102,7 +120,7 @@ $(function() {
   // Adds the visual chat typing message
   function addChatTyping (data) {
     data.typing = true;
-    data.message = 'is typing';
+    data.message = 'está escribiendo';
     addChatMessage(data);
   }
 
@@ -243,13 +261,13 @@ $(function() {
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user joined', function (data) {
-    log(data.username + ' joined');
+    log(data.username + ' ha entrado');
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user left', function (data) {
-    log(data.username + ' left');
+    log(data.username + ' se ha ido');
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
