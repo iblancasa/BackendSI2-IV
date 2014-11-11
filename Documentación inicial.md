@@ -13,7 +13,7 @@ El proyecto no tiene nombre ahora mismo por lo que nos referiremos a él como "B
 + Se podrán enviar textos, ficheros de audios, imágenes...
 + Más adelante, se introducirán sistemas de cifrado como GPG u otro similar
 + Sería interesante añadir la certificación del envío de mensajes por parte de una tercera empresa (es decir, externa a nuestra aplicación)
-![Diagrama1](https://github.com/iblancasa/BackendSI2-IV/blob/master/Documentaci%C3%B3n/Figura1.jpg)
+![Diagrama1](http://i.imgur.com/VEV4Lw7.jpg)
 
 *Figura 1. Cómo ven los usuarios la interacción con nuestro backend*
 
@@ -30,7 +30,7 @@ Finalmente, siendo un poco más concisos, vamos a ayudarnos de "[Socket.io](http
 
 
 ##Una primera aproximación##
-![Diagrama2](https://github.com/iblancasa/BackendSI2-IV/blob/master/Documentaci%C3%B3n/Figura2.jpg)
+![Diagrama2](http://i.imgur.com/vl39RsZ.jpg)
 
 *Figura 2. La aplicación y los sistemas utilizados*
 
