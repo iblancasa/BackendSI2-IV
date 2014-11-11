@@ -13,5 +13,5 @@
 ##Socket.io##
 * [Cómo ejecutar el ejemplo de chat en local](https://github.com/iblancasa/BackendSI2-IV/wiki/Instalaci%C3%B3n-en-local-del-ejemplo-de-chat)
 
-##[Página del proyecto](https://github.com/iblancasa/BackendSI2-IV/wiki/Panel-de-control-Heroku)##
+##[Página del proyecto](http://iblancasa.github.io/BackendSI2-IV/)##
 ##[Aplicación desplegada](https://backendsi2.herokuapp.com/)##
