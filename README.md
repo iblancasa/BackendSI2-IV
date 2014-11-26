@@ -38,3 +38,7 @@ Integrantes del grupo:
 > Podría ser tanto un proyecto de tipo nube creando un backend basado en alguna plataforma SaaS como un proyecto de tipo devops tomando cualquier sistema a medio desarrollar que necesitara una infraestructura virtual. El contacto de este proyecto es Ángel Moreno.
 
 Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propuestas.md)
+
+[Este proyecto parcipa en el "Concurso Universitario de software libre de la UGR"](http://osl.ugr.es/2014/09/26/premios-a-proyectos-libres-de-la-ugr/)
+
+![CUSL](logo-cusl.png)
