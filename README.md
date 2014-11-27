@@ -41,4 +41,9 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 
 [Este proyecto parcipa en el "Concurso Universitario de software libre de la UGR"](http://osl.ugr.es/2014/09/26/premios-a-proyectos-libres-de-la-ugr/)
 
+![CUSLUGR](logo-cuslugr.png)
+
+
+[Este proyecto parcipa en el "Concurso Universitario de software libre nacional"](http://www.concursosoftwarelibre.org/)
+
 ![CUSL](logo-cusl.png)
