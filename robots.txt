@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://iblancasa.github.io//github/sitemap.xml 
+Sitemap: http://iblancasa.github.io/BackendSI2-IV/sitemap.xml 
