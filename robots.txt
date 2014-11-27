@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://iblancasa.github.io//github/sitemap.xml 
