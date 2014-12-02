@@ -1,0 +1,15 @@
+#Comparando Socket.io y SocksJS#
+*Es importante decir, que estos parámetros han podido cambiar desde que se escribió este documento*
+
+* socket.io parece que consume algo más de recursos que socksjs
+* Comparando los gráficos de actualización del repositorio (https://github.com/Automattic/socket.io/graphs/code-frequency y https://github.com/sockjs/sockjs-node/graphs/code-frequency), ha habido algo más de movimiento en socksjs
+* Ambas tienen una release reciente (https://github.com/Automattic/socket.io/releases y https://github.com/sockjs/sockjs-node/releases)
+* Si miramos los issue de ambos repositorios, podemos ver que los últimos de socket.io han sido contestados hace menos tiempo (https://github.com/sockjs/sockjs-node/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc y https://github.com/Automattic/socket.io/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+* socket.io, a parte de disponer de su propia web, tiene también esta wiki (https://github.com/Automattic/socket.io/wiki) y el readme (https://github.com/Automattic/socket.io) que explica cómo funciona/se usa la biblioteca. socksjs, solo dispone del readme (https://github.com/sockjs/sockjs-node)
+* socket.io es prácticamente la misma biblioteca para cliente que para servidor, mientras que para socksjs, hay una biblioteca para cada cosa (https://github.com/sockjs)
+* socksjs tiene baterías de pruebas (al menos la versión cliente https://travis-ci.org/sockjs/sockjs-client y https://saucelabs.com/u/brycekahle), mientras que de socket.io no he encontrado nada similar
+* Un punto débil de socksjs es que hay que utilizar frameworks que son genéricos para websockets si queremos conectarnos desde aplicaciones escritas en otro lenguaje (en su repositorio, se mencionan un par de frameworks para Java, pero nada de Objective-C -socket.io tiene para los dos-).
+* Los ejemplos que hay colgados de socksjs son muy poco didácticos (solo he encontrado esto -que merezca la pena- http://truongtx.me/2014/06/07/simple-chat-application-using-sockjs/), mientras que el ejemplo del chat de socket.io, nos ayuda mucho a entender cómo funciona (paso a paso - http://socket.io/get-started/chat/)
+* socksjs es a más bajo nivel que socket.io: mientras en socket.io, nosotros enviamos estructuras de datos y ya la biblioteca se encarga de serializarlos/deserializarlos, en socksjs tenemos que serializarlos nosotros (aunque solo hay que llamar a una función, por ejemplo "JSON.stringify(mensaje)").
+* En socksjs solo disponemos de 3 eventos (uno para conexión, otro para desconexión y otro para recepción de datos), que ya vienen predefinidos. socket.io (además de tener esos tres eventos), nos permite crear los nuestros propios. En caso de querer enviar distintos tipos de comunicaciones, que reciban distinto tipo de trato, en socket.io será tan simple como crear un nuevo evento (por cada tipo de comunicación) y definir el tratamiento de esos datos, mientras que en socksjs tendremos que comprobar qué tipo de comunicación es y, en función de ello, enviar los datos a un módulo (función) que haga lo que sea con esos datos.
+* socksjs no depende de express.
