@@ -30,15 +30,21 @@ En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:
 ##Desplegando nuestra aplicación (solo para desarrolladores)##
 1. En primer lugar hacemos clone del repositorio.
 `git clone https://github.com/iblancasa/BackendSI2-IV.git`
-Es posible que nos de fallo si no tenemos una llave SSH generada, podemos generarla y añadirla a heroku facilmente con `heroku:keys add `
+Es posible que nos de fallo si no tenemos una llave SSH generada, podemos generarla y añadirla a heroku facilmente con `heroku:keys add ` Puedes ver abajo el enlace sobre administración de claves SSH.
+
 2. Entramos en el directorio que se ha creado. En el caso del ejemplo, "BackendSI2-IV".
 3. Añadimos el repositorio remoto de Heroku  `heroku git:clone -a  backendsi2`
+
 4. Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un "commit". Tras esto, ejecutaremos `git push heroku master`.
-5. Activamos el número de "dynos" que queremos tener en Heroku. `heroku ps:scale web=1`
-6. Abrimos nuestra aplicación recién desplegada con `heroku open`
+
+5. Activamos el número de "dynos" que queremos tener en Heroku. `heroku ps:scale web=1 --app backendsi2`
+
+6. Abrimos nuestra aplicación recién desplegada con `heroku open --app backendsi2`
+
 7. Cuando queramos desactivarla, ejecutaremos `heroku ps:scale web=0` en el directorio de la aplicación
 
 
 ####Enlaces interesantes####
 * [Manejo de ramas en Git](http://www.genbetadev.com/herramientas/manejo-de-ramas-de-desarrollo-con-git)
 * [Getting started with NodeJS](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+* [Administración de claves SSH](https://devcenter.heroku.com/articles/keys#validate-the-connection)
