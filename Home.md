@@ -8,7 +8,7 @@
 * [¿Por qué Heroku?](https://github.com/iblancasa/BackendSI2-IV/wiki/%C2%BFPor-qu%C3%A9-Heroku%3F)
 * [Cómo realizar un despliegue en Heroku](https://github.com/iblancasa/BackendSI2-IV/wiki/C%C3%B3mo-realizar-un-despliegue-en-Heroku)
 * [Panel de administración de Heroku](https://github.com/iblancasa/BackendSI2-IV/wiki/Panel-de-control-Heroku)
-*[Usar una base de datos externa en Heroku](https://github.com/iblancasa/BackendSI2-IV/wiki/Usar-una-base-de-datos-externa-en-Heroku)
+* [Usar una base de datos externa en Heroku](https://github.com/iblancasa/BackendSI2-IV/wiki/Usar-una-base-de-datos-externa-en-Heroku)
 
 ##Socket.io##
 * [Comparando socket.io con socksJS](https://github.com/iblancasa/BackendSI2-IV/wiki/Socket.io-Vs-SocksJS)
