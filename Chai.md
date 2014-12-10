@@ -74,4 +74,41 @@ foo.should.have.length(3);
 beverages.should.have.property('tea').with.length(3);
 ```
 
+Funcionamiento local.
 
+Tenemos que tener instalado mocha. Lo podemos instalar con: 
+
+npm install -g mocha
+
+(usamos la opción -g para instalarlo globalmente).
+
+Ahora nos vamos a la carpeta de nuestro proyecto e instalamos chai
+
+npm install chai
+
+### Nuestro primer test
+Creamos una carpeta lib y una carpeta test (por defecto mocha mira en la carpeta test para ejecutarlos).
+
+![Imgur](http://i.imgur.com/5Sc9pOD.png)
+
+Vamos a crear en lib un fichero llamado prueba.js y en test pruebaSpec.js
+
+Abrimos el fichero pruebaSpec.js y añadimos las siguientes lineas
+
+```
+var expect = require("chai").expect;
+var prueba = require("../lib/prueba.js");
+ 
+describe("Prueba", function(){
+ 
+});
+```
+Con la primera linea cargamos chai con sintaxis expect.
+Con la segunda mediante nodejs cargamos el modulo prueba.js.
+La tercera es parte de mocha.
+
+Guardamos, nos vamos al directorio raiz de nuestro directorio y ejecutamos mocha.
+
+![Imgur](http://i.imgur.com/8KyPJaI.png)
+
+Nos dice que el test ha finalizado sin errores.
