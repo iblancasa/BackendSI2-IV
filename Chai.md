@@ -86,55 +86,59 @@ Niega lo que viene después. Por lo tanto este test nos dice que prueba es difer
 **.a(tipo)**
 Como encadenamiento o como aserción de que tipo tiene que ser el objeto.
 Por ejemplo podemos comprobar que 'test' ha de ser de tipo string.
-```expect('test').to.be.a('string');```
+
+`expect('test').to.be.a('string');`
 
 **.include(valor)**
 Nos permite comprobar que _valor_ está en el array o en un substring.
-```expect([1,2,3]).to.include(2);```
-```expect('holamundo').to.contain('hola');```
+
+`expect([1,2,3]).to.include(2);`
+
+`expect('holamundo').to.contain('hola');`
 
 
 **.true**
 Se cerciora de que es true.
 
-```expect(true).to.be.true;```
+`expect(true).to.be.true;`
 
 **.false**
 Se cerciora de que es falso.
 
-```expect(false).to.be.false;```
+`expect(false).to.be.false;`
 
 **.null**
 Comprobación de que el objeto es null (o no null, segun los encadenamientos que pongamos).
-```expect(undefined).not.to.be.null;```
+`expect(undefined).not.to.be.null;`
 
 **.empty**
 Comprueba que la longitud es 0. Para arrays se comprueba la propiedad _lenght_. Para objetos, cuenta las keys que tiene.
-```expect('').to.be.empty;```
+`expect('').to.be.empty;`
 
 **.equal(valor)**
 Estrictamente igual (==)
 
-```expect(42).to.equal(42);```
+`expect(42).to.equal(42);`
 
 **.above(valor)**
 Comprueba que el objeto es mayor que _valor_
 
-```expect(10).to.be.above(5);```
+`expect(10).to.be.above(5);`
 
 
 **.below(valor)**
 Se asegura que tiene que ser menor que _valor_
 
-```expect(5).to.be.below(10);```
+`expect(5).to.be.below(10);`
 
 **.property(nombre, [valor])**
 
 Asegura que el objeto tiene una propiedad llamada _nombre_ y opcionalmente se puede comprobar que esa propiedad tiene _valor_
 
-```// referencia simple
-var obj = { foo: 'bar' };
-expect(obj).to.have.property('foo');```
+`var obj = { foo: 'bar' };`
+
+`expect(obj).to.have.property('foo');
+`
 
 ##Funcionamiento local.
 
