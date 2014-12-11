@@ -73,8 +73,70 @@ foo.should.equal('bar');
 foo.should.have.length(3);
 beverages.should.have.property('tea').with.length(3);
 ```
+### Sintaxis expect
 
-Funcionamiento local.
+Como hemos comentado antes, la sintaxis expect nos permite encadenamientos. Es una sintaxis muy intuitiva que solo con leerla podemos saber que es lo que hace, pero aun así vamos a describir brevemente algunas de estas cadenas que podemos usar para nuestros tests.
+
+**not**
+```expect(prueba).to.not.equal('bar'); ```
+
+Niega lo que viene después. Por lo tanto este test nos dice que prueba es diferente de bar.
+
+
+**.a(tipo)**
+Como encadenamiento o como aserción de que tipo tiene que ser el objeto.
+Por ejemplo podemos comprobar que 'test' ha de ser de tipo string.
+```expect('test').to.be.a('string');```
+
+**.include(valor)**
+Nos permite comprobar que _valor_ está en el array o en un substring.
+```expect([1,2,3]).to.include(2);```
+```expect('holamundo').to.contain('hola');```
+
+
+**.true**
+Se cerciora de que es true.
+
+```expect(true).to.be.true;```
+
+**.false**
+Se cerciora de que es falso.
+
+```expect(false).to.be.false;```
+
+**.null**
+Comprobación de que el objeto es null (o no null, segun los encadenamientos que pongamos).
+```expect(undefined).not.to.be.null;```
+
+**.empty**
+Comprueba que la longitud es 0. Para arrays se comprueba la propiedad _lenght_. Para objetos, cuenta las keys que tiene.
+```expect('').to.be.empty;```
+
+**.equal(valor)**
+Estrictamente igual (==)
+
+```expect(42).to.equal(42);```
+
+**.above(valor)**
+Comprueba que el objeto es mayor que _valor_
+
+```expect(10).to.be.above(5);```
+
+
+**.below(valor)**
+Se asegura que tiene que ser menor que _valor_
+
+```expect(5).to.be.below(10);```
+
+**.property(nombre, [valor])**
+
+Asegura que el objeto tiene una propiedad llamada _nombre_ y opcionalmente se puede comprobar que esa propiedad tiene _valor_
+
+```// referencia simple
+var obj = { foo: 'bar' };
+expect(obj).to.have.property('foo');```
+
+##Funcionamiento local.
 
 Tenemos que tener instalado mocha. Lo podemos instalar con: 
 
