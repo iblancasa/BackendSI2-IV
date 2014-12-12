@@ -9,6 +9,7 @@ RUN apt-get install -y mongodb-org
 RUN service mongod start
 RUN apt-get install -y build-essential
 RUN apt-get install -y nodejs
+RUN apt-get install npm
 RUN npm install socket.io
 RUN npm install --save express
 CMD nodejs index.js
