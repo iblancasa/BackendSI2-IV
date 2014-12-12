@@ -1,5 +1,5 @@
 {
-  "name": "Backend SI2-IV",
+  "name": "BackendSI2",
   "version": "0.0.0",
   "description": "Backend para SI2",
   "main": "index.js",
@@ -7,10 +7,14 @@
   "private": false,
   "license": "GPLv2",
   "dependencies": {
-    "express": "*",
-    "socket.io": "*"
+    "express": "latest",
+    "socket.io": "latest"
   },
   "engines": {
-    "node": "*"
+    "node": "latest"
+  },
+  "repository" :
+  { "type" : "git"
+    , "url" : "https://github.com/iblancasa/BackendSI2-IV.git"
   }
 }

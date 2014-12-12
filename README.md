@@ -8,7 +8,7 @@
 
 
 [La aplicación desplegada y funcionando la puedes ver aquí](https://backendsi2.herokuapp.com/)
-![Logo](logo.png)
+![Logo](http://fotos.subefotos.com/5fc10a3fee9186a0be88759dbcec02f3o.jpg)
 
 =======
 ###¿Qué hay desplegado?###

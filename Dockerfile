@@ -11,4 +11,4 @@ RUN apt-get install -y nodejs
 RUN apt-get install npm git git-core -y
 ADD start.sh /tmp/
 RUN chmod +x /tmp/start.sh
-CMD /tmp/start.sh
+CMD ./tmp/start.sh
