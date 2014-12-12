@@ -9,6 +9,9 @@ RUN apt-get install -y mongodb-org
 RUN service mongod start
 RUN apt-get install -y nodejs
 RUN apt-get install npm git git-core -y
-ADD start.sh /tmp/
-RUN chmod +x /tmp/start.sh
-CMD ./tmp/start.sh
+ADD index.js /app
+ADD public /app
+ADD package.json /app
+EXPOSE 3000
+RUN cd /app; npm install
+CMD ["nodejs", "index.js"]
