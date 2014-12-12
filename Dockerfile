@@ -7,9 +7,8 @@ RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 RUN apt-get update
 RUN apt-get install -y mongodb-org
 RUN service mongod start
-RUN apt-get install -y build-essential
 RUN apt-get install -y nodejs
-RUN apt-get install npm -y
-RUN npm install socket.io -y
-RUN npm install --save express -y
-CMD nodejs index.js
+RUN apt-get install npm git git-core -y
+ADD start.sh /tmp/
+RUN chmod +x /tmp/start.sh
+CMD /tmp/start.sh

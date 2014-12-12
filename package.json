@@ -1,12 +1,16 @@
 {
-  "name": "socket.io-chat",
+  "name": "Backend SI2-IV",
   "version": "0.0.0",
-  "description": "A simple chat client using socket.io",
+  "description": "Backend para SI2",
   "main": "index.js",
-  "author": "Grant Timmerman",
-  "private": true,
-  "license": "BSD",
+  "author": "Israel Blancas Álvarez, José Cristóbal López Zafra, Rafael Ortiz Cáceres, Pablo Casado Arenas",
+  "private": false,
+  "license": "GPLv2",
   "dependencies": {
-    "express": "3.4.8"
+    "express": "*",
+    "socket.io": "*"
+  },
+  "engines": {
+    "node": "*"
   }
 }
