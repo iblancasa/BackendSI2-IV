@@ -178,3 +178,54 @@ Guardamos, nos vamos al directorio raiz de nuestro directorio y ejecutamos mocha
 ![Imgur](http://i.imgur.com/8KyPJaI.png)
 
 Nos dice que el test ha finalizado sin errores.
+
+##Más tests.
+
+Continuamos con el test añadiéndole algo más de sustancia.
+Copiamos esto en la carpeta test, en nuestro fichero de tests.
+
+``` 
+var expect = require("chai").expect;
+var prueba = require("../lib/prueba.js");
+
+describe("Prueba", function(){
+       it("Ha de devolver 4", function(){
+           var resultados=prueba.suma();
+           expect(resultados).to.equal(4);
+           
+    });
+});
+```
+
+Todavía no tenemos nada en nuestro lib/prueba.js . Vamos a correr mocha a ver si conseguimos pasar el test.
+![Imgur](http://i.imgur.com/ML2vATW.png)
+Nos falla, basicamente porque no tenemos nada en prueba.js y el test espera un método llamado suma(). Vamos a añadirlo.
+
+```
+exports = module.exports = {};
+ 
+exports.suma = function() {
+ 
+    
+} 
+```
+Añadimos el metodo suma sin que devuelva nada, y comprobamos si es capaz de pasar el test.
+
+![Imgur](http://i.imgur.com/8t9cRt5.png)
+
+Obviamente no lo pasa, puesto que el metodo no devuelve nada. Vamos a añadir que devuelve el resultado de sumar 2+2. Nuestro prueba.js en /libs quedaría así:
+
+```
+exports = module.exports = {};
+ 
+exports.suma = function() {
+ 
+    return 2+2
+}
+```
+
+Y corremos el test de nuevo.
+
+![Imgur](http://i.imgur.com/58HL2SD.png)
+
+Por fin hemos conseguido pasar el test, con el mínimo de código necesario. No necesitamos escribir nada más en esa función.
