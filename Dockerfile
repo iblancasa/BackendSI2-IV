@@ -11,7 +11,7 @@ RUN apt-get install -y nodejs
 RUN apt-get install npm git git-core -y
 RUN mkdir /home/app
 ADD app /home/app
-ADD package.json /home
+COPY package.json /home/
 EXPOSE 3000
 RUN cd /home; npm install
 CMD ["nohup","nodejs", "app/index.js"]
