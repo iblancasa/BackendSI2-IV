@@ -23,7 +23,7 @@ En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:
 4. Al haber creado la aplicación en ese directorio, se habrá añadido automáticamente el repositorio remoto de Heroku. Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un "commit". Tras esto, ejecutaremos `git push heroku master`.
 5. Activamos el número de "dynos" que queremos tener en Heroku. `heroku ps:scale web=1`
 6. Abrimos nuestra aplicación recién desplegada con `heroku open`
-7. Cuando queramos desactivarla, ejecutaremos `heroku ps:scale web=1` en el directorio de la aplicación
+7. Cuando queramos desactivarla, ejecutaremos `heroku ps:scale web=0` en el directorio de la aplicación
 
 
 =====
