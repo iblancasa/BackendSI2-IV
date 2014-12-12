@@ -10,7 +10,8 @@ RUN service mongod start
 RUN apt-get install -y nodejs
 RUN apt-get install npm git git-core -y
 RUN mkdir /app
-ADD . /app
+ADD app /app
+ADD package.json /app/
 EXPOSE 3000
 RUN cd /app; npm install
-CMD ["nodejs", "index.js"]
+CMD ["nohup","nodejs", "index.js"]
