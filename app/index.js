@@ -57,6 +57,8 @@ io.on('connection', function (socket) {
     clients[username] = socket;
     ++numUsers;
     addedUser = true;
+
+
     socket.emit('login', {
       numUsers: numUsers
     });
