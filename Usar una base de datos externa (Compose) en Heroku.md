@@ -8,7 +8,7 @@ Para ello nos registramos en https://app.compose.io con un plan gratuito (Sandbo
 
 Ahora cambiamos la variable de entorno global con la Mongo URI:
 
-En [usuario] y [contraseña] meteremos nuestros datos de la cuenta de Heroku, y también especicaremos la aplicación en la que cambiaremos la variable ("ejemplonodejs" en mi caso)
+En [usuario] y [contraseña] meteremos usuario y contraseña de un "User" de la base de datos de Compose, y también especicaremos la aplicación en la que cambiaremos la variable ("ejemplonodejs" en mi caso)
 
 Ejecutar `heroku config:set MONGOHQ_URL="mongodb://[usuario]:[contraseña]@dogen.mongohq.com:10096/pruebaDB" --app ejemplonodejs`
 
