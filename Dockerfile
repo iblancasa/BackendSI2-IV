@@ -14,4 +14,4 @@ ADD app /home/app
 COPY package.json /home/
 EXPOSE 3000
 RUN cd /home; npm install
-CMD ["nohup","nodejs", "app/index.js"]
+CMD ["nohup","/usr/bin/nodejs", "app/index.js"]
