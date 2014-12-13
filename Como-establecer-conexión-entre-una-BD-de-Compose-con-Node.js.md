@@ -54,3 +54,9 @@ Una vez ejecutado nos indica que está correctamente conectado e insertado:
 y también lo podemos ver en [Compose](https://app.compose.io/):
 
 ![bdcompose](http://i.imgur.com/3vo3naP.png)
+
+Tutoriales de interés:
+
+https://docs.compose.io/languages/nodejs.html
+
+y este muy básico: https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps
