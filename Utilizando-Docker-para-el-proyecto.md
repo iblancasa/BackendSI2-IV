@@ -97,6 +97,8 @@ Se ejecuta el comando ``ìfconfig`` para comprobar la dirección IP y poder acce
 
 ![Ejecutando Docker](http://fotos.subefotos.com/8d8c0239e7af219126fe71232ef0db1eo.jpg)
 
+![Aplicación ejecutándose](http://fotos.subefotos.com/35e57fb13cd35e3020034130454d68f1o.jpg)
+
 Si solo queremos acceder al terminal (para, por ejemplo, ejecutar los test unitarios):
 
 ``
