@@ -11,7 +11,8 @@ RUN apt-get install -y nodejs
 RUN apt-get install npm git git-core -y
 RUN mkdir /home/app
 ADD app /home/app
+ADD test /home/test
 COPY package.json /home/
 EXPOSE 3000
-RUN cd /home; npm install
+RUN cd /home; npm install; npm install -g mocha;npm install mocha chai supertest
 CMD ["nohup","/usr/bin/nodejs", "app/index.js"]
