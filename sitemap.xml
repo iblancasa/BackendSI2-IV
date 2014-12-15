@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/15/por-que-heroku/</loc>
+    <lastmod>2014-12-15T10:54:37+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/14/documentacion-inicial/</loc>
     <lastmod>2014-12-14T17:48:36+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://iblancasa.github.io/BackendSI2-IV/</loc>
-    <lastmod>2014-12-14T17:57:55+01:00</lastmod>
+    <lastmod>2014-12-15T10:56:43+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://iblancasa.github.io/BackendSI2-IV/blog/archives/</loc>
-    <lastmod>2014-12-14T17:57:55+01:00</lastmod>
+    <lastmod>2014-12-15T10:56:43+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
