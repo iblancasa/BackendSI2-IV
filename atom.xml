@@ -4,7 +4,7 @@
   <title><![CDATA[BackendSI2 - IV]]></title>
   <link href="http://iblancasa.github.io/BackendSI2-IV/atom.xml" rel="self"/>
   <link href="http://iblancasa.github.io/BackendSI2-IV/"/>
-  <updated>2014-12-15T10:56:43+01:00</updated>
+  <updated>2014-12-15T10:58:29+01:00</updated>
   <id>http://iblancasa.github.io/BackendSI2-IV/</id>
   <author>
     <name><![CDATA[Israel Blancas]]></name>
@@ -18,9 +18,7 @@
     <link href="http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/15/por-que-heroku/"/>
     <updated>2014-12-15T10:54:37+01:00</updated>
     <id>http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/15/por-que-heroku</id>
-    <content type="html"><![CDATA[<h1>¿Por qué Heroku?</h1>
-
-<p>Para la elección del PaaS, es necesario tener en cuenta los requisitos del sistema a desarrollar y las herramientas que hemos estimado necesarias:
+    <content type="html"><![CDATA[<p>Para la elección del PaaS, es necesario tener en cuenta los requisitos del sistema a desarrollar y las herramientas que hemos estimado necesarias:
 + Integración continua con Git
 + Soporte para MongoDB
 + Soporte para NodeJS
