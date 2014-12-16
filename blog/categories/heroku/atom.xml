@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Heroku | BackendSI2 - IV]]></title>
   <link href="http://iblancasa.github.io/BackendSI2-IV/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://iblancasa.github.io/BackendSI2-IV/"/>
-  <updated>2014-12-15T10:59:29+01:00</updated>
+  <updated>2014-12-16T22:03:31+01:00</updated>
   <id>http://iblancasa.github.io/BackendSI2-IV/</id>
   <author>
     <name><![CDATA[Israel Blancas]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cómo Realizar Un Despliegue en Heroku]]></title>
+    <link href="http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/16/como-realizar-un-despliegue-en-heroku/"/>
+    <updated>2014-12-16T22:01:26+01:00</updated>
+    <id>http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/16/como-realizar-un-despliegue-en-heroku</id>
+    <content type="html"><![CDATA[<p>En primer lugar es preciso tener una cuenta en <a href="https://www.heroku.com/">Heroku</a>.
+Tras haber realizado el registro, nos dirigimos a nuestro <a href="https://dashboard-next.heroku.com/apps">dashboard</a>. Una vez allí, deberemos indicar que queremos crear una nueva aplicación (indicando el nombre de la misma). Aparecerá una pantalla similar a esta:</p>
+
+<p><img src="http://fotos.subefotos.com/2ba372c3bddefd5dbf477ce77d86014do.jpg" alt="Captura 1" /></p>
+
+<p>Deberemos seguir los pasos que se nos indican:</p>
+
+<ol>
+<li>Descargamos e instalamos la utilidad <a href="https://toolbelt.heroku.com/">&ldquo;Heroku Toolbelt&rdquo;</a> en función del sistema operativo que utilicemos.</li>
+<li>Creamos el repositorio y añadimos los repositorios remotos de Heroku.</li>
+<li>Lo desplegamos</li>
+</ol>
+
+
+<p>Durante alguno de estos pasos, se nos pedirá identificarnos con nuestros credenciales de Heroku. Además, puede que se nos pida la creación de una clave para la comunicación con Heroku (a lo que deberemos contestar que sí).</p>
+
+<hr />
+
+<h2>Cómo desplegar una aplicación de ejemplo</h2>
+
+<p>En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:</p>
+
+<ol>
+<li>En primer lugar hacemos clone de un repositorio. Ejemplo:
+<code>git clone https://github.com/heroku/node-js-getting-started.git</code></li>
+<li>Entramos en el directorio que se ha creado. En el caso del ejemplo, &ldquo;node-js-getting-started&rdquo;.</li>
+<li>Creamos la aplicación mediante <code>heroku create --http-git</code>. El nombre se seleccionará de forma automática. Podemos pasarle como argumento un nombre elegido por nosotros: <code>heroku create [nombre] --http-git</code></li>
+<li>Al haber creado la aplicación en ese directorio, se habrá añadido automáticamente el repositorio remoto de Heroku. Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un &ldquo;commit&rdquo;. Tras esto, ejecutaremos <code>git push heroku master</code>.</li>
+<li>Activamos el número de &ldquo;dynos&rdquo; que queremos tener en Heroku. <code>heroku ps:scale web=1</code></li>
+<li>Abrimos nuestra aplicación recién desplegada con <code>heroku open</code></li>
+<li>Cuando queramos desactivarla, ejecutaremos <code>heroku ps:scale web=0</code> en el directorio de la aplicación</li>
+</ol>
+
+
+<hr />
+
+<h2>Desplegando nuestra aplicación (solo para desarrolladores)</h2>
+
+<ol>
+<li><p>En primer lugar hacemos clone del repositorio.
+<code>git clone https://github.com/iblancasa/BackendSI2-IV.git</code>
+Es posible que nos de fallo si no tenemos una llave SSH generada, podemos generarla y añadirla a heroku facilmente con <code>heroku:keys add</code> Puedes ver abajo el enlace sobre administración de claves SSH.</p></li>
+<li><p>Entramos en el directorio que se ha creado. En el caso del ejemplo, &ldquo;BackendSI2-IV&rdquo;.</p></li>
+<li><p>Añadimos el repositorio remoto de Heroku  <code>heroku git:clone -a  backendsi2</code></p></li>
+<li><p>Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un &ldquo;commit&rdquo;. Tras esto, ejecutaremos <code>git push heroku master</code>.</p></li>
+<li><p>Activamos el número de &ldquo;dynos&rdquo; que queremos tener en Heroku. <code>heroku ps:scale web=1 --app backendsi2</code></p></li>
+<li><p>Abrimos nuestra aplicación recién desplegada con <code>heroku open --app backendsi2</code></p></li>
+<li><p>Cuando queramos desactivarla, ejecutaremos <code>heroku ps:scale web=0</code> en el directorio de la aplicación</p></li>
+</ol>
+
+
+<h4>Enlaces interesantes</h4>
+
+<ul>
+<li><a href="http://www.genbetadev.com/herramientas/manejo-de-ramas-de-desarrollo-con-git">Manejo de ramas en Git</a></li>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up">Getting started with NodeJS</a></li>
+<li><a href="https://devcenter.heroku.com/articles/keys#validate-the-connection">Administración de claves SSH</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[¿Por Qué Heroku?]]></title>

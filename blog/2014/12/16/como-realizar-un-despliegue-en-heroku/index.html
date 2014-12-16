@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cómo Realizar Un Despliegue en Heroku - BackendSI2 - IV</title>
+  <meta name="author" content="Israel Blancas">
+
+  
+  <meta name="description" content="En primer lugar es preciso tener una cuenta en Heroku.
+Tras haber realizado el registro, nos dirigimos a nuestro dashboard. Una vez allí, deberemos &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/16/como-realizar-un-despliegue-en-heroku">
+  <link href="/BackendSI2-IV/favicon.png" rel="icon">
+  <link href="/BackendSI2-IV/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/BackendSI2-IV/atom.xml" rel="alternate" title="BackendSI2 - IV" type="application/atom+xml">
+  <script src="/BackendSI2-IV/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/BackendSI2-IV/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/BackendSI2-IV/">BackendSI2 - IV</a></h1>
+  
+    <h2>Desarrollo de un backend móvil para contacto entre clientes y empresas</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/BackendSI2-IV/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:iblancasa.github.io/BackendSI2-IV" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/BackendSI2-IV/">Blog</a></li>
+  <li><a href="/BackendSI2-IV/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Cómo Realizar Un Despliegue en Heroku</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-16T22:01:26+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:01 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>En primer lugar es preciso tener una cuenta en <a href="https://www.heroku.com/">Heroku</a>.
+Tras haber realizado el registro, nos dirigimos a nuestro <a href="https://dashboard-next.heroku.com/apps">dashboard</a>. Una vez allí, deberemos indicar que queremos crear una nueva aplicación (indicando el nombre de la misma). Aparecerá una pantalla similar a esta:</p>
+
+<p><img src="http://fotos.subefotos.com/2ba372c3bddefd5dbf477ce77d86014do.jpg" alt="Captura 1" /></p>
+
+<p>Deberemos seguir los pasos que se nos indican:</p>
+
+<ol>
+<li>Descargamos e instalamos la utilidad <a href="https://toolbelt.heroku.com/">&ldquo;Heroku Toolbelt&rdquo;</a> en función del sistema operativo que utilicemos.</li>
+<li>Creamos el repositorio y añadimos los repositorios remotos de Heroku.</li>
+<li>Lo desplegamos</li>
+</ol>
+
+
+<p>Durante alguno de estos pasos, se nos pedirá identificarnos con nuestros credenciales de Heroku. Además, puede que se nos pida la creación de una clave para la comunicación con Heroku (a lo que deberemos contestar que sí).</p>
+
+<hr />
+
+<h2>Cómo desplegar una aplicación de ejemplo</h2>
+
+<p>En los siguientes pasos vamos a ver cómo desplegar una aplicación de ejemplo:</p>
+
+<ol>
+<li>En primer lugar hacemos clone de un repositorio. Ejemplo:
+<code>git clone https://github.com/heroku/node-js-getting-started.git</code></li>
+<li>Entramos en el directorio que se ha creado. En el caso del ejemplo, &ldquo;node-js-getting-started&rdquo;.</li>
+<li>Creamos la aplicación mediante <code>heroku create --http-git</code>. El nombre se seleccionará de forma automática. Podemos pasarle como argumento un nombre elegido por nosotros: <code>heroku create [nombre] --http-git</code></li>
+<li>Al haber creado la aplicación en ese directorio, se habrá añadido automáticamente el repositorio remoto de Heroku. Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un &ldquo;commit&rdquo;. Tras esto, ejecutaremos <code>git push heroku master</code>.</li>
+<li>Activamos el número de &ldquo;dynos&rdquo; que queremos tener en Heroku. <code>heroku ps:scale web=1</code></li>
+<li>Abrimos nuestra aplicación recién desplegada con <code>heroku open</code></li>
+<li>Cuando queramos desactivarla, ejecutaremos <code>heroku ps:scale web=0</code> en el directorio de la aplicación</li>
+</ol>
+
+
+<hr />
+
+<h2>Desplegando nuestra aplicación (solo para desarrolladores)</h2>
+
+<ol>
+<li><p>En primer lugar hacemos clone del repositorio.
+<code>git clone https://github.com/iblancasa/BackendSI2-IV.git</code>
+Es posible que nos de fallo si no tenemos una llave SSH generada, podemos generarla y añadirla a heroku facilmente con <code>heroku:keys add</code> Puedes ver abajo el enlace sobre administración de claves SSH.</p></li>
+<li><p>Entramos en el directorio que se ha creado. En el caso del ejemplo, &ldquo;BackendSI2-IV&rdquo;.</p></li>
+<li><p>Añadimos el repositorio remoto de Heroku  <code>heroku git:clone -a  backendsi2</code></p></li>
+<li><p>Ahora solo deberemos añadir, mediante git, los ficheros que hayamos modificado y asociarlos a un &ldquo;commit&rdquo;. Tras esto, ejecutaremos <code>git push heroku master</code>.</p></li>
+<li><p>Activamos el número de &ldquo;dynos&rdquo; que queremos tener en Heroku. <code>heroku ps:scale web=1 --app backendsi2</code></p></li>
+<li><p>Abrimos nuestra aplicación recién desplegada con <code>heroku open --app backendsi2</code></p></li>
+<li><p>Cuando queramos desactivarla, ejecutaremos <code>heroku ps:scale web=0</code> en el directorio de la aplicación</p></li>
+</ol>
+
+
+<h4>Enlaces interesantes</h4>
+
+<ul>
+<li><a href="http://www.genbetadev.com/herramientas/manejo-de-ramas-de-desarrollo-con-git">Manejo de ramas en Git</a></li>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up">Getting started with NodeJS</a></li>
+<li><a href="https://devcenter.heroku.com/articles/keys#validate-the-connection">Administración de claves SSH</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Israel Blancas</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-12-16T22:01:26+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:01 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/BackendSI2-IV/blog/categories/heroku/'>heroku</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/16/como-realizar-un-despliegue-en-heroku/" data-via="" data-counturl="http://iblancasa.github.io/BackendSI2-IV/blog/2014/12/16/como-realizar-un-despliegue-en-heroku/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/BackendSI2-IV/blog/2014/12/15/por-que-heroku/" title="Previous Post: ¿Por qué Heroku?">&laquo; ¿Por qué Heroku?</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/BackendSI2-IV/blog/2014/12/16/como-realizar-un-despliegue-en-heroku/">Cómo Realizar Un Despliegue en Heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/BackendSI2-IV/blog/2014/12/15/por-que-heroku/">¿Por Qué Heroku?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/BackendSI2-IV/blog/2014/12/14/documentacion-inicial/">Documentación Inicial</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Israel Blancas -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
