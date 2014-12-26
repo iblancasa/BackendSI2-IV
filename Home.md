@@ -25,6 +25,12 @@
 ##Compose y Node.js##
 * [Establecer conexión entre Compose y Node.js](https://github.com/iblancasa/BackendSI2-IV/wiki/Como-establecer-conexi%C3%B3n-entre-una-BD-de-Compose-con-Node.js)
 
+
+#APIs varias#
+* [Autentificar con Google+ desde NodeJS](https://github.com/iblancasa/BackendSI2-IV/wiki/Autentificar-a-un-usuario-utilizando-Google--y-NodeJS)
+    * [Conseguir las claves de Google+ para autentificar](https://github.com/iblancasa/BackendSI2-IV/wiki/Conseguir-las-claves-para-autentificar-con-Google-)
+
+
 ##Contenedores##
 * [Docker](https://github.com/iblancasa/BackendSI2-IV/wiki/Utilizando-Docker-para-el-proyecto)
 
