@@ -3,7 +3,7 @@
 ![Google+ y NodeJS](http://fotos.subefotos.com/7239fde6a03558307b9bf591999988a1o.jpg)
 
 Esta referencia está basada en [este repositorio](https://github.com/afirstenberg/google-plus-node).
-
+Es importante que hayas realizado [estos pasos](https://github.com/iblancasa/BackendSI2-IV/wiki/Conseguir-las-claves-para-autentificar-con-Google-).
 Cuando se escribe este artículo, el repositorio lleva dos años sin actualizar, pero los métodos son igualmente válidos.
 
 
