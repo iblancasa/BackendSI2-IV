@@ -22,6 +22,8 @@ En la última actualización se ha desplegado el chat de ejemplo de la bibliotec
 =======
 Todavía estamos trabajando en ello, pero puedes visitar [la wiki del proyecto](https://github.com/iblancasa/BackendSI2-IV/wiki) o el [sitio web](http://iblancasa.github.io/BackendSI2-IV/)
 
+También disponemos de una cuenta de Twitter asociada, [Twitter de BackendSI2-IV](https://twitter.com/BackendSI2), donde publicaremos los cambios en el repositorio y del blog.
+
 
 Integrantes del grupo:
 
