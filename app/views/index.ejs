@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google+ Sign-In Example</title>
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    clientStateToken = '<%= state %>';
+  </script>
+  <script src="/javascripts/client.js"></script>
+</head>
+<body>
+<h1>Google+ Sign-In Example</h1>
+
+<!--
+      Step 4: Add the sign-in button to your page
+      Step 5: Sign in the user (by calling signInCallback)
+  -->
+<div id="signinButton">
+  <span class="g-signin"
+        data-scope="<%= scope %>"
+        data-clientid="<%= clientId %>"
+        data-redirecturi="postmessage"
+        data-accesstype="offline"
+        data-cookiepolicy="single_host_origin"
+        data-callback="signInCallback">
+	</span>
+</div>
+<script type="text/javascript">
+  /*
+   * Step 3: Include the Google+ script on your page
+   */
+  (function(){
+    var po = document.createElement( 'script' );
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+    var s = document.getElementsByTagName( 'script' )[0];
+    s.parentNode.insertBefore( po, s );
+  })();
+</script>
+</body>
+</html>

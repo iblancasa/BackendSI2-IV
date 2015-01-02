@@ -2,13 +2,15 @@
   "name": "BackendSI2",
   "version": "0.0.0",
   "description": "Backend para SI2",
-  "main": "app/index.js",
+  "main": "app.js",
   "author": "Israel Blancas Álvarez, José Cristóbal López Zafra, Rafael Ortiz Cáceres, Pablo Casado Arenas",
   "private": false,
   "license": "GPLv2",
   "dependencies": {
-    "express": "latest",
-    "socket.io": "latest"
+    "express": "3.1.0",
+    "socket.io": "latest",
+    "ejs": "latest",
+    "googleapis": "0.2.5-alpha"
   },
   "engines": {
     "node": "latest"
