@@ -1,0 +1,33 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+
+#cabecera{
+	width: 75.00%;
+	float:right;
+
+}
+
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+.mastfoot {
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    text-align:center;
+    background-color: #f6f6f6;
+  }
+
+
+
+
