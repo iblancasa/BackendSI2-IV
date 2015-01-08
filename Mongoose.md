@@ -52,6 +52,32 @@ var kittySchema = mongoose.Schema({
 Cada key en nuestro esquema define una propiedad en nuestro documentos que sera casteada al SchemaType asociado.
 Por ejemplo, la key _name_ sera casteada a String.
 
+### Tipos de esquemas.
+
+Cada key en nuestro esquema definirá una propiedad de nuestros documentos. También se pueden anidar keys.
+```
+var blogSchema = new Schema({
+  title:  String,
+  author: String,
+  body:   String,
+  comments: [{ body: String, date: Date }],
+  date: { type: Date, default: Date.now },
+  hidden: Boolean,
+  meta: {
+    votes: Number,
+    favs:  Number
+  }
+});
+```
+Los tipos de esquemas en Mongoose son:
++ String
++ Number
++ Date
++ Buffer
++ Boolean
++ Mixed
++ ObjectId
++ Array
 ### Creando un modelo.
 Para usar nuestro esquema, necesitamos convertirlo en un Modelo con el que podamos trabajar.
 Los modelos son clases con las que construimos documentos.
