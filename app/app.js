@@ -27,13 +27,16 @@
         var https = require('https');
 
         var server = https.createServer(options, app);
+
+
+  Este proyecto está pensado para Heroku. Como no vamos a firmar nuestros certificados y es necesario usar un addon de Heroku,
+  dejamos la conexión segura que Heroku brinda por defecto. En
 */
-
-
 
 
 var express = require('express')
   , routes = require('./routes')
+  , cookies = require('./avisos/cookies')
   , google = require('./routes/google')
   , http = require('http')
   , path = require('path');
@@ -60,6 +63,8 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+
+app.get('/cookies', cookies.cookies);
 app.get('/', routes.index);
 app.post('/google/auth', google.auth);
 

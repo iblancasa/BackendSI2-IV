@@ -8,6 +8,15 @@ body {
   font-family: 'PT Sans Narrow', sans-serif;
 }
 
+p{
+  color:#ffffff;
+  font-size:110%;
+  text-align:center;
+}
+
+a{
+  color:#ffffff;
+}
 
 h1{
   margin-top:10%;
