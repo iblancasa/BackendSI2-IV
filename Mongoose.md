@@ -20,7 +20,7 @@ En nuestro fichero .js ponemos
 
 ``` 
 var mongoose= require('mongoose');
-mongoose.connect('mongodb:://localhost/test');
+mongoose.connect('mongodb://localhost/test');
 
 ```
 Cargamos el modulo de mongoose y conectamos a nuestra base de datos en localhost.
