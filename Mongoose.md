@@ -103,7 +103,14 @@ fluffy.save(function (err, fluffy) {
 ```
 Asi guardaremos a fluffy.
 
-
+Podemos acceder a todos los documentos guardados mediante nuestro modelo:
+```
+Kitten.find(function (err, kittens) {
+  if (err) return console.error(err);
+  console.log(kittens)
+})
+```
+Con esto mostramos en consola todos nuestros kittens.
 
 // Mas sobre esquemas y documentos, como añadir metodos propios a las instancias.//
 ```
@@ -114,7 +121,7 @@ animalSchema.methods.findSimilarTypes = function (cb) {
 }
 ```
 
-Con esto hemos conseguido que nuestras instancias que deriven de animalSchema tengan el metodo findSimilarTypes.
+Con esto hemos conseguido que nuestras instancias que deriven de animalSchema tengan el método findSimilarTypes.
 
 ```
 var Animal = mongoose.model('Animal', animalSchema);
@@ -125,3 +132,35 @@ dog.findSimilarTypes(function (err, dogs) {
 });
 ```
 
+### Métodos estáticos
+
+```
+// Asignamos una función al objeto "statics" de nuestro animalSchema 
+animalSchema.statics.findByName = function (name, cb) {
+  this.find({ name: new RegExp(name, 'i') }, cb);
+}
+
+var Animal = mongoose.model('Animal', animalSchema);
+Animal.findByName('fido', function (err, animals) {
+  console.log(animals);
+});
+```
+### Índices
+
+MongoDB soporta índices secondarios. Con Mongoose, definimos estos índices dentro de nuestro esquema a nivel de path o de esquema. Es necesario cuando se crean "compound indexes".
+
+```
+var animalSchema = new Schema({
+  name: String,
+  type: String,
+  tags: { type: [String], index: true } // field level
+});
+
+animalSchema.index({ name: 1, type: -1 }); // schema level
+```
+
+En producción se recomienda desactivar autoIndex debido al impacto en rendimiento que provoca tenerlo activado.
+
+```
+animalSchema.set('autoIndex', false);
+```
