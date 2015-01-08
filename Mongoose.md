@@ -78,6 +78,7 @@ Los tipos de esquemas en Mongoose son:
 + Mixed
 + ObjectId
 + Array
+
 ### Creando un modelo.
 Para usar nuestro esquema, necesitamos convertirlo en un Modelo con el que podamos trabajar.
 Los modelos son clases con las que construimos documentos.
