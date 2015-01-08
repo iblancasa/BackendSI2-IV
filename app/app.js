@@ -1,7 +1,36 @@
 
 /**
- * Module dependencies.
+ * Dependencias
  */
+
+/**
+  Para usar HTTPS:
+
+  En consola
+        openssl genrsa -out chat-key.pem 1024
+        openssl req -new -key chat-key.pem -out certrequest.csr
+        openssl x509 -req -in certrequest.csr -signkey chat-key.pem -out chat-cert.pem
+
+
+  En este mismo archivo:
+        var fs = require('fs');
+        var hskey = fs.readFileSync('chat-key.pem');
+        var hscert = fs.readFileSync('chat-cert.pem')
+        var options = {
+        key: hskey,
+        cert: hscert
+        };
+
+        var express = require('express');
+        var app = express();
+
+        var https = require('https');
+
+        var server = https.createServer(options, app);
+*/
+
+
+
 
 var express = require('express')
   , routes = require('./routes')
@@ -11,13 +40,13 @@ var express = require('express')
 
 var app = express();
 
+
 app.configure(function(){
   app.set('clientId', process.env.CLIENT_ID);
   app.set('clientSecret', process.env.CLIENT_SECRET);
   app.set('port', process.env.PORT || 3001);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
-  app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
@@ -37,10 +66,10 @@ app.post('/google/auth', google.auth);
 google.CLIENT_ID = app.get('clientId');
 google.CLIENT_SECRET = app.get('clientSecret');
 if( !google.isInitialized() ){
-  console.log("You must set the CLIENT_ID and CLIENT_SECRET environment variables.");
+  console.log("Debes introducir las claves como variables de entorno");
   process.exit(1);
 }
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+  console.log("Ejecutando en el puerto " + app.get('port'));
 });
