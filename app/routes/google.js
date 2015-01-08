@@ -1,16 +1,12 @@
 
-/*
- * Step 1: Create a client ID and client secret
- *
- * The CLIENT_ID and CLIENT_SECRET need to be set by setting the environment
- * variables when starting the server. They should match the values obtained
- * from the API Console
- */
 exports.CLIENT_ID = undefined;
 exports.CLIENT_SECRET = undefined;
 
+
 /**
- * @returns {*} If the required client information has been set.
+ * Comprobar si están los credenciales de Google
+ * @method isInitialized
+ * @return LogicalExpression  Verdadero si las dos claves están
  */
 exports.isInitialized = function(){
   return exports.CLIENT_ID && exports.CLIENT_SECRET;
@@ -31,19 +27,29 @@ googleapis
     client = data;
   });
 
+/**
+ * Hora actual
+ * @method now
+ * @return CallExpression Hora Actual
+ */
 var now = function(){
   return (new Date()).toISOString();
 };
 
+/**
+ * Autentificación del usuario en Google
+ * @method auth
+ * @param {} req  Petición
+ * @param {} res  Respuesta
+ * @return
+ */
 exports.auth = function( req, res ){
   var ret = {
     err: null,
     ok: null
   };
 
-  /*
-   * Step 7: Confirm the anti-request forgery state token on the server
-   */
+
   var sessionStateToken = req.session['state'];
   var clientStateToken  = req.body['state'];
   console.log( 'csrf', sessionStateToken, clientStateToken );
@@ -57,10 +63,7 @@ exports.auth = function( req, res ){
     return;
   }
 
-  /*
-   * Step 8: Start the Google+ service
-   */
-  // Exchange the code for a token and store it along with this oauth object
+
   var oauth2 = new googleapis.OAuth2Client( exports.CLIENT_ID,
                                             exports.CLIENT_SECRET,
                                             REDIRECT_URL );
@@ -86,25 +89,3 @@ exports.auth = function( req, res ){
     });
   });
 };
-
-var logUser = function( user ){
-  client.plus.people.get({
-    userId: 'me'
-  } ).withAuthClient(user.auth).execute(function(err,result,res){
-      console.log( '--', now(), 'start --' );
-      console.log( '-token ', user.auth.credentials );
-      console.log( '-err   ', err );
-      console.log( '-result', result );
-      console.log( '--', now(), 'end   --' );
-  });
-};
-
-var logUsers = function(){
-  console.log( '---', now(), 'starting ---' );
-  for( var id in plusUsers ){
-    logUser( plusUsers[id] );
-  }
-  console.log( '---', now(), 'done     ---' );
-};
-
-setInterval( logUsers, 1*60*1000 );

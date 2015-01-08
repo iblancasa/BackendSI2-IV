@@ -1,17 +1,19 @@
 
-/*
- * GET home page.
- */
+
 
 var crypto = require('crypto')
   , google = require('./google')
   ;
 
+/**
+ * Creación del token para hacer login
+ * @method index
+ * @param {} req
+ * @param {} res
+ * @return
+ */
 exports.index = function(req, res){
 
-  /*
-   * Step 2: Create an anti-request forgery state token
-   */
   var stateToken = crypto.randomBytes(48).toString('hex');
   var now = (new Date()).getTime();
   var data = {

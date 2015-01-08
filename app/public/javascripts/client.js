@@ -1,16 +1,19 @@
 (function(global){
   'use strict';
 
+  /**
+   * Función de retorno al hacer login
+   * @method signInCallback
+   * @param {} auth Autentificación
+   * @return
+   */
   global.signInCallback = function( auth ){
     console.log( 'signInCallback:', auth );
     if (auth['code']) {
 
-      // Hide the sign-in button now that the user is authorized, for example:
+      // Esconde el botón de inicio de sesión al autentificar
       $('#signinButton').attr('style', 'display: none');
 
-      /*
-       * Step 6: Send the authorization code to the server
-       */
       var data = {
         'code': auth['code'],
         'state': global.clientStateToken
@@ -19,22 +22,22 @@
         type: 'POST',
         url: '/google/auth',
         contentType: 'application/json; charset=utf-8',
+        /**
+         * Petición al servidor para autentificación
+         * @method success
+         * @param {} result Resultado de la llamada
+         * @return
+         */
         success: function(result) {
-          // Handle or verify the server response if necessary.
 
-          // Prints the list of people that the user has allowed the app to know
-          // to the console.
+          // Escribe usuarios
           console.log(result);
         },
         processData: false,
         data: JSON.stringify(data)
       });
     } else if (auth['error']) {
-      // There was an error.
-      // Possible error codes:
-      //   "access_denied" - User denied access to your app
-      //   "immediate_failed" - Could not automatially log in the user
-      console.log('There was an error: ' + auth['error']);
+      console.log('Hubo un error: ' + auth['error']);
     }
   }
 
