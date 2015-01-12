@@ -29,8 +29,7 @@
         var server = https.createServer(options, app);
 
 
-  Este proyecto está pensado para Heroku. Como no vamos a firmar nuestros certificados y es necesario usar un addon de Heroku,
-  dejamos la conexión segura que Heroku brinda por defecto. En
+  Este proyecto está pensado para OpenShift y no es necesario hacer todo esto
 */
 
 
@@ -39,15 +38,20 @@ var express = require('express')
   , cookies = require('./avisos/cookies')
   , google = require('./routes/google')
   , http = require('http')
+  , keys = require('./keys')
   , path = require('path');
 
 var app = express();
 
+var io = require('socket.io')(server);
+var port = process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+
 
 app.configure(function(){
-  app.set('clientId', process.env.CLIENT_ID);
-  app.set('clientSecret', process.env.CLIENT_SECRET);
-  app.set('port', process.env.PORT || 3001);
+  app.set('clientId', keys.CLIENT_ID);
+  app.set('clientSecret', keys.CLIENT_SECRET);
+  app.set('port', port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.logger('dev'));
@@ -75,6 +79,6 @@ if( !google.isInitialized() ){
   process.exit(1);
 }
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'),ip, function(){
   console.log("Ejecutando en el puerto " + app.get('port'));
 });
