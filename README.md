@@ -21,6 +21,9 @@ Todavía estamos trabajando en ello, pero puedes visitar [la wiki del proyecto](
 
 También disponemos de una cuenta de Twitter asociada, [Twitter de BackendSI2-IV](https://twitter.com/BackendSI2), donde publicaremos los cambios en el repositorio y del blog.
 
+[Dockerfile funcionando correctamente](https://github.com/iblancasa/BackendSI2-IV/blob/master/Dockerfile)
+
+
 
 Integrantes del grupo:
 

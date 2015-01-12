@@ -4,6 +4,6 @@ Cosas que hacer:
 * [X] [Mudanza a Openshift](https://github.com/iblancasa/BackendSI2-IV/issues/77#issuecomment-69545274)
 * [ ] [Dar estrella](https://github.com/iblancasa/BackendSI2-IV/issues/63)
 * [ ] [Añadir licencia](https://github.com/iblancasa/BackendSI2-IV/issues/78)
-* [ ] [Comprobar funcionamiento Dockerfile](https://github.com/iblancasa/BackendSI2-IV/issues/79)
+* [x] [Comprobar funcionamiento Dockerfile](https://github.com/iblancasa/BackendSI2-IV/issues/79) 
 * [X] [Añadir fichero de claves](https://github.com/iblancasa/BackendSI2-IV/issues/81)
 * [ ] Arreglar documentación (Heroku Vs Openshift y cómo ejecutar todo)
