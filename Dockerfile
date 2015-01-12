@@ -12,7 +12,7 @@ RUN apt-get install npm git git-core -y
 RUN mkdir /home/app
 ADD app /home/app
 ADD test /home/test
-ADD package.json /home
+ADD package.json /home/package.json
 EXPOSE 8080
 RUN cd /home; npm install; npm install -g mocha;npm install mocha chai supertest
 CMD ["nohup","/usr/bin/nodejs", "."]
