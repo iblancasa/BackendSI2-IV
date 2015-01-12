@@ -7,16 +7,13 @@
 
 
 
-[La aplicación desplegada y funcionando la puedes ver aquí](https://backendsi2.herokuapp.com/)
+[La aplicación desplegada y funcionando la puedes ver aquí](http://backendsi2-iblancasa.rhcloud.com/)
 ![Logo](http://fotos.subefotos.com/5fc10a3fee9186a0be88759dbcec02f3o.jpg)
 
 =======
 ###¿Qué hay desplegado?###
-Actualmente nuestro proyecto se encuentra en fase de desarrollo.
-En la última actualización se ha desplegado el chat de ejemplo de la biblioteca [socket.io](http://socket.io/). Además, se le han realizado los siguientes cambios:
-+ Traducción de la interfaz de inglés a castellano
-+ Ligeros cambios en el aspecto visual (colores, imagen de fondo)
-+ Cuando un usuario escribe "xD", ":P" ó ":D", estos símbolos se cambian por emoticonos.
+Estamos trabajando en el backend.
+Actualmente, está desplegado un sistema que solo permite darte de alta en nuestra aplicación utilizando la autentificación de Google+.
 
 
 =======
@@ -31,7 +28,6 @@ Integrantes del grupo:
 + [José Cristóbal López Zafra](https://github.com/JCristobal)
 + [Rafael Ortiz Cáceres](https://github.com/rafaroc)
 + [Pablo Casado Arenas](https://github.com/ramako)
-+ [Gabriel Guirado Muñoz](https://github.com/gabrigm)
 
 
 
