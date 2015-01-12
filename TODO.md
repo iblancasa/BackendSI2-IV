@@ -5,3 +5,5 @@ Cosas que hacer:
 * [ ] [Dar estrella](https://github.com/iblancasa/BackendSI2-IV/issues/63)
 * [ ] [Añadir licencia](https://github.com/iblancasa/BackendSI2-IV/issues/78)
 * [ ] [Comprobar funcionamiento Dockerfile](https://github.com/iblancasa/BackendSI2-IV/issues/79)
+* [ ] [Añadir fichero de claves](https://github.com/iblancasa/BackendSI2-IV/issues/81)
+
