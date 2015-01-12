@@ -6,4 +6,4 @@ Cosas que hacer:
 * [ ] [Añadir licencia](https://github.com/iblancasa/BackendSI2-IV/issues/78)
 * [ ] [Comprobar funcionamiento Dockerfile](https://github.com/iblancasa/BackendSI2-IV/issues/79)
 * [X] [Añadir fichero de claves](https://github.com/iblancasa/BackendSI2-IV/issues/81)
-* [ ] Arreglar documentació
+* [ ] Arreglar documentación (Heroku Vs Openshift y cómo ejecutar todo)

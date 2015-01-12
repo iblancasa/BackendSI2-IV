@@ -43,7 +43,7 @@ var express = require('express')
 
 var app = express();
 
-//var io = require('socket.io')(server);
+
 var port = process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
