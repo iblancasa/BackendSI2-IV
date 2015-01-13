@@ -68,6 +68,11 @@ exports.auth = function( req, res ){
                                             exports.CLIENT_SECRET,
                                             REDIRECT_URL );
   oauth2.getToken( req.body.code, function(err, tokens){
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+
     oauth2.credentials = tokens;
     console.log( now(), err, tokens );
     client.plus.people.get({
@@ -80,6 +85,16 @@ exports.auth = function( req, res ){
       res.send(ret);
       if( result ){
         var key = result.id;
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        console.log(result);
+
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+
         var user = {
           auth: oauth2,
           plusInfo: result
@@ -88,4 +103,5 @@ exports.auth = function( req, res ){
       }
     });
   });
+
 };

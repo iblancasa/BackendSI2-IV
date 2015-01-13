@@ -1,6 +1,4 @@
 
-
-
 var crypto = require('crypto')
   , google = require('./google')
   ;
@@ -20,7 +18,8 @@ exports.index = function(req, res){
     'clientId': google.CLIENT_ID,
     'scope':    google.SCOPE,
     'state':    stateToken,
-    'now':      now
+    'now':      now,
+    'ip': global.ip
   };
   res.render('index', data);
   req.session['now'] = now;
