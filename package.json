@@ -15,6 +15,14 @@
   "engines": {
     "node": "latest"
   },
+  "scripts": {
+    "test": "make test"
+  }
+  , "devDependencies": {
+    "mocha": "latest",
+    "chai": "latest",
+    "supertest": "latest"
+  },
   "repository" :
   { "type" : "git"
     , "url" : "https://github.com/iblancasa/BackendSI2-IV.git"
