@@ -1,0 +1,17 @@
+    <form id="buscar_usuario" >  
+        <fieldset>  
+            <legend>Búsqueda de un usuario</legend>
+            <div class="field">  
+                <label for="nombre">Nombre del usuario:</label>  
+                <input type="text" id="nombre" name="nombre" size="20" maxlength="50" tabindex="1"/>  
+            </div>  
+            <div class="field">  
+                <label for="nombre_emp">Empresa del usuario:</label>  
+                <input type="text" id="nombre_emp" name="nombre_emp" size="20" maxlength="50" tabindex="1"/>  
+            </div>  
+        </fieldset>  
+        <div>  
+            <input type="submit" value="Buscar"/>  
+              
+        </div>  
+    </form>
