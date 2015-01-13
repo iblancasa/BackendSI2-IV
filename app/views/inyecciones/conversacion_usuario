@@ -1,0 +1,27 @@
+<section id="avisos">
+
+    <p> notificacion </p> <p> notificacion </p><p> notificacion </p><p> notificacion </p>
+
+</section>
+
+<section id="cabecera_chat">   Admin   </section>
+
+<section id="chat">
+
+    <p> Mensajes del chat </p><p> Mensajes del chat </p><p> Mensajes del chat </p><p> Mensajes del chat </p><p> Mensajes del chat </p><p> Mensajes del chat </p><p> Mensajes del chat </p>
+
+</section>
+<section id="mitexto">
+
+    <form >  
+        <fieldset>  
+            <div >  
+                <input id="mitexto"  type="text"  name="texto" maxlength="50" />  
+            </div>   
+        </fieldset>  
+        <div>  
+            <input style="color: black"  type="submit" value="Enviar"/>              
+        </div> 
+    </form> 
+
+</section>
