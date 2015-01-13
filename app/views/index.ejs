@@ -1,108 +1,181 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BackendSI2-IV - Inicio</title>
-  <link rel='stylesheet' href='/stylesheets/style.css'/>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>
-  clientStateToken = '<%= state %>';
-  </script>
-  <script>
-  (function(global){
-    'use strict';
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FrontEnd para nuestra aplicación de IV">
+    <meta name="author" content="Autores varios">
+    <link rel="icon" href="../../favicon.ico">
 
-    /**
-    * Función de retorno al hacer login
-    * @method signInCallback
-    * @param {} auth Autentificación
-    * @return
-    */
-    global.signInCallback = function( auth ){
-      console.log( 'signInCallback:', auth );
-      if (auth['code']) {
+    <title>BackendSI2-IV</title>
 
-        // Esconde el botón de inicio de sesión al autentificar
-        $('#signinButton').attr('style', 'display: none');
+    <script>
+    (function(global){
+      'use strict';
 
-        var data = {
-          'code': auth['code'],
-          'state': global.clientStateToken
-        };
-        $.ajax({
-          type: 'POST',
-          url: '/google/auth',
-          contentType: 'application/json; charset=utf-8',
-          /**
-          * Petición al servidor para autentificación
-          * @method success
-          * @param {} result Resultado de la llamada
-          * @return
-          */
-          success: function(result) {
+      /**
+      * Función de retorno al hacer login
+      * @method signInCallback
+      * @param {} auth Autentificación
+      * @return
+      */
+      global.signInCallback = function( auth ){
+        console.log( 'signInCallback:', auth );
+        if (auth['code']) {
+          // Esconde el botón de inicio de sesión al autentificar
+          $('#signinButton').attr('style', 'display: none');
 
-            // Escribe usuarios
-            console.log(result);
-          },
-          processData: false,
-          data: JSON.stringify(data),
-        });
+          var data = {
+            'code': auth['code'],
+            'state': global.clientStateToken
+          };
+          $.ajax({
+            type: 'POST',
+            url: '/google/auth',
+            contentType: 'application/json; charset=utf-8',
+            /**
+            * Petición al servidor para autentificación
+            * @method success
+            * @param {} result Resultado de la llamada
+            * @return
+            */
+            success: function(result) {
+              // Escribe usuarios
+              console.log(result);
+            },
+            processData: false,
+            data: JSON.stringify(data),
+          });
 
-        window.location.replace("http://<%= ip %>/dashboard");
+          $("#contenido").remove();
 
-      } else if (auth['error']) {
-        console.log('Hubo un error: ' + auth['error']);
+          $.post( "/dashboard", function( data ) {
+            $(".jumbotron").append(data);
+          });
+
+          $.post( "/menu", function( data ) {
+            $(".jumbotron").append(data);
+          });
+
+
+        } else if (auth['error']) {
+          console.log('Hubo un error: ' + auth['error']);
+        }
       }
-    }
 
-  })(this);
+    })(this);
+    </script>
+
+
+
+
+    <!--  Cargamos CSS con estilo propio -->
+
+    <link href="/stylesheets/estilo.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+
+    <!-- Cargamos Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"> BackendSI2-IV</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav active">
+              <li class="active"><a href="/">Dashboard</a></li>
+              <li><a href="/sobre">Sobre</a></li>
+              <li><a href="/contacto">Contacto</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Otros <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">TOS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron" >
+
+        <section id="contenido" >
+            <h2>Bienvenido a BackendSI2-IV</h2>
+
+            <div id="signinButton">
+              <span class="g-signin"
+              data-scope="<%= scope %>"
+              data-clientid="<%= clientId %>"
+              data-redirecturi="postmessage"
+              data-accesstype="offline"
+              data-cookiepolicy="single_host_origin"
+              data-callback="signInCallback">
+            </span>
+          </div>
+            <img src="/images/logo.png"/>
+        </section>
+
+
+
+
+
+
+
+
+
+
+    </div> <!-- /container -->
+    <div class="mastfoot" id="prueba">
+      <div class="inner">
+        <p>Plantilla obtenida parcialmente de <a href="http://getbootstrap.com">Bootstrap</a> </p>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>  -->
+  </body>
+
+  <script type="text/javascript">
+
+  (function(){
+    var po = document.createElement( 'script' );
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+    var s = document.getElementsByTagName( 'script' )[0];
+    s.parentNode.insertBefore( po, s );
+  })();
   </script>
-  <style>
-
-  </style>
-</head>
-<body>
-
-  <video  id="video-background"  autoplay loop>
-    <source src="/video/back.mp4" type="video/mp4">
-  </video>
-
-  <section id="fondo">
-    <h1>Bienvenido a BackendSI2-IV</h1>
-
-
-    <div id="signinButton">
-      <span class="g-signin"
-      data-scope="<%= scope %>"
-      data-clientid="<%= clientId %>"
-      data-redirecturi="postmessage"
-      data-accesstype="offline"
-      data-cookiepolicy="single_host_origin"
-      data-callback="signInCallback">
-    </span>
-  </div>
-
-  <a href="https://github.com/iblancasa/BackendSI2-IV"><img src="images/github.png"/></a>
-
-  <p>
-    Esta web utiliza cookies, puedes ver nuestra  <a href="/cookies">política de cookies, aquí</a>. Si continuas navegando estás aceptándola.
-  </p>
-</section>
-
-
-<script type="text/javascript">
-
-(function(){
-  var po = document.createElement( 'script' );
-  po.type = 'text/javascript';
-  po.async = true;
-  po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
-  var s = document.getElementsByTagName( 'script' )[0];
-  s.parentNode.insertBefore( po, s );
-})();
-</script>
-
-
-</body>
-
-
 </html>

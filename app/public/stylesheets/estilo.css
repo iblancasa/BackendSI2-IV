@@ -1,6 +1,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #3B0B39 !important;
 }
 
 .navbar {
@@ -8,10 +9,25 @@ body {
 }
 
 
-#cabecera{
-	width: 75.00%;
-	float:right;
+#operacion{
+  width: 75.00%;
+  float:right;
+}
 
+#sidebardashboard{
+  width: 20%;
+}
+
+
+#contenido{
+  width:100%;
+  text-align: center;
+}
+
+#contenido img{
+  width:30%;
+  margin: 0 auto;
+  display: block;
 }
 
 
@@ -21,13 +37,10 @@ body {
 }
 
 .mastfoot {
-    position: fixed;
+    margin: 0 auto;
+    padding: 0;
     bottom: 0;
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
     text-align:center;
     background-color: #f6f6f6;
   }
-
-
-
-

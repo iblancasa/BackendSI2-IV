@@ -76,10 +76,13 @@ app.configure('development', function(){
 
 
 app.get('/cookies', cookies.cookies);
-app.get('/dashboard', dashboard.index);
 
-app.get('/', routes.index);
-app.post('/google/auth', google.auth);
+
+app.post('/dashboard', dashboard.index);//Cargar dashboard
+app.post('/menu', dashboard.menu);//Cargar menu
+
+app.get('/', routes.index);//Inicio
+app.post('/google/auth', google.auth);//Autentificación de Google
 
 google.CLIENT_ID = app.get('clientId');
 google.CLIENT_SECRET = app.get('clientSecret');
