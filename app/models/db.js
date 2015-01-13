@@ -9,8 +9,12 @@ db.on('error', console.error.bind(console, 'Error de conexión:'));
 db.once('open', function (callback) {
 
 var nuevoUsuario = new models.usuarios({
-        nombre: 'prueba',
+        idUsuario:'abcdef',
+        fotoPerfil:'http://127.0.0.1',
+        fotoHeader:'http://127.0.0.1',
+        token: 'zwyx',
         empresa:'IV',
+        nombre: 'prueba',
         estado:'Offline'
 });
 
@@ -20,16 +24,15 @@ var nuevoUsuario = new models.usuarios({
     console.dir(nuevoUsuario);
       });
 
-    var nuevoAdministrador = new models.administrador({
-        nombre: 'pablo',
-        empresa:'IV',
-        password:'123'})
-
-
-     nuevoAdministrador.save(function(err, nuevoAdministrador) {
+var nuevaEmpresa = new models.empresa({
+    nombre: 'IV',
+    idEmpresa: 'abcdefg'
+    
+});
+     nuevaEmpresa.save(function(err, nuevaEmpresa) {
     if (err)
         return console.error(err);
-    console.dir(nuevoAdministrador);
+    console.dir(nuevaEmpresa);
       });
 
     });
