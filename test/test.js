@@ -10,6 +10,10 @@ var request = require('supertest');//Biblioteca para comprobar servidores web
 var io = require('socket.io/node_modules/socket.io-client');
 var express = require('express');
 var app = express();
+/**Mongoose**/
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+var models = require('../app/models/schema.js')(mongoose);
 
 /**Variables auxiliares*****************************************/
 var urlServidor = "http://localhost:8080";//URL donde se ejecuta el servidor
@@ -31,6 +35,33 @@ beforeEach(function (done) {
 
 
 /**Pruebas de servidor**/
+describe('Pruebas de BDD', function () {
+    it('Insertar usuario', function(done) {
+        var db = mongoose.connection;
+        db.on('error', console.error.bind(console, 'Error de conexión:'));
+        db.once('open', function (callback) {
+           var nuevoUsuario = new models.usuarios({
+                idUsuario:'abcdef',
+                fotoPerfil:'http://127.0.0.1',
+                fotoHeader:'http://127.0.0.1',
+                token: 'zwyx',
+                empresa:'IV',
+                nombre: 'prueba',
+                estado:'Offline'
+           }); 
+         nuevoUsuario.save(function (err, createdUser) {    
+             expect(err).to.not.be.true;
+             
+             done();
+        });
+        
+    })
+    
+    
+    });
+    });
+    
+
 describe('Pruebas de servidor online', function () {
   /**Comprobando que la web está online**/
   it('Comprobando que la página responde (200)', function (done) {
@@ -39,6 +70,15 @@ describe('Pruebas de servidor online', function () {
         done();
       });
     });
+    
+      
+     it('La pagina ha de devolver error', function (done) {
+    request(urlServidor).get('/abcde').expect(404).end(function(err, res){
+      if (err) return done(err)
+        done();
+      });
+    });  
+    
 })
 
 
