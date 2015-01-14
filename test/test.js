@@ -12,7 +12,7 @@ var express = require('express');
 var app = express();
 
 /**Variables auxiliares*****************************************/
-var urlServidor = "http://localhost:3001";//URL donde se ejecuta el servidor
+var urlServidor = "http://localhost:8080";//URL donde se ejecuta el servidor
 
 var options ={//Opctiones del servidor
   transports: ['websocket'],
