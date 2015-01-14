@@ -51,3 +51,36 @@ describe('GET /', function(){
     .expect(200, done);
   })
 })
+
+/**Comprando la petición a la plantilla css**/ 
+describe('GET /stylesheets/estilo.css', function(){
+  it('Petición de CSS ', function(done){
+    request(urlServidor)
+    .get('/stylesheets/estilo.css')
+    .set('Accept', 'text/plain')
+    .expect('Content-Type', "text/html; charset=utf-8")
+    .expect(200, done);
+  })
+})
+
+/**Comprando la petición del apartado "sobre"**/ 
+describe('GET /sobre', function(){
+  it('Petición de /sobre', function(done){
+    request(urlServidor)
+    .get('/sobre')
+    .set('Accept', 'text/plain')
+    .expect('Content-Type', "text/html; charset=utf-8")
+    .expect(404, done);  /** debe fallar, aún no está realizada**/ 
+  })
+})
+
+/**Comprando la petición del apartado "contacto"**/ 
+describe('GET /contacto', function(){
+  it('Petición de /contacto', function(done){
+    request(urlServidor)
+    .get('/conctacto')
+    .set('Accept', 'text/plain')
+    .expect('Content-Type', "text/html; charset=utf-8")
+    .expect(404, done);  /** debe fallar, aún no está realizada**/ 
+  })
+})
