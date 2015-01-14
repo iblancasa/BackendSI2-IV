@@ -3,6 +3,8 @@
 
 ##Proyecto para el desarrollo de backend de servicio de mensajería instantánea orientado a empresas.##
 
+[![Build Status](https://travis-ci.org/iblancasa/BackendSI2-IV.svg?branch=master)](https://travis-ci.org/iblancasa/BackendSI2-IV)
+
 ####Asignatura "Infaestructuras Virtuales". Grado de Ingeniería Informática, Universidad de Granada####
 
 

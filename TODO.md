@@ -8,3 +8,4 @@ Cosas que hacer:
 * [X] [Añadir fichero de claves](https://github.com/iblancasa/BackendSI2-IV/issues/81)
 * [ ] Arreglar documentación (Heroku Vs Openshift y cómo ejecutar todo)
 * [ ] [Arreglar integración continua](https://github.com/iblancasa/BackendSI2-IV/issues/82)
+* [ ] [Provisionamiento de una máquina en Azure usando Grunt o dejándolo automático (en la pŕactica dice "Los tests y los despliegue deben hacerse automáticamente con una sola orden tal como make install o grunt y deben usarse herramientas estándar para el mismo. Si se ha configurado un despliegue automático desde GitHub, debe indicarse claramente en la documentación.")](https://github.com/iblancasa/BackendSI2-IV/issues/84)
