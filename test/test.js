@@ -58,7 +58,7 @@ describe('GET /stylesheets/estilo.css', function(){
     request(urlServidor)
     .get('/stylesheets/estilo.css')
     .set('Accept', 'text/plain')
-    .expect('Content-Type', "text/html; charset=utf-8")
+    .expect('Content-Type', "text/css; charset=UTF-8")
     .expect(200, done);
   })
 })
@@ -69,7 +69,7 @@ describe('GET /sobre', function(){
     request(urlServidor)
     .get('/sobre')
     .set('Accept', 'text/plain')
-    .expect('Content-Type', "text/html; charset=utf-8")
+    .expect('Content-Type', "text/plain")
     .expect(404, done);  /** debe fallar, aún no está realizada**/ 
   })
 })
@@ -80,7 +80,7 @@ describe('GET /contacto', function(){
     request(urlServidor)
     .get('/conctacto')
     .set('Accept', 'text/plain')
-    .expect('Content-Type', "text/html; charset=utf-8")
+    .expect('Content-Type', "text/plain")
     .expect(404, done);  /** debe fallar, aún no está realizada**/ 
   })
 })
