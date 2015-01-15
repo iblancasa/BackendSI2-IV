@@ -44,21 +44,15 @@ var express = require('express')
 
 var app = express();
 
+global.ip=keys.ip;
+global.port=keys.port;
 
-var port = process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
-if(ip=="127.0.0.1"){
-  global.ip=ip+":"+port;
-}
-else{
-  global.ip=ip;
-}
 
 app.configure(function(){
   app.set('clientId', keys.CLIENT_ID);
   app.set('clientSecret', keys.CLIENT_SECRET);
-  app.set('port', port);
+  app.set('port', global.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.logger('dev'));
@@ -91,6 +85,6 @@ if( !google.isInitialized() ){
   process.exit(1);
 }
 
-http.createServer(app).listen(app.get('port'),ip, function(){
+http.createServer(app).listen(app.get('port'),global.ip, function(){
   console.log("Ejecutando en el puerto " + app.get('port'));
 });
