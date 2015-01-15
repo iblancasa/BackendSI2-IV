@@ -29,19 +29,25 @@ var options ={//Opctiones del servidor
 
 /**TEST*********************************************************/
 
-/**Arrancamos el servidor**/
+
+/*
+ * Arrancamos el servidor
+ * @method beforeEach
+ */
 beforeEach(function (done) {
     server = require('../app/app.js').server;
     done();
 });
 
 
-/**Pruebas de servidor**/
+/*
+ * Pruebas de la Base de Datos
+ */
 describe('Pruebas de BDD', function () {
+    /*
+       * Insertamos un usuario, con unos campos conocidos, consultándolos después también
+    */
     it('Insertar usuario', function(done) {
-       // var db = mongoose.connection;
-        //db.on('error', console.error.bind(console, 'Error de conexión:'));
-        //db.once('open', function (callback) {
            var nuevoUsuario = new models.usuarios({
                 idUsuario:'abcdef',
                 fotoPerfil:'http://127.0.0.1',
@@ -63,11 +69,16 @@ describe('Pruebas de BDD', function () {
     
     
     });
-   // });
-    
+   
 
+
+/*
+ * Pruebas de servidor online
+ */
 describe('Pruebas de servidor online', function () {
-  /**Comprobando que la web está online**/
+  /*
+     * Comprobando que la web está online
+  */
   it('Comprobando que la página responde (200)', function (done) {
     request(urlServidor).get('/').expect(200).end(function(err, res){
       if (err) return done(err)
@@ -75,14 +86,19 @@ describe('Pruebas de servidor online', function () {
       });
     });
     
-      
-     it('La pagina ha de devolver error', function (done) {
-    request(urlServidor).get('/abcde').expect(404).end(function(err, res){
+  /*
+     * Comprobando una página erronea, para que devuelva un fallo
+  */     
+  it('La pagina ha de devolver error', function (done) {
+      request(urlServidor).get('/abcde').expect(404).end(function(err, res){
       if (err) return done(err)
         done();
       });
-    });  
-   
+  });  
+
+  /*
+     * Comprobando la ruta /
+  */   
   it('La ruta / responde con texto plano', function(done){
     request(urlServidor)
     .get('/')
@@ -91,7 +107,9 @@ describe('Pruebas de servidor online', function () {
     .expect(200, done);
   })
 
-  /**Comprando la petición a la plantilla css**/ 
+  /*
+     * Comprobando la plantilla CSS
+  */ 
   it('Petición de CSS ', function(done){  
     request(urlServidor)
     .get('/stylesheets/estilo.css')
@@ -100,22 +118,26 @@ describe('Pruebas de servidor online', function () {
     .expect(200, done);
   })
 
-  /**Comprando la petición del apartado "sobre"**/ 
+  /*
+     * Comprobando la ruta /sobre   (debe fallar, todavía no esta hecha)
+  */ 
   it('Petición de /sobre (debe fallar)', function(done){
     request(urlServidor)
     .get('/sobre')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
-    .expect(404, done);  /** debe fallar, aún no está realizada**/ 
+    .expect(404, done);		/** debe fallar, aún no está realizada**/ 
   })
 
-  /**Comprando la petición del apartado "contacto"**/ 
+  /*
+     * Comprobando la ruta /contacto   (debe fallar, todavía no esta hecha)
+  */  
   it('Petición de /contacto (debe fallar)', function(done){
     request(urlServidor)
     .get('/conctacto')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
-    .expect(404, done);  /** debe fallar, aún no está realizada**/ 
+    .expect(404, done);		/** debe fallar, aún no está realizada**/ 
   })
 
  
