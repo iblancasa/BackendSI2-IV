@@ -1,7 +1,5 @@
 
-
-
-if(process.env.OPENSHIFT_INTERNAL_PORT){//Estamos en OpenShift
+if(process.env.OPENSHIFT_NODEJS_IP){//Estamos en OpenShift
   //IP y puerto
   exports.port = process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT;
   exports.ip = process.env.OPENSHIFT_NODEJS_IP;
