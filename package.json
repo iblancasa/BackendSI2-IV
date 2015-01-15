@@ -22,7 +22,8 @@
   , "devDependencies": {
     "mocha": "latest",
     "chai": "latest",
-    "supertest": "latest"
+    "supertest": "latest",
+    "mockgoose": "latest"
   },
   "repository" :
   { "type" : "git"

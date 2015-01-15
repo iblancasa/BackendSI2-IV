@@ -12,6 +12,8 @@ var express = require('express');
 var app = express();
 /**Mongoose**/
 var mongoose = require('mongoose');
+var mockgoose = require('mockgoose');
+mockgoose(mongoose);
 mongoose.connect('mongodb://localhost/test');
 var models = require('../app/models/schema.js')(mongoose);
 

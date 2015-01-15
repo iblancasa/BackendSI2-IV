@@ -13,6 +13,7 @@ var usuarioSchema = new mongoose.Schema({
         administra      :           Boolean
 });
 
+
 /**
 //Administradores
 var administradorSchema = mongoose.Schema({
