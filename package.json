@@ -10,7 +10,8 @@
     "express": "3.1.0",
     "socket.io": "latest",
     "ejs": "latest",
-    "googleapis": "0.2.5-alpha"
+    "googleapis": "0.2.5-alpha",
+    "mongoose":"latest"
   },
   "engines": {
     "node": "0.10"
@@ -21,7 +22,8 @@
   , "devDependencies": {
     "mocha": "latest",
     "chai": "latest",
-    "supertest": "latest"
+    "supertest": "latest",
+    "mockgoose": "latest"
   },
   "repository" :
   { "type" : "git"

@@ -12,7 +12,9 @@ var express = require('express');
 var app = express();
 /**Mongoose**/
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+var mockgoose = require('mockgoose');
+mockgoose(mongoose);
+//mongoose.connect('mongodb://localhost/test');
 var models = require('../app/models/schema.js')(mongoose);
 
 /**Variables auxiliares*****************************************/
@@ -37,9 +39,9 @@ beforeEach(function (done) {
 /**Pruebas de servidor**/
 describe('Pruebas de BDD', function () {
     it('Insertar usuario', function(done) {
-        var db = mongoose.connection;
-        db.on('error', console.error.bind(console, 'Error de conexión:'));
-        db.once('open', function (callback) {
+       // var db = mongoose.connection;
+        //db.on('error', console.error.bind(console, 'Error de conexión:'));
+        //db.once('open', function (callback) {
            var nuevoUsuario = new models.usuarios({
                 idUsuario:'abcdef',
                 fotoPerfil:'http://127.0.0.1',
@@ -59,7 +61,7 @@ describe('Pruebas de BDD', function () {
     
     
     });
-    });
+   // });
     
 
 describe('Pruebas de servidor online', function () {
@@ -78,49 +80,43 @@ describe('Pruebas de servidor online', function () {
         done();
       });
     });  
-    
-})
-
-
-describe('GET /', function(){
-  it('Responde con texto plano', function(done){
+   
+  it('La ruta / responde con texto plano', function(done){
     request(urlServidor)
     .get('/')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/html; charset=utf-8")
     .expect(200, done);
   })
-})
 
-/**Comprando la petición a la plantilla css**/ 
-describe('GET /stylesheets/estilo.css', function(){
-  it('Petición de CSS ', function(done){
+  /**Comprando la petición a la plantilla css**/ 
+  it('Petición de CSS ', function(done){  
     request(urlServidor)
     .get('/stylesheets/estilo.css')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/css; charset=UTF-8")
     .expect(200, done);
   })
-})
 
-/**Comprando la petición del apartado "sobre"**/ 
-describe('GET /sobre', function(){
-  it('Petición de /sobre', function(done){
+  /**Comprando la petición del apartado "sobre"**/ 
+  it('Petición de /sobre (debe fallar)', function(done){
     request(urlServidor)
     .get('/sobre')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
     .expect(404, done);  /** debe fallar, aún no está realizada**/ 
   })
-})
 
-/**Comprando la petición del apartado "contacto"**/ 
-describe('GET /contacto', function(){
-  it('Petición de /contacto', function(done){
+  /**Comprando la petición del apartado "contacto"**/ 
+  it('Petición de /contacto (debe fallar)', function(done){
     request(urlServidor)
     .get('/conctacto')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
     .expect(404, done);  /** debe fallar, aún no está realizada**/ 
   })
+
+ 
 })
+
+
