@@ -65,7 +65,18 @@ describe('Pruebas de BDD', function () {
              done();
         });
         
-    })
+    });
+    
+    it('Encontrar usuario',function(done) {
+      // encuentra un usuario y comprueba que devuelve su nombre y su empresa.
+  models.usuarios.findOne({ 'nombre': 'prueba'}, 'nombre empresa estado', function (err, person) {
+  if (err) return handleError(err);
+  expect(person.nombre).to.equal('prueba');
+  expect(person.empresa).to.equal('IV');
+  expect(person.estado).to.equal('Offline');
+})
+  done();
+    });
     
     
     });

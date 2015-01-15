@@ -1,3 +1,12 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
+deploy:
+  provider: openshift
+  user: iblancasa@gmail.com
+  password:
+    secure: QH+5fB99tRLP4mC6zllJdbbvFvtu22iG1yomuZ+WGplN3pBsVRYPGXRat3xFhsRB5h7BzEs8YS4t0R2FTyt5Elh5/xY7KM2qIqK8iPQ07iavgcxyEORxyUh3SVLskIsrat4a66MoW4CDDY8elggmGA+Wmv2Hl0R+wXTz2c/It2w=
+  app: backendsi2
+  domain: iblancasa
+  on:
+    repo: iblancasa/BackendSI2-IV
