@@ -53,7 +53,9 @@ describe('Pruebas de BDD', function () {
            }); 
          nuevoUsuario.save(function (err, createdUser) {    
              expect(err).to.not.be.true;
-             
+             expect(createdUser.empresa).to.equal('IV');
+             expect(createdUser.nombre).to.equal('prueba');
+             expect(createdUser.estado).to.equal('Offline');
              done();
         });
         
