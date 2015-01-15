@@ -14,7 +14,7 @@ var app = express();
 var mongoose = require('mongoose');
 var mockgoose = require('mockgoose');
 mockgoose(mongoose);
-mongoose.connect('mongodb://localhost/test');
+//mongoose.connect('mongodb://localhost/test');
 var models = require('../app/models/schema.js')(mongoose);
 
 /**Variables auxiliares*****************************************/
@@ -39,9 +39,9 @@ beforeEach(function (done) {
 /**Pruebas de servidor**/
 describe('Pruebas de BDD', function () {
     it('Insertar usuario', function(done) {
-        var db = mongoose.connection;
-        db.on('error', console.error.bind(console, 'Error de conexión:'));
-        db.once('open', function (callback) {
+       // var db = mongoose.connection;
+        //db.on('error', console.error.bind(console, 'Error de conexión:'));
+        //db.once('open', function (callback) {
            var nuevoUsuario = new models.usuarios({
                 idUsuario:'abcdef',
                 fotoPerfil:'http://127.0.0.1',
@@ -61,7 +61,7 @@ describe('Pruebas de BDD', function () {
     
     
     });
-    });
+   // });
     
 
 describe('Pruebas de servidor online', function () {
