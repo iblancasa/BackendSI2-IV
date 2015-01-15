@@ -80,49 +80,43 @@ describe('Pruebas de servidor online', function () {
         done();
       });
     });  
-    
-})
-
-
-describe('GET /', function(){
-  it('Responde con texto plano', function(done){
+   
+  it('La ruta / responde con texto plano', function(done){
     request(urlServidor)
     .get('/')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/html; charset=utf-8")
     .expect(200, done);
   })
-})
 
-/**Comprando la petición a la plantilla css**/ 
-describe('GET /stylesheets/estilo.css', function(){
-  it('Petición de CSS ', function(done){
+  /**Comprando la petición a la plantilla css**/ 
+  it('Petición de CSS ', function(done){  
     request(urlServidor)
     .get('/stylesheets/estilo.css')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/css; charset=UTF-8")
     .expect(200, done);
   })
-})
 
-/**Comprando la petición del apartado "sobre"**/ 
-describe('GET /sobre', function(){
-  it('Petición de /sobre', function(done){
+  /**Comprando la petición del apartado "sobre"**/ 
+  it('Petición de /sobre (debe fallar)', function(done){
     request(urlServidor)
     .get('/sobre')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
     .expect(404, done);  /** debe fallar, aún no está realizada**/ 
   })
-})
 
-/**Comprando la petición del apartado "contacto"**/ 
-describe('GET /contacto', function(){
-  it('Petición de /contacto', function(done){
+  /**Comprando la petición del apartado "contacto"**/ 
+  it('Petición de /contacto (debe fallar)', function(done){
     request(urlServidor)
     .get('/conctacto')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
     .expect(404, done);  /** debe fallar, aún no está realizada**/ 
   })
+
+ 
 })
+
+
