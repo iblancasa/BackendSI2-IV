@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "Esto funciona";
-cat ok.txt;
+cat ./travisscripts/ok.txt;
