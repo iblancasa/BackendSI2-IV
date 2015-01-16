@@ -68,7 +68,7 @@
     </script>
 
 
-
+ 
 
     <!--  Cargamos CSS con estilo propio -->
 
@@ -105,15 +105,15 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav active">
               <li class="active"><a href="/">Dashboard</a></li>
-              <li><a href="/sobre">Sobre</a></li>
-              <li><a href="/contacto">Contacto</a></li>
+              <li ><a href="#" >Sobre</a></li>
+              <li><a href="/#" id="botoncontacto">Contacto</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Otros <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="#">FAQ</a></li>
                   <li><a href="#">TOS</a></li>
                 </ul>
-              </li>
+              </li> 
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -137,7 +137,6 @@
           </div>
             <img src="/images/logo.png"/>
         </section>
-
 
 
 
@@ -178,4 +177,26 @@
     s.parentNode.insertBefore( po, s );
   })();
   </script>
+
+
+
+   <script type="text/javascript">
+          $(document).ready(function () {
+           
+              $('#botoncontacto').click(function () {
+
+                  
+                  $("#contenido").remove();
+                  $("#sidebardashboard").remove();
+                  $("#operacion").remove();
+
+                  $.get( "/contacto", function(data) {
+                    $(".jumbotron").append(data);
+                  });
+              });
+                   
+          });
+    </script>
+
+
 </html>

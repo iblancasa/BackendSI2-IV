@@ -75,8 +75,11 @@ app.get('/cookies', cookies.cookies);
 app.post('/dashboard', dashboard.index);//Cargar dashboard
 app.post('/menu', dashboard.menu);//Cargar menu
 
+app.get('/contacto', dashboard.contacto);     //Cargar contacto  
+
 app.get('/', routes.index);//Inicio
 app.post('/google/auth', google.auth);//Autentificación de Google
+
 
 google.CLIENT_ID = app.get('clientId');
 google.CLIENT_SECRET = app.get('clientSecret');

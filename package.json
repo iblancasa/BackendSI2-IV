@@ -18,15 +18,15 @@
   },
   "scripts": {
     "test": "make test"
-  }
-  , "devDependencies": {
+  },
+  "devDependencies": {
     "mocha": "latest",
     "chai": "latest",
     "supertest": "latest",
     "mockgoose": "latest"
   },
-  "repository" :
-  { "type" : "git"
-    , "url" : "https://github.com/iblancasa/BackendSI2-IV.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iblancasa/BackendSI2-IV.git"
   }
 }
