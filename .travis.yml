@@ -11,8 +11,6 @@ deploy:
   on:
     repo: iblancasa/BackendSI2-IV
 after_deploy:
-  - ./despliegue.sh
-after_success:
-  - ./despliegue.sh
+  - ./travisscripts/despliegue.sh
 after_failure:
-  - ./error.sh
+  - ./travisscripts/error.sh
