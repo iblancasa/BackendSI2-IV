@@ -141,14 +141,14 @@ describe('Pruebas de servidor online', function () {
   })
 
   /*
-     * Comprobando la ruta /contacto   (debe fallar, todavía no esta hecha)
+     * Comprobando la ruta /contacto   
   */  
-  it('Petición de /contacto (debe fallar)', function(done){
+  it('Petición de /contacto', function(done){
     request(urlServidor)
     .get('/conctacto')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/plain")
-    .expect(404, done);		/** debe fallar, aún no está realizada**/ 
+    .expect(200, done);		 
   })
 
  
