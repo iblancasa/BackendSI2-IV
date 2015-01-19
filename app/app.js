@@ -43,6 +43,8 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
+var server = http.createServer(app);
+var io = require('socket.io')(server);
 
 global.ip=keys.ip;
 global.port=keys.port;
@@ -75,7 +77,7 @@ app.get('/cookies', cookies.cookies);
 app.post('/dashboard', dashboard.index);//Cargar dashboard
 app.post('/menu', dashboard.menu);//Cargar menu
 
-app.get('/contacto', dashboard.contacto);     //Cargar contacto  
+app.get('/contacto', dashboard.contacto);     //Cargar contacto
 
 app.get('/', routes.index);//Inicio
 app.post('/google/auth', google.auth);//Autentificación de Google
@@ -88,6 +90,12 @@ if( !google.isInitialized() ){
   process.exit(1);
 }
 
-http.createServer(app).listen(app.get('port'),global.ip, function(){
+server.listen(app.get('port'),global.ip, function(){
   console.log("Ejecutando en el puerto " + app.get('port'));
+});
+
+
+/*Socket.io*/
+io.on('connection', function (socket) {
+  socket.on('disconnect', function () {});
 });
