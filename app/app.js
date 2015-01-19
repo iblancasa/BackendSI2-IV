@@ -40,14 +40,24 @@ var express = require('express')
   , http = require('http')
   , keys = require('./keys')
   , dashboard = require('./routes/dashboard')
+  , mongoose = require('mongoose')
   , path = require('path');
 
+//Creando servidor
 var app = express();
 var server = http.createServer(app);
 var io = require('socket.io')(server);
 
+
+//Variables de conexión
 global.ip=keys.ip;
 global.port=keys.port;
+
+//Base de datos
+global.models = require('./models/schema.js')(mongoose);
+
+mongoose.connect(keys.hostdatabase);
+global.mongoose=mongoose;
 
 
 

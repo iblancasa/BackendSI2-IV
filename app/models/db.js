@@ -1,10 +1,7 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
-var models = require('./schema.js')(mongoose);
 
 
-
-var db = mongoose.connection;
+var models = global.models;
+var db = global.mongoose.connection;
 db.on('error', console.error.bind(console, 'Error de conexión:'));
 db.once('open', function (callback) {
 
@@ -26,8 +23,6 @@ var nuevoUsuario = new models.usuarios({
 
 var nuevaEmpresa = new models.empresa({
     nombre: 'IV',
-    idEmpresa: 'abcdefg'
-    
 });
      nuevaEmpresa.save(function(err, nuevaEmpresa) {
     if (err)
