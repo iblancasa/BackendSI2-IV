@@ -56,7 +56,7 @@ global.port=keys.port;
 //Base de datos
 global.models = require('./models/schema.js')(mongoose);
 
-mongoose.connect(keys.hostdatabase);
+mongoose.connect(process.env.DBHOST);
 global.mongoose=mongoose;
 
 
@@ -80,6 +80,7 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+console.log(process.env.DBHOST);
 
 app.get('/cookies', cookies.cookies);
 
