@@ -12,8 +12,8 @@ var app = express();
 var mongoose = require('mongoose');
 var mockgoose = require('mockgoose');
 mockgoose(mongoose);
-//mongoose.connect('mongodb://localhost/test');
-var models = require('../app/models/schema.js')(mongoose);
+
+
 
 /**Variables auxiliares*****************************************/
 var urlServidor = "http://localhost:8080";//URL donde se ejecuta el servidor
@@ -40,7 +40,7 @@ describe('Pruebas de BDD', function () {
 * Insertamos un usuario, con unos campos conocidos, consultándolos después también
 */
 it('Insertar usuario', function(done) {
-	var nuevoUsuario = new models.usuarios({
+	var nuevoUsuario = new global.models.usuarios({
 		idUsuario:'abcdef',
 		fotoPerfil:'http://127.0.0.1',
 		fotoHeader:'http://127.0.0.1',
@@ -59,7 +59,7 @@ it('Insertar usuario', function(done) {
 });
 it('Encontrar usuario',function(done) {
 // encuentra un usuario y comprueba que devuelve su nombre y su empresa.
-	models.usuarios.findOne({ 'nombre': 'prueba'}, 'nombre empresa estado', function (err, person) {
+global.models.usuarios.findOne({ 'nombre': 'prueba'}, 'nombre empresa estado', function (err, person) {
 		if (err) return handleError(err);
 		expect(person.nombre).to.equal('prueba');
 		expect(person.empresa).to.equal('IV');
@@ -121,13 +121,13 @@ describe('Pruebas de servidor online', function () {
 	.expect(404, done); /** debe fallar, aún no está realizada**/
 	})
   /*
-     * Comprobando la ruta /contacto   
-  */  
+     * Comprobando la ruta /contacto
+  */
   it('Petición de /contacto', function(done){
     request(urlServidor)
     .get('/contacto')
     .set('Accept', 'text/plain')
     .expect('Content-Type', "text/html; charset=utf-8")
-    .expect(200, done);		 
+    .expect(200, done);
   })
 })
