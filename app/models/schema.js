@@ -14,16 +14,12 @@ var usuarioSchema = new mongoose.Schema({
 });
 
 
-/**
-//Administradores
-var administradorSchema = mongoose.Schema({
-        idUsuario       :           {type: String, required: true},
-        fotoperfil      :           String,
-        fotoheader      :           String,
-        token           :           String,
-        empresa         :           String,
-        nombre          :           String,
-});**/
+
+//superAdministrador
+var superAdminSchema = mongoose.Schema({
+        id              :           ObjectId,
+        token           :           String
+});
 
 //Empresas
 
@@ -46,19 +42,28 @@ var notificacionesSchema =  mongoose.Schema({
   var mensajesSchema = mongoose.Schema({
       idMensaje: ObjectId,
       fecha: { type: Date, default: Date.now },
-      idEmisor: {type: ObjectId, ref:'usuario'},
+      idEmisor: {type: ObjectId, ref:'usuarios'},
       idReceptor: ObjectId,
       idNotificacion: {type: ObjectId, ref:'notificaciones'}
 
 });
+  //Conversaciones
+  var conversacionSchema =mongoose.Schema({
+        idConversacion: ObjectId,
+        idUsuario: {type:ObjectId, ref:'usuarios'},
+        idEmpresa: {type:ObjectId,ref:'empresa'},
+        estados : String,
+        Respondido : Boolean
+  });
 
 // Modelos
 var models = {
       usuarios : mongoose.model('usuarios', usuarioSchema),
-      //administrador : mongoose.model('administrador',administradorSchema),
       empresa : mongoose.model('empresa', empresaSchema),
+      superAdministrador: mongoose.model('superAdministrador',superAdminSchema),
       notificaciones : mongoose.model('notificaciones', notificacionesSchema),
-      mensajes : mongoose.model('mensajes',mensajesSchema)
+      mensajes : mongoose.model('mensajes',mensajesSchema),
+      conversaciones: mongoose.model('conversaciones',conversacionSchema)
     };
     return models;
 }
