@@ -1,0 +1,22 @@
+
+    <form id="nombrar_admin" >  
+        <fieldset>  
+            <legend> Nombrar administrador </legend>
+            <div class="field">  
+                <label for="nombre">Nombre del usuario:</label>    
+                <input id="nombre" name="nombre" minlength="2" type="text" required>
+            </div> 
+            <div class="field">  
+                <label for="nombre_emp">Nombre de la empresa:</label>  
+                <input id="nombre_emp" name="nombre_emp" minlength="2" type="text" required>
+            </div>   
+        </fieldset>  
+        <div id="entity_commands">  
+            <input class="submit" type="submit" value="Aceptar">
+            <input type="submit" value="Cancelar" class="cancel"/>           
+        </div>  
+    </form> 
+
+    <script>
+    $("#nombrar_admin").validate();
+    </script>
