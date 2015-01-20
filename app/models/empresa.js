@@ -26,7 +26,7 @@ var nuevaEmpresa = new global.models.empresa({
     if (err)
         return console.error(err);
     console.dir(nuevaEmpresa);
-    callback("",nuevaEmpresa);
+    callback(nuevaEmpresa,"");
       });
    
    
