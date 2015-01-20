@@ -15,3 +15,19 @@ exports.listaEmpresas = function listaEmpresas(callback){
  })
 
 }
+
+exports.crearEmpresa = function crearEmpresa(callback, nombreEmpresa) {
+   
+var nuevaEmpresa = new global.models.empresa({
+    nombre: nombreEmpresa 
+   });
+
+   nuevaEmpresa.save(function(err, nuevaEmpresa) {
+    if (err)
+        return console.error(err);
+    console.dir(nuevaEmpresa);
+    callback("",nuevaEmpresa);
+      });
+   
+   
+}
