@@ -1,25 +1,25 @@
 var mongoose = require('mongoose');
-var models = global.models;
+
 
 exports.listaEmpresas = function listaEmpresas(callback){
- var queryEmpresa = global.model.empresa;
- queryEmpresa.findAll({}, function (err, empresas) {
- if(err){
-  console.log(err);
-}else{
-   console.log(empresas);
-   callback(empresas);
-
-  }
-
+ var queryEmpresa = global.models.empresa;
+ queryEmpresa.find({}, function (err, empresas) {
+   if(err){
+     console.log(err);
+   }else{
+     console.log(empresas);
+     global.respuesta=empresas;
+     exports.empre=empresas;
+     callback(empresas);
+   }
  })
 
 }
 
 exports.crearEmpresa = function crearEmpresa(callback, nombreEmpresa) {
-   
+
 var nuevaEmpresa = new global.models.empresa({
-    nombre: nombreEmpresa 
+    nombre: nombreEmpresa
    });
 
    nuevaEmpresa.save(function(err, nuevaEmpresa) {
@@ -28,6 +28,6 @@ var nuevaEmpresa = new global.models.empresa({
     console.dir(nuevaEmpresa);
     callback(nuevaEmpresa,"");
       });
-   
-   
+
+
 }

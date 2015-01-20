@@ -19,6 +19,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
     clientStateToken = '<%= state %>';
+
+
     </script>
   </head>
 
@@ -56,6 +58,7 @@
     <div class="jumbotron" >
         <section id="contenido" >
             <h2>Bienvenido a BackendSI2-IV</h2>
+            <p><%=empresas%></p>
             <div id="signinButton">
               <span class="g-signin"
               data-scope="<%= scope %>"
@@ -73,8 +76,11 @@
 
                 <ul class="dropdown-menu" role="menu">
                   <!-- Inyección aquí con las empresas -->
-                  <li><a href="#">los olivos</a></li>
-                  <li><a href="#">ETSIIT</a></li>
+
+                  <% for (var j in empresas) { %>
+
+                  <li><a href="#"><%=empresas[j]%></a></li>
+                  <% }; %>
                 </ul>
 
               </li>
