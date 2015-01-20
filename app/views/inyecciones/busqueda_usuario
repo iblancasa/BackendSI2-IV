@@ -3,11 +3,11 @@
             <legend>Búsqueda de un usuario</legend>
             <div class="field">  
                 <label for="nombre">Nombre del usuario:</label>  
-                <input type="text" id="nombre" name="nombre" size="20" maxlength="50" tabindex="1"/>  
+                <input id="nombre" name="nombre" minlength="2" type="text" required>
             </div>  
             <div class="field">  
                 <label for="nombre_emp">Empresa del usuario:</label>  
-                <input type="text" id="nombre_emp" name="nombre_emp" size="20" maxlength="50" tabindex="1"/>  
+		<input id="nombre_emp" name="nombre_emp" minlength="2" type="text" required>
             </div>  
         </fieldset>  
         <div>  
