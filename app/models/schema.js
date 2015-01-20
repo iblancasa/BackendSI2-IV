@@ -47,7 +47,7 @@ var notificacionesSchema =  mongoose.Schema({
       idNotificacion: {type: ObjectId, ref:'notificaciones'}
 
 });
-  
+  //Conversaciones
   var conversacionSchema =mongoose.Schema({
         idConversacion: ObjectId,
         idUsuario: {type:ObjectId, ref:'usuarios'},
