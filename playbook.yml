@@ -1,0 +1,15 @@
+---
+- hosts: vagrant
+  sudo: yes
+  tasks:
+    - name: Actualizar lista de paquetes
+      apt: update_cache=yes
+    - name: Instalar Node JS
+      apt: name=nodejs state=present
+    - name: Instalar NPM
+      apt: name=npm state=present
+    - name: clonar repo
+      command: git clone https://github.com/iblancasa/BackendSI2-IV.git
+
+
+
