@@ -1,15 +1,20 @@
 ---
-- hosts: vagrant
+- hosts: azure
   sudo: yes
+  remote_user: nuestro usuario
   tasks:
     - name: Actualizar lista de paquetes
       apt: update_cache=yes
     - name: Instalar Node JS
       apt: name=nodejs state=present
+      apt: name=node state=present
     - name: Instalar NPM
       apt: name=npm state=present
     - name: clonar repo
       command: git clone https://github.com/iblancasa/BackendSI2-IV.git
-
+    - name: Crear servicio upstart
+      template: src=despliegue.conf dest=/etc/init/despliegue.conf owner=root group=root mode=0644
+    - name: Iniciar aplicación
+      service: name=despliegue state=running
 
 
