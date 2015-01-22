@@ -73,15 +73,6 @@ global.models.usuarios.findOne({ 'nombre': 'prueba'}, 'nombre empresa estado', f
 */
 describe('Pruebas de servidor online', function () {
 	/*
-	* Comprobando que la web está online
-	*/
-	it('Comprobando que la página responde (200)', function (done) {
-	request(urlServidor).get('/').expect(200).end(function(err, res){
-	if (err) return done(err)
-	done();
-	});
-	});
-	/*
 	* Comprobando una página erronea, para que devuelva un fallo
 	*/
 	it('La pagina ha de devolver error', function (done) {
@@ -90,23 +81,31 @@ describe('Pruebas de servidor online', function () {
 	done();
 	});
 	});
+
+	
+
+
 	/*
 	* Comprobando la ruta /
 	*/
 	it('La ruta / responde con texto plano', function(done){
 	request(urlServidor)
 	.get('/')
-	.set('Accept', 'text/plain')
+	.set('Accept', 'text/html; charset=utf-8')
 	.expect('Content-Type', "text/html; charset=utf-8")
 	.expect(200, done);
 	})
+
+
+
+
 	/*
 	* Comprobando la plantilla CSS
 	*/
 	it('Petición de CSS ', function(done){
 	request(urlServidor)
 	.get('/stylesheets/estilo.css')
-	.set('Accept', 'text/plain')
+	.set('Accept', 'text/css; charset=UTF-8')
 	.expect('Content-Type', "text/css; charset=UTF-8")
 	.expect(200, done);
 	})
