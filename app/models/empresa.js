@@ -16,6 +16,20 @@ exports.listaEmpresas = function listaEmpresas(callback){
 
 }
 
+exports.crearEmpresa = function crearEmpresa(nombreEmpresa, io) {
+  var nuevaEmpresa = new global.models.empresa({
+    nombre: nombreEmpresa
+   });
+  
+  nuevaEmpresa.save(function(err, nuevaEmpresa) {
+    if (err)
+        return io.emit(err);
+    console.dir(nuevaEmpresa);
+  
+}
+
+
+/*
 exports.crearEmpresa = function crearEmpresa(callback, nombreEmpresa) {
 
 var nuevaEmpresa = new global.models.empresa({
@@ -30,4 +44,4 @@ var nuevaEmpresa = new global.models.empresa({
       });
 
 
-}
+}*/

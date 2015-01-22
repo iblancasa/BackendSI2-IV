@@ -1,7 +1,7 @@
 module.exports = function(mongoose) {
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-// Usuarios
+// Usuarios, 
 var usuarioSchema = new mongoose.Schema({
         idUsuario       :           {type: String, required: true},
         fotoPerfil      :           String,
