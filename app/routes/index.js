@@ -1,7 +1,6 @@
-
 var crypto = require('crypto')
   , google = require('./google')
-  , async = require('async')
+//  , async = require('async')
   , mongoose = require('mongoose')
   , empresa = require('../models/empresa');
 
@@ -47,9 +46,19 @@ function renderizar(empresas,stateToken,now,res,req){
  */
 exports.index = function(req, res){
 
-  mongoose.connect(process.env.DBHOST);
-  mongoose.connection;
+ mongoose.connect(process.env.DBHOST);
+
+
   
+
+ var db = mongoose.connection;
+                db.on('error', console.error.bind(console, 'connection error:'));
+                db.once('open', function callback() {
+                    console.log('db connection open');
+                });
+
+
+
   var stateToken = crypto.randomBytes(48).toString('hex');
   var now = (new Date()).getTime();
 
@@ -61,11 +70,11 @@ exports.index = function(req, res){
         queryEmpresa.find({}, function (err, empresas) {
           if(err){
             console.log(err);
-            global.mongoose.connection.close();
+           mongoose.disconnect();
           }else{
             console.log(empresas);
             renderizar(empresas,stateToken,now,res,req);
-            global.mongoose.connection.close();
+             mongoose.disconnect();
           }
 
         });
