@@ -1,3 +1,4 @@
+
 /**
  * Dependencias
  */
@@ -55,8 +56,7 @@ global.port=keys.port;
 //Base de datos
 global.models = require('./models/schema.js')(mongoose);
 
-//mongoose.connect(process.env.DBHOST);
-//global.mongoose=mongoose;
+
 
 
 
@@ -109,4 +109,3 @@ server.listen(app.get('port'),global.ip, function(){
 io.on('connection', function (socket) {
   socket.on('disconnect', function () {});
 });
-
