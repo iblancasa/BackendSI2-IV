@@ -1,7 +1,6 @@
 var crypto = require('crypto')
 , google = require('./google')
-, mongoose = require('mongoose')
-, empresa = require('../models/empresa');
+, mongoose = require('mongoose');
 
 
 
