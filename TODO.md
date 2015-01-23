@@ -14,6 +14,19 @@ Cosas que hacer:
 * [X] [Pasar la wiki al repo](https://github.com/iblancasa/BackendSI2-IV/issues/87)
 
 ****
+#Despliegue
+* [ ] Introducir variable de entorno en Azure con el valor de la BD
+* [ ] Obtener variable de entorno con la IP de Azure
+* [ ] Comprobar que funciona la actualiazción del repo en el IaaS
+* [ ] Crear Playbook Ansible solo para despliegues
+* [ ] Que se ejecute el despliegue desde Travis
+  * [ ] Script que instale Python y Ansible
+  * [ ] Creación de Ansible Host de forma dinámica
+* [ ] Crear servicio
+
+
+
+****
 #Operaciones mínimas:
 
 * [ ] Conectar usuario. El usuario envía su ID, token de G+ y empresa a la que quiere conectar.
