@@ -17,7 +17,7 @@ Cosas que hacer:
 #Despliegue
 * [ ] Introducir variable de entorno en Azure con el valor de la BD
 * [ ] Obtener variable de entorno con la IP de Azure
-* [ ] Comprobar que funciona la actualiazción del repo en el IaaS
+* [ ] Comprobar que funciona la actualización del repo en el IaaS
 * [ ] Crear Playbook Ansible solo para despliegues
 * [ ] Que se ejecute el despliegue desde Travis
   * [ ] Script que instale Python y Ansible
