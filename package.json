@@ -11,7 +11,7 @@
     "socket.io": "latest",
     "ejs": "latest",
     "googleapis": "0.2.5-alpha",
-    "mongoose":"latest",
+    "mongoose":"latest"
   },
   "engines": {
     "node": "0.10"
