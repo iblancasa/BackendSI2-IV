@@ -2,8 +2,6 @@ language: node_js
 node_js:
 - '0.10'
 before_script:
-  - sudo apt-get install nodejs npm
-  - sudo npm install -g mocha
   - chmod +x ./travisscripts/despliegue.sh
   - chmod +x ./travisscripts/error.sh
 deploy:

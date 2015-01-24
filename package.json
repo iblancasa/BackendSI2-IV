@@ -12,13 +12,12 @@
     "ejs": "latest",
     "googleapis": "0.2.5-alpha",
     "mongoose":"latest",
-    "async": "latest"
   },
   "engines": {
     "node": "0.10"
   },
   "scripts": {
-    "test": "mocha ./test/test.js"
+    "test": "node_modules/.bin/mocha ./test/test.js"
   },
   "devDependencies": {
     "mocha": "latest",
