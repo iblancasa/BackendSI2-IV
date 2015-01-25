@@ -15,7 +15,6 @@
     - name: Descargar/Actualizar repo.
       git: repo=https://github.com/iblancasa/BackendSI2-IV.git dest=/home/backendsi2/BackendSI2-IV accept_hostkey=yes
     - name: Crear servicio upstart
-      template: src=despliegue.conf dest=/etc/init/backendsi2.conf owner=root group=root mode=0644
+      template: src=backendsi2 dest=/etc/init.d/backendsi2 owner=root group=root mode=0644
     - name: Iniciar aplicación
       service: name=backendsi2 state=running
-
