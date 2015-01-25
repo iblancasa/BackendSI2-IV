@@ -3,7 +3,10 @@
   sudo: yes
   remote_user: backendsi2
   tasks:
+    - name: Parar servicio
+      action: service name=backendsi2 state=stopped
     - name: Descargar/Actualizar repo.
       git: repo=https://github.com/iblancasa/BackendSI2-IV.git dest=/home/backendsi2/BackendSI2-IV accept_hostkey=yes
-    - name: Reiniciar servicio
-      action: service name=backendsi2 state=restarted
+    - name: Arrancar servicio
+      action: service name=backendsi2 state=started
+
