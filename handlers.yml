@@ -1,3 +1,0 @@
----
-- name: Reiniciar
-  action: service name=backendsi2 state=restarted
