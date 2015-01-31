@@ -20,4 +20,5 @@
       npm: path=/home/backendsi2/BackendSI2-IV
     - name: Iniciar aplicación
       service: name=backendsi2 state=restarted
-
+      async: 10
+      poll: 0

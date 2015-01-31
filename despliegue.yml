@@ -7,6 +7,10 @@
       action: service name=backendsi2 state=stopped
     - name: Descargar/Actualizar repo.
       git: repo=https://github.com/iblancasa/BackendSI2-IV.git dest=/home/backendsi2/BackendSI2-IV accept_hostkey=yes
+    - name: Instalar dependencias de BackendSI2
+      npm: path=/home/backendsi2/BackendSI2-IV
     - name: Arrancar servicio
       action: service name=backendsi2 state=restarted
+      async: 10
+      poll: 0
 
