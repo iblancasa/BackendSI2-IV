@@ -19,4 +19,5 @@
     - name: Instalar dependencias de BackendSI2
       npm: path=/home/backendsi2/BackendSI2-IV
     - name: Iniciar aplicación
-      service: name=backendsi2 state=running
+      service: name=backendsi2 state=restarted
+
