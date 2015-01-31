@@ -100,10 +100,16 @@ if( !google.isInitialized() ){
   process.exit(1);
 }
 
-server.listen(app.get('port'),global.ip, function(){
-  console.log("Ejecutando en el puerto " + app.get('port'));
-});
-
+if(global.ip!='localhost'){
+	server.listen(app.get('port'),global.ip, function(){
+  	console.log("Ejecutando en el puerto " + app.get('port'));
+	});
+}
+else{
+server.listen(app.get('port'), function(){
+  	console.log("Ejecutando en el puerto " + app.get('port'));
+	});
+}
 
 /*Socket.io*/
 io.on('connection', function (socket) {

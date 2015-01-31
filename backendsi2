@@ -16,7 +16,6 @@ NAME=backendsi2
 do_start()
 {
    cd /home/backendsi2/BackendSI2-IV;
-   npm install;
    nodejs .;
 }
 
