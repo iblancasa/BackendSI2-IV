@@ -6,8 +6,8 @@ echo "
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          backendsi2
-# Required-Start:    $local_fs
-# Required-Stop:     $local_fs
+# Required-Start:    \$local_fs
+# Required-Stop:     \$local_fs
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # X-Interactive:     false
