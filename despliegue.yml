@@ -1,5 +1,5 @@
 ---
-- hosts: azure
+- hosts: all
   sudo: yes
   remote_user: backendsi2
   tasks:
