@@ -14,7 +14,7 @@ deploy:
   on:
     repo: iblancasa/BackendSI2-IV
 after_deploy:
-  - sudo apt-get install python
+  - sudo apt-get install python sshpass
   - sudo pip install ansible
   - ./travisscripts/despliegue.sh
 after_failure:
