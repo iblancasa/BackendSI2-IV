@@ -139,3 +139,17 @@ it('Insertar usuario', function(done) {
 		});
 });
 ```
+Test que comprueba que existen usuarios en la tabla.
+Se usa la función findOne para encontrar a un usuario que tenga de nombre prueba,  como segundo parametro hay un callback en el que se nos devuelve los datos recogidos por la consulta, y comprobamos que efectivamente la consulta a la BDD se ha realizado correctamente.
+```
+it('Encontrar usuario',function(done) {
+// encuentra un usuario y comprueba que devuelve su nombre y su empresa.
+global.models.usuarios.findOne({ 'nombre': 'prueba'}, 'nombre empresa estado', function (err, person) {
+		if (err) return handleError(err);
+		expect(person.nombre).to.equal('prueba');
+		expect(person.empresa).to.equal('IV');
+		expect(person.estado).to.equal('Offline');
+		})
+	done();
+	});
+```
