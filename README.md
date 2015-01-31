@@ -52,6 +52,7 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 ![CUSL](logo-cusl.png)
 
 
+=======
 
 ###¿Por qué escoger OpenShift?
 
@@ -61,18 +62,23 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 [OpenShift](https://www.openshift.com/) es un PaaS que nos ofrece multitud de herramientas y varios beneficios que nos ayudarán a integrarlo con nuestra aplicacción:
 
 * Sencillez de uso
+
 Permite un desarrollo muy intuitivo, permite trabajar sin obstáculos y con una interfaz sencilla.
 
 * Integración con GitHub
+
 Integración continua con esta plataforma, asegurando la portabilidad de las aplicaciones
 
 * Eficiencia
+
 Reduce el tiempo para construir y desplegar nuestra aplicación de forma sencilla: dispone de varias regiones para desplegarla, mejorando la latencia. Además escala a lo que necesita respondiendo al tráfico de la web.
 
 * Variedad de lenguajes
+
 Nos ofrece varios lenguajes de programación, entre ellos NodeJS
 
 * Facilidad a la hora de trabajar con BD
+
 Dispone de [MongoDB](https://developers.openshift.com/en/databases-mongodb.html) entre otras (MySQL, PostgreSQL o Amazon RDS).
 
 * Dispone de SSL
@@ -88,7 +94,7 @@ Después de probar Heroku encontramos OpenShift más flexible e intuitivo que é
 En nuestro caso optamos por la cuenta "Free" de este PaaS, que nos da 512MB RAM y un 1GB de almacenamiento.
 
 
-
+=======
 
 
 ### Tests
