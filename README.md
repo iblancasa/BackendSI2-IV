@@ -50,3 +50,31 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 [Este proyecto parcipa en el "Concurso Universitario de software libre nacional"](http://www.concursosoftwarelibre.org/)
 
 ![CUSL](logo-cusl.png)
+
+### Tests
+
+Los tests los podemos encontrar en la carpeta test, fichero test.js. Para los tests hemos usado las librerias [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Mockgoose](https://github.com/mccormicka/Mockgoose).
+Hemos realizado tests contra la base de datos:
+
+nuevoUsuario: Variable que depende del modelo definido en schemas.js, en este caso de usuarios. Contiene los datos a insertar.
+Función save, guarda los datos en la base de datos, tiene un callback y dentro de ese callback hacemos los tests, comprobamos que no hay ningun error y con la orden `expect(createdUser.empresa).to.equal('IV');` comprobamos que los datos se insertan.
+```
+it('Insertar usuario', function(done) {
+	var nuevoUsuario = new global.models.usuarios({
+		idUsuario:'abcdef',
+		fotoPerfil:'http://127.0.0.1',
+		fotoHeader:'http://127.0.0.1',
+		token: 'zwyx',
+		empresa:'IV',
+		nombre: 'prueba',
+		estado:'Offline'
+	});
+	nuevoUsuario.save(function (err, createdUser) {
+		expect(err).to.not.be.true;
+		expect(createdUser.empresa).to.equal('IV');
+		expect(createdUser.nombre).to.equal('prueba');
+		expect(createdUser.estado).to.equal('Offline');
+		done();
+		});
+});
+```
