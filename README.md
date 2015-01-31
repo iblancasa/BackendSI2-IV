@@ -54,6 +54,20 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 ### Tests
 
 Los tests los podemos encontrar en la carpeta test, fichero test.js. Para los tests hemos usado las librerias [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Mockgoose](https://github.com/mccormicka/Mockgoose).
+
+
+[Mocha](http://mochajs.org/) es un framework para nodejs para hacer tests unitarios
+.+ [Dispone de interfaces](http://mochajs.org/#interfaces) cercanas a los "Test Drive Development" y también "Behavior-Driven Development". También dispone de "Exports", "QUnit" y "Require". Nos permite utilizar cualquiera de estos, lo que lo hace más amigable para aquellos desarrolladores que prefieren un tipo u otro.
++ Tiene capacidad para presentar los resultados de los test de diferentes formas, en lo que se llaman [reporters](http://mochajs.org/#reporters)
++ [Permite el uso de distintas bibliotecas de aserciones](http://mochajs.org/#assertions) (ya que no dispone de un módulo propio). En nuestro caso, utilizaremos Chai.JS.
+
+[Chai](http://chaijs.com/) Es una biblioteca de aserciones (assertion library) para NodeJS y para el navegador. Nosotros la integramos con el framework Mocha. Chai nos ayuda a realizar aserciones contra nuestro código.
+Es muy completo ya que, sin necesidad de plugins, tiene tres estilos con los que podemos realizar las aserciones, podemos optar por el estilo TDD (Test-driven development) o BDD(Behavior-Driven Development).
+
+[Mockgoose](https://github.com/mccormicka/Mockgoose) es una libreria que nos permite comprobar los tests contra la base de datos sin tener que conectarnos a una base de datos actual, funciona como un wrapper e intercepta las llamadas a la base de datos de Mongoose.
+
+Los tests se ejecutan con el comando `npm test`
+
 Hemos realizado tests contra la base de datos:
 
 nuevoUsuario: Variable que depende del modelo definido en schemas.js, en este caso de usuarios. Contiene los datos a insertar.
