@@ -52,9 +52,38 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 ![CUSL](logo-cusl.png)
 
 
+
+
 =======
 
-###¿Por qué OpenShift?
+### ¿Cómo ejecuto la aplicación en mi máquina?
+
+En primer lugar necesitarás [obtener las claves necesarias para que tus usuarios puedan conectarse utilizando Google+](https://github.com/iblancasa/BackendSI2-IV/blob/master/wiki/Conseguir-las-claves-para-autentificar-con-Google-.md).
+
+Clona el repositorio en tu máquina
+
+```bash
+git clone https://github.com/iblancasa/BackendSI2-IV.git
+```
+
+Añade las claves de la API de Google+ al fichero [keys](https://github.com/iblancasa/BackendSI2-IV/blob/master/app/keys.js)
+
+Exporta una variable de entorno llamada "DBHOST" en tu terminal. Esta variable de entorno contendrá la dirección a tu base de datos MongoDB.
+
+```bash
+export DBHOST='hostBD'
+```
+
+Instala las dependencias del proyecto. Ve a la carpeta donde clonaste el repositorio y ejecuta ``npm install``.
+
+Ejecuta el proyecto escribiendo en terminal ``nodejs .``
+
+
+
+
+=======
+
+### ¿Por qué OpenShift?
 
 [![OpenShift](http://fotos.subefotos.com/57622f5e03b9cb3ed8dbbbfcc030e2d9o.jpg)](https://www.openshift.com/)
 
@@ -96,11 +125,11 @@ Tras haber probado otros servicios como Heroku, nos decantamos por OpenShift deb
 A esto, se suma la posibilidad de acceder mediante SSH a la aplicación (cosa que Heroku no nos permitía). Añadir nuevos "addons" de forma gratuíta y utilizar un dominio propio sin tener que poner datos bancarios, cosa que sí ocurría con Heroku, son otras características importantes a tener en cuenta a la hora sde haber elegido este PaaS
 
 
+
+
 =======
 
-
-
-###¿Por qué Azure?
+### ¿Por qué Azure?
 
 [![Azure](http://blogs.itpro.es/eduardocloud/files/2014/12/entrada-sola.jpg)](http://azure.microsoft.com/es-es/)
 
@@ -127,13 +156,11 @@ Proporciona servicios de datos administrados de SQL y NoSQL o mucha compatiblida
 Un inconveniente de usarlo lo podemos encontrar en la privacidad: Microsoft permite que el gobierno de los Estados Unidos tenga acceso a los datos almacenados incluso si el cliente no es estadounidense y los datos residen fuera de Estados Unidos, de acuerdo a la [Ley USA PATRIOT](http://es.wikipedia.org/wiki/Ley_USA_PATRIOT)
 
 
-
 En nuestro caso ejecutaremos la apliación en una máquina de Ubuntu 14.04 (ubicada al Oeste de Europa) con 1 núcleo  y 1,75 GB de memoria (Máquina tipo A1)
 
 Para crearla simplemente ejecutamos: `azure vm create mimaquina b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-trusty-14_04_1-LTS-amd64-server-20150113.1-en-us-30GB miusuario  mipass --location "West Europe" --ssh`
 
 La arrancamos con `azure vm start mimaquina` y si queremos conectarnos mediante ssh: `ssh miusuario@mimaquina.cloudapp.net`
-
 
 
 Escogemos [Azure](http://azure.microsoft.com/es-es/) como nuestro IaaS por ser uno de los más extendidos, muy flexible y con una importante empresa tras este IaaS (Microsoft). Se suma a esto, el tener conocimientos previos sobre su uso, ya que se a trabajado en clase con éste y disponemos de una cuenta gratuíta (cedida por el profesor).
@@ -143,8 +170,10 @@ También se estudiaron otras alternativas:
 * [Amazon](http://aws.amazon.com/es/ec2/): necesario introducir datos bancarios
 * [Fiware](https://cloud.lab.fiware.org/): es un servicio gratuíto y permite instalar algunas imágenes. No lo hemos utilizado ya que están teniendo problemas con los recursos y es complicado encontrar una región que permita crear nuevas máquinas.
 
-=======
 
+
+
+=======
 
 ### Tests
 
@@ -164,3 +193,32 @@ Es muy completo ya que, sin necesidad de plugins, tiene tres estilos con los que
 
 
 Los tests se ejecutan con el comando `npm test`
+
+
+
+
+=======
+
+### Herramientas utilizadas
+
++ NodeJS
++ NPM
++ Paquetes NodeJS:
+	+ Test:
+		+ Mocha
+		+ Chai
+		+ Supertest
+	+ Software:
+		+ Socket.io
+		+ EJS
+		+ Express
+		+ Mongoose
+		+ GoogleAPIS
++ OpenShift
++ Azure
++ Travis
++ Docker
++ Ansible
+	+ Necesario instalar:
+		+ Python
+		+ sshpass
