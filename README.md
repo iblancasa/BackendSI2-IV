@@ -93,6 +93,47 @@ Después de probar Heroku encontramos OpenShift más flexible e intuitivo que é
 
 En nuestro caso optamos por la cuenta "Free" de este PaaS, que nos da 512MB RAM y un 1GB de almacenamiento.
 
+=======
+
+
+
+###¿Por qué Azure?
+
+[![Azure](http://blogs.itpro.es/eduardocloud/files/2014/12/entrada-sola.jpg)](http://azure.microsoft.com/es-es/)
+
+
+Escogemos [Azure](http://azure.microsoft.com/es-es/) como nuestro SaaS por ser uno de los más extendidos, muy flexible y que siempre está operativo, sin caidas.  Además se a trabajado en clase con éste y disponemos de una cuenta (cedida por el profesor) que nos ofrece muchas garantías.
+
+Tambíen se probaron otros como FIWARE, pero al dar problemas técnicos optamos por Azure.
+
+
+Azure nos ofrece:
+
+* Flexibilidad
+
+Podremos crear cualquier SO, y dentro usar cualquier lenguaje, herramienta o framework.
+
+
+* Alta disponibilidad 
+
+Ofrece un servicio con una disponibilidad del 99.95%, soporte técnico y una supervisión puntual del estado del servicio.
+
+
+* Escalabilidad
+
+Se puede ampliar o reducir rápidamente para adaptarse a cualquier demanda, de modo que solo paga por lo que usa.
+
+* Multitud de servicios para BD
+
+Proporciona servicios de datos administrados de SQL y NoSQL o mucha compatiblidad con éstos. También se podrá sincronizar con directorios locales existentes.
+
+
+En nuestro ejecutaremos la apliación en una máquina de Ubuntu 14.04 (ubicada al oeste de Europa) con 1 núcleo  y 1,75 GB de memoria (Máquina tipo A1)
+
+Para crearla simplemente ejecutamos: `azure vm create backendsi2 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-trusty-14_04_1-LTS-amd64-server-20150113.1-en-us-30GB backendsi2  (micontraseña) --location "West Europe" --ssh`
+
+La arrancamos con `azure vm start backendsi2` y si queremos conectarnos mediante ssh: `ssh backendsi2@backendsi2.cloudapp.net`
+
 
 =======
 
