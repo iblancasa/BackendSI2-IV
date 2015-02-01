@@ -107,7 +107,7 @@ Escogemos [Azure](http://azure.microsoft.com/es-es/) como nuestro SaaS por ser u
 Tambíen se probaron otros como FIWARE, pero al dar problemas técnicos optamos por Azure.
 
 
-Azure nos ofrece:
+**Azure nos ofrece:**
 
 * Flexibilidad
 
@@ -127,8 +127,13 @@ Se puede ampliar o reducir rápidamente para adaptarse a cualquier demanda, de m
 
 Proporciona servicios de datos administrados de SQL y NoSQL o mucha compatiblidad con éstos. También se podrá sincronizar con directorios locales existentes.
 
+* Otros aspectos:
 
-En nuestro ejecutaremos la apliación en una máquina de Ubuntu 14.04 (ubicada al oeste de Europa) con 1 núcleo  y 1,75 GB de memoria (Máquina tipo A1)
+Un inconveniente de usarlo lo podemos encontrar en la privacidad: Microsoft permite que el gobierno de los Estados Unidos tenga acceso a los datos almacenados incluso si el cliente no es estadounidense y los datos residen fuera de Estados Unidos, de acuerdo a la [Ley USA PATRIOT](http://es.wikipedia.org/wiki/Ley_USA_PATRIOT)
+
+
+
+En nuestro caso ejecutaremos la apliación en una máquina de Ubuntu 14.04 (ubicada al Oeste de Europa) con 1 núcleo  y 1,75 GB de memoria (Máquina tipo A1)
 
 Para crearla simplemente ejecutamos: `azure vm create backendsi2 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-trusty-14_04_1-LTS-amd64-server-20150113.1-en-us-30GB backendsi2  (micontraseña) --location "West Europe" --ssh`
 
