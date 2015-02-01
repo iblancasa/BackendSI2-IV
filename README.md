@@ -174,7 +174,17 @@ También se estudiaron otras alternativas:
 
 
 =======
+### Integración continua
 
+Para la integración continua hemos elegido [Travis-CI](https://travis-ci.org/) Travis es open source, y  provee integración continua hosteada, es decir, no tenemos que tener nuestros propios servidores. Tiene una integración con github muy sencilla, despues de configurarlo automaticamente puede construir las ramas de un repositorio. Además soporta despliegue para Openshift, Heroku, etc...
+
+Se configura con un fichero llamado `.travis.yml` en la raiz del directorio del proyecto. En el, describimos mediante YAML nuestro proyecto.
+
+Cada vez que se hace un commit, Travis-CI nos construye la aplicación y ejecuta los tests. 
+
+El despliegue se realiza desde Travis mediante un script bash, y desplegamos a Azure automaticamente con cada commit.
+
+=======
 ### Tests
 
 Los tests los podemos encontrar en la carpeta test, fichero test.js. Para los tests hemos usado las bibliotecas [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Mockgoose](https://github.com/mccormicka/Mockgoose).
