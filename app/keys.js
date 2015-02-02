@@ -10,9 +10,6 @@ if(process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT){//E
   exports.CLIENT_ID = "904562443868-lqhes66t36kt1f1amkc1hi0g8s43ul1r.apps.googleusercontent.com";
   exports.CLIENT_SECRET = "ZbN7vPWVzOxGJb7o88qmG45A";
 }
-else if(process.env.AZURE){//Estamos en Azure
-
-}
 else{//Estamos en local
   //IP y puerto
 
@@ -20,6 +17,6 @@ else{//Estamos en local
   exports.ip ="localhost";
 
   //Keys de la API para autentificación en Google+
-  exports.CLIENT_ID = "904562443868-lqhes66t36kt1f1amkc1hi0g8s43ul1r.apps.googleusercontent.com";
-  exports.CLIENT_SECRET = "ZbN7vPWVzOxGJb7o88qmG45A";
+  exports.CLIENT_ID = "904562443868-e25fvrqqd143ulrg9v416hqq6kdptgrs.apps.googleusercontent.com";
+  exports.CLIENT_SECRET = "Nv6UgzQOcVdB0nCkgWx_g69z";
 }
