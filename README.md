@@ -206,6 +206,7 @@ El proceso que se sigue es el siguiente:
 		* Se ejecuta el playbook (que para el servicio, actualiza el repositorio y vuelve a iniciarlo)
 		* Se muestra un mensaje
 
+De esta forma, nos aseguramos que, hasta que no se hayan pasado los test, no se despliegue en el PaaS ni en el IaaS (cosa que ocurriría si hubiésemos linkeado el repositorio directamente con cualquiera de los dos).
 
 
 
