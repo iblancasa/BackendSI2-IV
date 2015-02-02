@@ -1,28 +1,10 @@
 Cosas que hacer:
 
+***
+#Documentar:
 
-* [X] [Mudanza a Openshift](https://github.com/iblancasa/BackendSI2-IV/issues/77#issuecomment-69545274)
-* [X] [Dar estrella](https://github.com/iblancasa/BackendSI2-IV/issues/63)
-* [X] [Añadir licencia](https://github.com/iblancasa/BackendSI2-IV/issues/78)
-* [x] [Comprobar funcionamiento Dockerfile](https://github.com/iblancasa/BackendSI2-IV/issues/79)
-* [X] [Añadir fichero de claves](https://github.com/iblancasa/BackendSI2-IV/issues/81)
-* [ ] Arreglar documentación (Heroku Vs Openshift, cómo ejecutar todo y por qué lo hemos hecho así)
-* [X] [Arreglar integración continua](https://github.com/iblancasa/BackendSI2-IV/issues/82)
-* [ ] [Documentar integración continua](https://github.com/iblancasa/BackendSI2-IV/issues/82)
-* [ ] [Integración continua en una IaaS](https://github.com/iblancasa/BackendSI2-IV/issues/84)
-* [X] [Reorganizar plantilla](https://github.com/iblancasa/BackendSI2-IV/issues/86)
-* [X] [Pasar la wiki al repo](https://github.com/iblancasa/BackendSI2-IV/issues/87)
-
-****
-#Despliegue
-* [ ] Introducir variable de entorno en Azure con el valor de la BD
-* [ ] Obtener variable de entorno con la IP de Azure
-* [ ] Comprobar que funciona la actualización del repo en el IaaS
-* [ ] Crear Playbook Ansible solo para despliegues
-* [ ] Que se ejecute el despliegue desde Travis
-  * [ ] Script que instale Python y Ansible
-  * [ ] Creación de Ansible Host de forma dinámica
-* [ ] Crear servicio
+* [ ] Documentar integración continua
+* [ ] Por qué usamos Docker y cómo se ejecuta el contenedor
 
 
 
@@ -41,7 +23,7 @@ Cosas que hacer:
             * [ ] Si no existe, **se concatena el ID de usuario con el nombre de la empresa, eliminando los espacios, y se crea el usuario**
 
 * [ ] Nombrar administrador de empresa (vamos a poner lo justo). El superadministrador va a tener dos listas: en una se muestran todos los usuarios y en otra todas las empresas. Cuando seleccione una empresa y un usuario, le dará a un botón y ese usuario pasa a ser administrador.
-* [ ] Crear empresa
+* [ ] Crear empresa (interfaz)
 * [ ] Enviar mensaje:
   * [ ] Comprobar si existe la conversación. Si no existe, se crea.
   * [ ] Se añade el mensaje a al conversación
