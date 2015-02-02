@@ -209,6 +209,62 @@ Es muy completo ya que, sin necesidad de plugins, tiene tres estilos con los que
 Los tests se ejecutan con el comando `npm test`
 
 
+=======
+
+
+### Docker
+
+[![Docker](http://fotos.subefotos.com/4e7301538895cdc19b0eb5f2a3b60730o.png)](https://www.docker.com/)
+
+#Por qué usamos Docker 
+
+Usamos [Docker](https://www.docker.com/) sobre otras opciones de contendores, como [lxc](https://linuxcontainers.org/) por:
+
+* Instalación sencilla y gran compatibilidad con SO.
+* Nos da la posibilidad para trabajar con un Dockerfile en un repositorio de Github, permitiéndonos trabajar de manera muy cómoda.
+* Gran seguridad: los usuarios que acceden a la aplicación solo pueden acceder al entorno creado en el contenedor.
+* Permite integración continua
+* Los contendores pueden usarse para pruebas y producción.
+* Gran documentación. 
+* Además en una herramienta que proporciona mucha información: descripción y contenido del Dockerfile, detalles de su "build" o los colaboradores. Además puedes consultar otros contendores y colaborar en su mejora.
+
+
+#Cómo se ejecuta el contenedor
+
+Para usar nuestro [Docker](https://github.com/iblancasa/BackendSI2-IV/blob/master/Dockerfile) primero hay que tener instalado Docker en nuestro ordenador:
+
+
+```
+apt-get update
+apt-get install docker.io
+```
+
+Cuando queramos "arrancar" el servicio, ejecutaremos siendo superusuario:
+
+`docker -d`
+
+En caso de que falle y no arranque, avisándonos de un problema con ``/var/run/docker.pid``, tendremos que borrarlo ( ``rm /var/run/docker.pid`` ) y volver a ejecutar la orden anterior.
+
+
+Y en otro terminal, ejecutaremos:
+
+``docker pull iblancasa/backendsi2-iv``
+
+
+Que descargará [nuestro Docker](https://registry.hub.docker.com/u/iblancasa/backendsi2-iv/). Una vez finalizada la descarga, podremos ejecutar la aplicación ejecutando:
+
+`sudo docker run -i -t iblancasa/backendsi2-iv /bin/bash -c "ifconfig;nodejs /home"`
+
+
+Si solo queremos acceder al terminal (para, por ejemplo, ejecutar los test unitarios):
+
+`sudo docker run -i -t iblancasa/backendsi2-iv /bin/bash`
+
+
+Para facilitar la instalación/ejecución, el repositorio cuenta con un [script de Bash](https://github.com/iblancasa/BackendSI2-IV/blob/master/installDocker.sh) que hay que ejecutar como superusuario y que arrancará el docker con la aplicación.
+
+
+
 
 
 =======
