@@ -216,11 +216,11 @@ Los tests se ejecutan con el comando `npm test`
 
 [![Docker](http://fotos.subefotos.com/4e7301538895cdc19b0eb5f2a3b60730o.png)](https://www.docker.com/)
 
-#Por qué usamos Docker 
+####Por qué usamos Docker 
 
 Usamos [Docker](https://www.docker.com/) sobre otras opciones de contendores, como [lxc](https://linuxcontainers.org/) por:
 
-* Instalación sencilla y gran compatibilidad con SO.
+* Instalación sencilla y gran compatibilidad con muchos sistemas operativos.
 * Nos da la posibilidad para trabajar con un Dockerfile en un repositorio de Github, permitiéndonos trabajar de manera muy cómoda.
 * Gran seguridad: los usuarios que acceden a la aplicación solo pueden acceder al entorno creado en el contenedor.
 * Permite integración continua
@@ -229,7 +229,7 @@ Usamos [Docker](https://www.docker.com/) sobre otras opciones de contendores, co
 * Además en una herramienta que proporciona mucha información: descripción y contenido del Dockerfile, detalles de su "build" o los colaboradores. Además puedes consultar otros contendores y colaborar en su mejora.
 
 
-#Cómo se ejecuta el contenedor
+####Cómo se ejecuta el contenedor
 
 Para usar nuestro [Docker](https://github.com/iblancasa/BackendSI2-IV/blob/master/Dockerfile) primero hay que tener instalado Docker en nuestro ordenador:
 
