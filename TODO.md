@@ -3,8 +3,9 @@ Cosas que hacer:
 ***
 #Documentar:
 
-* [ ] Documentar integración continua
-* [ ] Por qué usamos Docker y cómo se ejecuta el contenedor
+* [X] Documentar integración continua
+* [X] Por qué usamos Docker y cómo se ejecuta el contenedor
+* [ ] Ansible
 
 
 

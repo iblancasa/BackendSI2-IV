@@ -19,11 +19,11 @@ Actualmente, está desplegado un sistema que solo permite darte de alta en nuest
 
 
 =======
-Todavía estamos trabajando en ello, pero puedes visitar [la wiki del proyecto](https://github.com/iblancasa/BackendSI2-IV/wiki) o el [sitio web](http://iblancasa.github.io/BackendSI2-IV/)
+[Sitio web del proyecto](http://iblancasa.github.io/BackendSI2-IV/)
 
 También disponemos de una cuenta de Twitter asociada, [Twitter de BackendSI2-IV](https://twitter.com/BackendSI2), donde publicaremos los cambios en el repositorio y del blog.
 
-[Dockerfile funcionando correctamente](https://github.com/iblancasa/BackendSI2-IV/blob/master/Dockerfile)
+[Contenedor Docker](https://registry.hub.docker.com/u/iblancasa/backendsi2-iv/)
 
 
 
@@ -54,8 +54,8 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 
 
 
-=======
 
+=======
 ### ¿Cómo ejecuto la aplicación en mi máquina?
 
 En primer lugar necesitarás [obtener las claves necesarias para que tus usuarios puedan conectarse utilizando Google+](https://github.com/iblancasa/BackendSI2-IV/blob/master/wiki/Conseguir-las-claves-para-autentificar-con-Google-.md).
@@ -82,8 +82,7 @@ Ejecuta el proyecto escribiendo en terminal ``nodejs .``
 
 
 =======
-
-### ¿Por qué OpenShift?
+### Despliegue en un PaaS: OpenShift
 
 [![OpenShift](http://fotos.subefotos.com/57622f5e03b9cb3ed8dbbbfcc030e2d9o.jpg)](https://www.openshift.com/)
 
@@ -128,8 +127,7 @@ A esto, se suma la posibilidad de acceder mediante SSH a la aplicación (cosa qu
 
 
 =======
-
-### ¿Por qué Azure?
+### Despliegue en un IaaS: Azure
 
 [![Azure](http://blogs.itpro.es/eduardocloud/files/2014/12/entrada-sola.jpg)](http://azure.microsoft.com/es-es/)
 
@@ -174,19 +172,42 @@ También se estudiaron otras alternativas:
 
 
 =======
-### Integración continua
+### Integración continua: Travis
 
-Para la integración continua hemos elegido [Travis-CI](https://travis-ci.org/) 
+Para la integración continua hemos elegido [Travis-CI](https://travis-ci.org/)
 
-Travis es open source, y  provee integración continua hosteada, es decir, no tenemos que tener nuestros propios servidores.
+Travis es open source y  provee integración continua hosteada, es decir, no tenemos que tener nuestros propios servidores.
 
-Tiene una integración con GitHub muy sencilla, despues de configurarlo automaticamente puede construir las ramas de un repositorio. Además soporta despliegue para Openshift, Heroku, etc...
+Tiene una integración con GitHub muy sencilla. Después de configurarlo automaticamente puede construir las ramas de un repositorio. Además soporta despliegue para Openshift, Heroku, etc...
 
-Se configura con un fichero llamado `.travis.yml` en la raiz del directorio del proyecto. En el, describimos mediante YAML nuestro proyecto.
+Se configura con un fichero llamado `.travis.yml` en el directorio raíz del proyecto. En él, describimos mediante lenguaje YAML lo que necesitamos que instale antes de ejecutar nuestros test, cómo debe ejecutarlos y qué hacer después de ello (pudiendo elegiur qué hacer en caso que los test se pasen de forma satisfactoria o no).
 
-Cada vez que se hace un commit, Travis-CI nos construye la aplicación y ejecuta los tests. 
+[Proyectyo en Travis](https://travis-ci.org/iblancasa/BackendSI2-IV)
 
-El despliegue se realiza desde Travis mediante un script bash, con la orden `ansible-playbook despliegue.yml;` desplegamos a Azure automaticamente con cada commit.
+El proceso que se sigue es el siguiente:
+
+* Se hace un push en el proyecto
+* GitHub, que ha sido previamente linkeado con nuestra cuenta de Travis, envía una petición POST a los servidores de Travis para que haga un nuevo build.
+* Travis nos muestra la versión de disntintos programas que tiene instalados y pueden sernos útiles
+* Clona nuestro repositorio
+* Exporta variables de entorno que hayamos declarado en Travis (se delaran dos: "DBHOST" y "ANSIBLESSH", ambas con el valor oculto)
+* Lee el fichero `.travis.yml` de nuestro repositorio y detecta que el lenguaje que vamos a utilizar es NodeJS, por lo que instala algunas cosas como npm o las dependencias de nuestro proyecto (además de crear un entorno)
+* Después se ejecuta la sección "before_script" de nuestro `.travis.yml` (en el que se asignan permisos de ejecución a unos scripts que se usarán más tarde)
+* Se ejecutan los test. Si alguno falla, se ejecuta la sección "after_failure", que muestra un mensaje de error
+* Se despliega en OpenShift, utilizando los parámetros de "deploy" (cabe destacar que hay que utilizar la gema Ruby de Travis para encriptar la contraseña)
+* Finalmente, se ejecuta la sección "after_deploy", en la que se siguen los siguientes pasos:
+	* Instalamos Python (necesario para instalar Ansible) y sshpass (necesario para conectar por SSH usando Ansible)
+	* Instalamos Ansible
+	* Se ejecuta `despliegue.sh`:
+		* Acepta la llave de Azure para conectarse por SSH
+		* Genera el `ansible host` para que no se muestr la contraseña, que está en la variable de entorno ANSIBLESSH
+		* Exporta la variable de entorno ANSIBLE_HOSTS (con la ruta al fichero recien generado)
+		* Generamos el script para lanzar el servicio (con la variable de entorno, de forma que no se vea el valor de DBHOST)
+		* Se ejecuta el playbook (que para el servicio, actualiza el repositorio y vuelve a iniciarlo)
+		* Se muestra un mensaje
+
+
+
 
 =======
 ### Tests
@@ -209,30 +230,32 @@ Es muy completo ya que, sin necesidad de plugins, tiene tres estilos con los que
 Los tests se ejecutan con el comando `npm test`
 
 
+
+
 =======
-
-
-### Docker
+### Aislamiento de recursos: Docker
 
 [![Docker](http://fotos.subefotos.com/4e7301538895cdc19b0eb5f2a3b60730o.png)](https://www.docker.com/)
 
-####Por qué usamos Docker 
+[Ir al Docker del proyecto](https://registry.hub.docker.com/u/iblancasa/backendsi2-iv/)
+
+#### Por qué usamos Docker
 
 Usamos [Docker](https://www.docker.com/) sobre otras opciones de contendores, como [lxc](https://linuxcontainers.org/) por:
 
 * Instalación sencilla y gran compatibilidad con muchos sistemas operativos.
 * Nos da la posibilidad para trabajar con un Dockerfile en un repositorio de Github, permitiéndonos trabajar de manera muy cómoda.
-* Gran seguridad: los usuarios que acceden a la aplicación solo pueden acceder al entorno creado en el contenedor.
+* Gran seguridad: los usuarios que acceden a la aplicación solo pueden acceder al entorno creado en el contenedor
 * Permite integración continua
-* Los contendores pueden usarse para pruebas y producción.
-* Gran documentación. 
-* Además en una herramienta que proporciona mucha información: descripción y contenido del Dockerfile, detalles de su "build" o los colaboradores. Además puedes consultar otros contendores y colaborar en su mejora.
+* Los contendores pueden usarse para pruebas y producción
+* Gran documentación
+* Además en una herramienta que proporciona mucha información: descripción y contenido del Dockerfile, detalles de su "build" o los colaboradores. También puedes consultar otros contenedores y colaborar en su mejora
+* Posibilidad de utilizar estos contenedores tanto en entornos de pruebas como de producción (algunas empresas cloud permiten subir los docker y utilizarlos de cara al público)
 
 
-####Cómo se ejecuta el contenedor
+#### Cómo se ejecuta el contenedor
 
 Para usar nuestro [Docker](https://github.com/iblancasa/BackendSI2-IV/blob/master/Dockerfile) primero hay que tener instalado Docker en nuestro ordenador:
-
 
 ```
 apt-get update
@@ -263,12 +286,18 @@ Si solo queremos acceder al terminal (para, por ejemplo, ejecutar los test unita
 
 Para facilitar la instalación/ejecución, el repositorio cuenta con un [script de Bash](https://github.com/iblancasa/BackendSI2-IV/blob/master/installDocker.sh) que hay que ejecutar como superusuario y que arrancará el docker con la aplicación.
 
+También será necesario que:
++ Añadas las claves de la API de Google+ al fichero [keys](https://github.com/iblancasa/BackendSI2-IV/blob/master/app/keys.js)
++ Exportes una variable de entorno llamada "DBHOST" en tu terminal. Esta variable de entorno contendrá la dirección a tu base de datos MongoDB.
+
+```bash
+export DBHOST='hostBD'
+```
 
 
 
 
 =======
-
 ### Herramientas utilizadas
 
 + NodeJS
