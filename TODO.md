@@ -5,7 +5,7 @@ Cosas que hacer:
 
 * [X] Documentar integración continua
 * [X] Por qué usamos Docker y cómo se ejecuta el contenedor
-* [ ] Ansible
+* [X] Ansible
 
 
 

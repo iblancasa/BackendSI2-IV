@@ -210,7 +210,6 @@ El proceso que se sigue es el siguiente:
 
 
 =======
-
 ### Por qué Ansible
 [![Ansible](http://cdn2.hubspot.net/hub/330046/file-769078210-png/Official_Logos/ansible_logo_black_square_small.png?t=1422639852056)](http://www.ansible.com/home)
 
@@ -223,18 +222,23 @@ La configuración de Ansible se realiza a traves de la sintaxis YAML, en fichero
 Las ventajas que hemos observado son:
 
 + Facilidad de uso, su instalación y el uso de lenguaje YAML es bastante directa.
-
 + Ansible permite la utilización de sudo.
-
 + Uso de SSH.
-
 + Su integración con los servicios cloud es muy buena.
-
 + Documentación extensa y uso extendido, nos da facilidades para buscar información y ayuda en caso de problemas.
+
+Como se ha comentado anteriormente, hemos probado otros sistemas y no nos han parecido tan interesantes como este. Chef, por ejemplo, nos proporcionaba algunos problemas en su instalación. Además, la necesidad de utilizar muchos directorios y ficheros, cuando con Ansible se necesita mucho menos.
+
+Para ejecutar el provisionamiento de la aplicación, hay que exportar una variable de entorno llamada `ANSIBLESSH` y que es la contraseña de nuestro usuario de SSH (en caso que estés utilizando tu propia máquina, cambia también el script [aprovisionamiento.sh](https://github.com/iblancasa/BackendSI2-IV/blob/master/travisscripts/aprovisionamiento.sh) para adecuarlo a tu máquina):
+
+``export ANSIBLESSH='pass'``
+
+Después ejecutaremos el script que ejecuta todo lo necesario para realizar el provisionamiento (también ejecutará el playbook de Ansible):_
+
+``./travisscripts/aprovisionamiento.sh``
 
 
 =======
-
 ### Tests
 
 Los tests los podemos encontrar en la carpeta test, fichero test.js. Para los tests hemos usado las bibliotecas [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Mockgoose](https://github.com/mccormicka/Mockgoose).
