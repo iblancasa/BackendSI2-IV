@@ -87,7 +87,7 @@ Ejecuta el proyecto escribiendo en terminal ``nodejs .``
 [![OpenShift](http://fotos.subefotos.com/57622f5e03b9cb3ed8dbbbfcc030e2d9o.jpg)](https://www.openshift.com/)
 
 
-[OpenShift](https://www.openshift.com/) es un PaaS que nos ofrece multitud de herramientas y varios beneficios que nos ayudarán a poner en marcha nuestra aplicacción:
+[OpenShift](https://www.openshift.com/) es un PaaS que nos ofrece multitud de herramientas y varios beneficios que nos ayudarán a poner en marcha nuestra aplicación:
 
 * Sencillez de uso
 
@@ -173,6 +173,7 @@ También se estudiaron otras alternativas:
 
 =======
 ### Integración continua: Travis
+[![Travis](http://i.imgur.com/Drswt2z.png)](https://travis-ci.org/)
 
 Para la integración continua hemos elegido [Travis-CI](https://travis-ci.org/)
 
@@ -210,6 +211,31 @@ El proceso que se sigue es el siguiente:
 
 
 =======
+
+### Por qué Ansible
+[![Ansible](http://cdn2.hubspot.net/hub/330046/file-769078210-png/Official_Logos/ansible_logo_black_square_small.png?t=1422639852056)](http://www.ansible.com/home)
+
+
+Ansible es una herramienta open source para automatizar tareas de forma simple, sus principales contricantes son Pupper, Chef y Salt. Chef se ha utilizado y es más complicado de usar que Ansible, y los resultados son iguales.
+
+La instalación de Ansible se puede realizar a traves de pip, el manejador de paquetes de Python.
+La configuración de Ansible se realiza a traves de la sintaxis YAML, en ficheros de configuración llamados Playbooks.
+
+Las ventajas que hemos observado son:
+
++ Facilidad de uso, su instalación y el uso de lenguaje YAML es bastante directa.
+
++ Ansible permite la utilización de sudo.
+
++ Uso de SSH.
+
++ Su integración con los servicios cloud es muy buena.
+
++ Documentación extensa y uso extendido, nos da facilidades para buscar información y ayuda en caso de problemas.
+
+
+=======
+
 ### Tests
 
 Los tests los podemos encontrar en la carpeta test, fichero test.js. Para los tests hemos usado las bibliotecas [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Mockgoose](https://github.com/mccormicka/Mockgoose).
