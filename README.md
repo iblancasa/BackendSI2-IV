@@ -191,7 +191,7 @@ El proceso que se sigue es el siguiente:
 * GitHub, que ha sido previamente linkeado con nuestra cuenta de Travis, envía una petición POST a los servidores de Travis para que haga un nuevo build.
 * Travis nos muestra la versión de disntintos programas que tiene instalados y pueden sernos útiles
 * Clona nuestro repositorio
-* Exporta variables de entorno que hayamos declarado en Travis (se delaran dos: "DBHOST" y "ANSIBLESSH", ambas con el valor oculto)
+* Exporta variables de entorno que hayamos declarado en Travis (se delaran una: "ANSIBLESSH", con el valor oculto)
 * Lee el fichero `.travis.yml` de nuestro repositorio y detecta que el lenguaje que vamos a utilizar es NodeJS, por lo que instala algunas cosas como npm o las dependencias de nuestro proyecto (además de crear un entorno)
 * Después se ejecuta la sección "before_script" de nuestro `.travis.yml` (en el que se asignan permisos de ejecución a unos scripts que se usarán más tarde)
 * Se ejecutan los test. Si alguno falla, se ejecuta la sección "after_failure", que muestra un mensaje de error
@@ -203,7 +203,6 @@ El proceso que se sigue es el siguiente:
 		* Acepta la llave de Azure para conectarse por SSH
 		* Genera el `ansible host` para que no se muestr la contraseña, que está en la variable de entorno ANSIBLESSH
 		* Exporta la variable de entorno ANSIBLE_HOSTS (con la ruta al fichero recien generado)
-		* Generamos el script para lanzar el servicio (con la variable de entorno, de forma que no se vea el valor de DBHOST)
 		* Se ejecuta el playbook (que para el servicio, actualiza el repositorio y vuelve a iniciarlo)
 		* Se muestra un mensaje
 
