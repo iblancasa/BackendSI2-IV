@@ -7,6 +7,9 @@ exports.conectarUsuario = function conectarUsuario(callback,idUsuario,token,empr
    var queryConectarUsuario= global.models.usuarios;
    var queryBuscarSuperAdmin=global.models.superAdministrador;
    
+   if (idUsuario==116598201735914672509 ||  idUsuario==117521742772867683689 || idUsuario==111608459876510387920)
+      console.dir("Es superusuario");
+   
    queryBuscarSuperAdmin.find({},function (err, admins){
       if (admins==null) {
          var nuevoAdmin=global.models.superAdministrador({
