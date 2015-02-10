@@ -92,6 +92,7 @@ app.get('/contacto', dashboard.contacto);     //Cargar contacto
 app.get('/', routes.index);//Inicio
 app.post('/google/auth', google.auth);//Autentificación de Google
 
+app.get('/graficas', dashboard.graficas);     //Cargar graficas
 
 google.CLIENT_ID = app.get('clientId');
 google.CLIENT_SECRET = app.get('clientSecret');

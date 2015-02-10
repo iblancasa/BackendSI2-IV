@@ -13,3 +13,20 @@ $(document).ready(function () {
   });
 
 });
+
+
+$(document).ready(function () {
+
+  $('#botongraficas').click(function () {
+
+
+    $("#contenido").remove();
+    $("#sidebardashboard").remove();
+    $("#operacion").remove();
+
+    $.get( "/graficas", function(data) {
+      $(".jumbotron").append(data);
+    });
+  });
+
+});
