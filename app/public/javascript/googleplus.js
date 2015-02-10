@@ -1,4 +1,7 @@
 (function(global){
+
+  var prueba;
+
   'use strict';
 
   /**
@@ -8,7 +11,8 @@
   * @return
   */
   global.signInCallback = function( auth ){
-    console.log( 'signInCallback:', auth );
+
+
     if (auth['code']) {
       // Esconde el botón de inicio de sesión al autentificar
       $('#signinButton').attr('style', 'display: none');
@@ -29,26 +33,36 @@
         */
         success: function(result) {
           // Escribe usuarios
-          console.log(result);
+          localStorage.setItem("result", result.ok);
+
+          data = {
+            'auth': auth,
+            'state': global.clientStateToken,
+            'idusuario':result.ok.id
+          };
+
+          $("#contenido").remove();
+
+          $.post("/dashboard",data, function( data ) {
+            $(".jumbotron").append(data);
+          });
+
+          $.post( "/menu",data, function( data ) {
+            $(".jumbotron").append(data);
+          });
+
         },
         processData: false,
         data: JSON.stringify(data),
       });
 
-      $("#contenido").remove();
 
-      $.post( "/dashboard", function( data ) {
-        $(".jumbotron").append(data);
-      });
-
-      $.post( "/menu", function( data ) {
-        $(".jumbotron").append(data);
-      });
 
 
     } else if (auth['error']) {
       console.log('Hubo un error: ' + auth['error']);
     }
+
   }
 
 })(this);
