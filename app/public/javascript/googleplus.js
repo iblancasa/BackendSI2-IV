@@ -45,11 +45,16 @@
 
           $.post("/dashboard",data, function( data ) {
             $(".jumbotron").append(data);
+            console.log( result.ok.image.url.substring(0, result.ok.image.url.length-6));
+            $("#perfil").attr('src',result.ok.image.url.substring(0, result.ok.image.url.length-6));
+            $("#nombre").text(result.ok.name.givenName);
           });
 
           $.post( "/menu",data, function( data ) {
             $(".jumbotron").append(data);
           });
+
+
 
         },
         processData: false,
