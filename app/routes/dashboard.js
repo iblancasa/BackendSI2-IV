@@ -1,5 +1,6 @@
 
 exports.index = function(req, res){
+
   res.render('dashboard');
 };
 
@@ -20,4 +21,9 @@ exports.menu = function(req, res){
 
 exports.contacto = function(req, res){
   res.render('contacto');
+};
+
+
+exports.graficas = function(req, res){
+  res.render('graficas');
 };
