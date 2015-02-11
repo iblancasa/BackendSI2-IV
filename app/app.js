@@ -41,6 +41,7 @@ var express = require('express')
   , keys = require('./keys')
   , dashboard = require('./routes/dashboard')
   , mongoose = require('mongoose')
+  , empresa = require('./models/empresa')
   , path = require('path');
 
 //Creando servidor
@@ -116,7 +117,8 @@ server.listen(app.get('port'), function(){
 /*Socket.io*/
 io.on('connection', function (socket) {
     socket.on('crearempresa', function(crearempresa){
-     console.log('Empresa a crear: ' + text);
+     console.log('Empresa a crear: ' + crearempresa);
+     empresa.crearEmpresa(crearempresa);
    });
 
   socket.on('disconnect', function () {});

@@ -1,6 +1,5 @@
 (function(global){
 
-  var prueba;
 
   'use strict';
 
@@ -57,14 +56,18 @@
               $.get( "/crearempresa", function(data) {
                 $("#operacion").remove();
                 $(".jumbotron").prepend(data);
+
+                $("#botonenviarcrearempresa").click(function () {
+                  var socket = io();
+                  socket.emit('crearempresa', $("#nombre_emp").val());
+                  $("#operacion").remove();
+                  $(".jumbotron").prepend("<img src='/images/exito.jpg'/>");
+                });
+
               });
             });
 
           });
-
-
-
-
         },
         processData: false,
         data: JSON.stringify(data),
