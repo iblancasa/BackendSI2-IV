@@ -83,11 +83,6 @@ exports.auth = function( req, res ){
       res.send(ret);
       if( result ){
         var key = result.id;
-        console.log("++++++++++++++++++++");
-        console.log(result);
-        console.log("++++++++++++++++++++");
-        console.log(result.nickname);
-        console.log("--------------------");
 
         var user = {
           auth: oauth2,

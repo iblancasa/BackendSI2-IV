@@ -12,10 +12,6 @@ $(document).ready(function () {
     });
   });
 
-});
-
-
-$(document).ready(function () {
 
   $('#botongraficas').click(function () {
 
@@ -28,5 +24,8 @@ $(document).ready(function () {
       $(".jumbotron").append(data);
     });
   });
+
+  
+
 
 });
