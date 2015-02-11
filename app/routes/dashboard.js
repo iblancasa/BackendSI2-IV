@@ -27,3 +27,8 @@ exports.contacto = function(req, res){
 exports.graficas = function(req, res){
   res.render('graficas');
 };
+
+
+exports.crearempresa = function(req, res){
+  res.render('crearempresa');
+};

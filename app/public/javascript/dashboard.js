@@ -14,8 +14,6 @@ $(document).ready(function () {
 
 
   $('#botongraficas').click(function () {
-
-
     $("#contenido").remove();
     $("#sidebardashboard").remove();
     $("#operacion").remove();
@@ -25,7 +23,8 @@ $(document).ready(function () {
     });
   });
 
-  
 
+
+  
 
 });

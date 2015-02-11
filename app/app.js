@@ -91,6 +91,7 @@ app.get('/contacto', dashboard.contacto);     //Cargar contacto
 
 app.get('/', routes.index);//Inicio
 app.post('/google/auth', google.auth);//Autentificación de Google
+app.get('/crearempresa',  dashboard.crearempresa);//Creación de empresa
 
 app.get('/graficas', dashboard.graficas);     //Cargar graficas
 
@@ -114,5 +115,9 @@ server.listen(app.get('port'), function(){
 
 /*Socket.io*/
 io.on('connection', function (socket) {
+    socket.on('crearempresa', function(crearempresa){
+     console.log('Empresa a crear: ' + text);
+   });
+
   socket.on('disconnect', function () {});
 });

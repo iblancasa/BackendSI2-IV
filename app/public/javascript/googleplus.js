@@ -52,7 +52,16 @@
 
           $.post( "/menu",data, function( data ) {
             $(".jumbotron").append(data);
+            $('#crearempresa').click(function () {
+              $("#contenido").remove();
+              $.get( "/crearempresa", function(data) {
+                $("#operacion").remove();
+                $(".jumbotron").prepend(data);
+              });
+            });
+
           });
+
 
 
 
