@@ -1,3 +1,4 @@
+
 #Backend server mensajería#
 ==============
 
@@ -44,12 +45,12 @@ Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propue
 
 [Este proyecto parcipa en el "Concurso Universitario de software libre de la UGR"](http://osl.ugr.es/2014/09/26/premios-a-proyectos-libres-de-la-ugr/)
 
-![CUSLUGR](logo-cuslugr.png)
+![CUSLUGR](img/logo-cuslugr.png)
 
 
 [Este proyecto parcipa en el "Concurso Universitario de software libre nacional"](http://www.concursosoftwarelibre.org/)
 
-![CUSL](logo-cusl.png)
+![CUSL](img/logo-cusl.png)
 
 
 
@@ -351,3 +352,9 @@ export DBHOST='hostBD'
 	+ Necesario instalar:
 		+ Python
 		+ sshpass
+
+
+
+Repositorios que han ayudado:
+
++ [Easy Node Authentication](https://github.com/scotch-io/easy-node-authentication/)
