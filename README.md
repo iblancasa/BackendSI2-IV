@@ -1,3 +1,4 @@
+
 #Backend server mensajería#
 ==============
 
@@ -351,3 +352,8 @@ export DBHOST='hostBD'
 	+ Necesario instalar:
 		+ Python
 		+ sshpass
+
+
+
+Además:
++ [easy-node-authentication](https://github.com/scotch-io/easy-node-authentication/)  -- MIT License
