@@ -9,7 +9,7 @@ module.exports = function(app, passport) {
 
 	// PROFILE SECTION =========================
 	app.get('/panel', isLoggedIn, function(req, res) {
-		res.render('profile.ejs', {
+		res.render('panel.ejs', {
 			user : req.user
 		});
 	});
