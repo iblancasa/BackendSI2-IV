@@ -1,21 +1,23 @@
 language: node_js
 node_js:
 - '0.10'
-before_script:
-  - chmod +x ./travisscripts/despliegue.sh
-  - chmod +x ./travisscripts/error.sh
+script: date
 deploy:
-  provider: openshift
-  user: iblancasa@gmail.com
-  password:
-    secure: QH+5fB99tRLP4mC6zllJdbbvFvtu22iG1yomuZ+WGplN3pBsVRYPGXRat3xFhsRB5h7BzEs8YS4t0R2FTyt5Elh5/xY7KM2qIqK8iPQ07iavgcxyEORxyUh3SVLskIsrat4a66MoW4CDDY8elggmGA+Wmv2Hl0R+wXTz2c/It2w=
-  app: backendsi2
-  domain: iblancasa
-  on:
-    repo: iblancasa/BackendSI2-IV
-after_deploy:
-  - sudo apt-get install python sshpass
-  - sudo pip install ansible
-  - ./travisscripts/despliegue.sh
-after_failure:
-  - ./travisscripts/error.sh
+  - provider: openshift
+    user: backendsi2@outlook.es
+    password:
+      secure: MhfEzD/zZw6MDi+qcjGlSsyCEeqA7gJwOQqAXIalMXHiA8pf7oQzdPo6YfRuYyNccKh9egAJh354z3FtARjwQJRUe9h/24ni+2ae9DipYRQssGCvcbm20mNEFkm45yWy9vrz9hj1h3KRTQKl/XM6B7nsI9mQbDvXDYnGBzpk48g=
+    app: testing
+    domain: backendsi2
+    on:
+      repo: iblancasa/BackendSI2-IV
+      branch: test
+  - provider: openshift
+    user: backendsi2@outlook.es
+    password:
+      secure: MhfEzD/zZw6MDi+qcjGlSsyCEeqA7gJwOQqAXIalMXHiA8pf7oQzdPo6YfRuYyNccKh9egAJh354z3FtARjwQJRUe9h/24ni+2ae9DipYRQssGCvcbm20mNEFkm45yWy9vrz9hj1h3KRTQKl/XM6B7nsI9mQbDvXDYnGBzpk48g=
+    app: stable
+    domain: backendsi2
+    on:
+      repo: iblancasa/BackendSI2-IV
+      branch: master
