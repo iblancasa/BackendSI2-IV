@@ -1,7 +1,5 @@
 // config/auth.js
-var host       = process.env.OPENSHIFT_NODEJS_IP || process.env.IP;
-var port     = process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080;
-var service = 'http://'+host+':'+port;
+var service = process.env.URLSERVICE;
 var callFacebook = service+'/auth/facebook/callback';
 var callTwitter = service+'/auth/twitter/callback';
 var callGoogle = service+'/auth/google/callback';

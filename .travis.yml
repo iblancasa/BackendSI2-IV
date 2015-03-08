@@ -7,15 +7,6 @@ deploy:
     user: backendsi2@outlook.es
     password:
       secure: MhfEzD/zZw6MDi+qcjGlSsyCEeqA7gJwOQqAXIalMXHiA8pf7oQzdPo6YfRuYyNccKh9egAJh354z3FtARjwQJRUe9h/24ni+2ae9DipYRQssGCvcbm20mNEFkm45yWy9vrz9hj1h3KRTQKl/XM6B7nsI9mQbDvXDYnGBzpk48g=
-    app: testing
-    domain: backendsi2
-    on:
-      repo: iblancasa/BackendSI2-IV
-      branch: test
-  - provider: openshift
-    user: backendsi2@outlook.es
-    password:
-      secure: MhfEzD/zZw6MDi+qcjGlSsyCEeqA7gJwOQqAXIalMXHiA8pf7oQzdPo6YfRuYyNccKh9egAJh354z3FtARjwQJRUe9h/24ni+2ae9DipYRQssGCvcbm20mNEFkm45yWy9vrz9hj1h3KRTQKl/XM6B7nsI9mQbDvXDYnGBzpk48g=
     app: stable
     domain: backendsi2
     on:
