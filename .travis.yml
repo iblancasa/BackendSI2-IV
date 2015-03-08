@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - '0.10'
+script: date
 deploy:
   - provider: openshift
     user: backendsi2@outlook.es
