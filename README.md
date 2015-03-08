@@ -2,6 +2,8 @@
 #Backend server mensajería#
 ==============
 
+[![Join the chat at https://gitter.im/iblancasa/BackendSI2-IV](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/iblancasa/BackendSI2-IV?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##Proyecto para el desarrollo de backend de servicio de mensajería instantánea orientado a empresas.##
 
 [![Build Status](https://travis-ci.org/iblancasa/BackendSI2-IV.svg?branch=master)](https://travis-ci.org/iblancasa/BackendSI2-IV)
