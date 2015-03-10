@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Backend para SI2",
   "main": "app/server.js",
-  "author": "Israel Blancas Álvarez, José Cristóbal López Zafra, Rafael Ortiz Cáceres, Pablo Casado Arenas",
+  "author": "Israel Blancas Álvarez, José Cristóbal López Zafra, Pablo Casado Arenas",
   "private": false,
   "license": "MIT",
   "dependencies" : {
@@ -33,7 +33,10 @@
     "mocha": "latest",
     "chai": "latest",
     "supertest": "latest",
-    "mockgoose": "latest"
+    "grunt": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-cssmin": "latest"
   },
   "repository": {
     "type": "git",
