@@ -36,7 +36,8 @@
     "grunt": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-concat": "latest",
-    "grunt-contrib-cssmin": "latest"
+    "grunt-contrib-cssmin": "latest",
+    "sleep": "latest"
   },
   "repository": {
     "type": "git",
