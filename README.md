@@ -10,7 +10,7 @@
 
 
 
-[La aplicación desplegada y funcionando la puedes ver aquí](http://backendsi2-iblancasa.rhcloud.com/)
+[La aplicación desplegada y funcionando la puedes ver aquí](http://stable-backendsi2.rhcloud.com/)
 ![Logo](http://fotos.subefotos.com/5fc10a3fee9186a0be88759dbcec02f3o.jpg)
 
 =======
