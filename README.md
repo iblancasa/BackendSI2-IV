@@ -43,16 +43,6 @@ Integrantes del grupo:
 
 Extraído de [aquí](https://github.com/JJ/GII-2014/blob/master/practicas_propuestas.md)
 
-[Este proyecto parcipa en el "Concurso Universitario de software libre de la UGR"](http://osl.ugr.es/2014/09/26/premios-a-proyectos-libres-de-la-ugr/)
-
-![CUSLUGR](img/logo-cuslugr.png)
-
-
-[Este proyecto parcipa en el "Concurso Universitario de software libre nacional"](http://www.concursosoftwarelibre.org/)
-
-![CUSL](img/logo-cusl.png)
-
-
 
 
 
@@ -67,13 +57,24 @@ Clona el repositorio en tu máquina
 git clone https://github.com/iblancasa/BackendSI2-IV.git
 ```
 
-Añade las claves de la API de Google+ al fichero [keys](https://github.com/iblancasa/BackendSI2-IV/blob/master/app/keys.js)
-
-Exporta una variable de entorno llamada "DBHOST" en tu terminal. Esta variable de entorno contendrá la dirección a tu base de datos MongoDB.
+Exporta las siguientes variables con sus valores correspondientes:
 
 ```bash
-export DBHOST='hostBD'
+export PORT= #Puerto en el que se ejecuta la aplicación
+export PASSWORDSERVER= #Contraseña del servidor (para sesiones)
+export facebookclientID= #ID de cliente de tu aplicación Facebook
+export facebookclientSecret= #Secreto de cliente de tu aplicación Facebook
+export twitterconsumerKey= #Clave de consumidor de tu aplicación Twitter
+export twitterconsumerSecret= #Clave de consumidor secreta de tu aplicación Twitter
+export googleclientID= #ID de cliente de tu aplicación Google+
+export googleclientSecret= #Secreto de cliente de tu aplicación Google+
+export BD= #URL de la base de datos MongoDB
+export IP= #IP de la máquina donde se está ejecutando el backend
+export URLSERVICE= #URL donde se está ejecutando el Backend (si para acceder es necesario poner el puerto, hay que ponerlo también)
+
 ```
+
+
 
 Instala las dependencias del proyecto. Ve a la carpeta donde clonaste el repositorio y ejecuta ``npm install``.
 
