@@ -1,7 +1,8 @@
 language: node_js
 node_js:
 - '0.10'
-script: date
+script:
+  - ./node_modules/.bin/mocha test
 deploy:
   - provider: openshift
     user: backendsi2@outlook.es
@@ -12,3 +13,10 @@ deploy:
     on:
       repo: iblancasa/BackendSI2-IV
       branch: master
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/591213bfb48aedd605d0
+    on_success: change
+    on_failure: always
+    on_start: false
