@@ -4,7 +4,7 @@
   <title><![CDATA[BackendSI2-IV]]></title>
   <link href="http://iblancasa.com/BackendSI2-IV/atom.xml" rel="self"/>
   <link href="http://iblancasa.com/BackendSI2-IV/"/>
-  <updated>2015-03-11T12:07:16+01:00</updated>
+  <updated>2015-03-11T16:55:51+01:00</updated>
   <id>http://iblancasa.com/BackendSI2-IV/</id>
   <author>
     <name><![CDATA[Israel Blancas]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Conseguir las claves para autentificar con Google+]]></title>
+    <link href="http://iblancasa.com/BackendSI2-IV/blog/2015/03/11/conseguir-las-claves-para-autentificar-con-google-plus/"/>
+    <updated>2015-03-11T16:52:56+01:00</updated>
+    <id>http://iblancasa.com/BackendSI2-IV/blog/2015/03/11/conseguir-las-claves-para-autentificar-con-google-plus</id>
+    <content type="html"><![CDATA[<p>Lo primero que hay que hacer es acceder a la <a href="https://console.developers.google.com/">Consola de desarrolladores de Google</a>.</p>
+
+<p><img src="http://fotos.subefotos.com/d29e4a8bf07b9ec8cfdee4655fc8e2a7o.jpg" alt="Consola Desarrolladores de Google" /></p>
+
+<p>Una vez aquí, pulsamos sobre &ldquo;Crear proyecto&rdquo;. Nos aparecerá un cuadro de diálogo en el que deberemos escribir el nombre del proyecto.</p>
+
+<p><img src="http://fotos.subefotos.com/efb1be1db76a2e7ceec6c22f90d188cao.jpg" alt="Crear proyecto" /></p>
+
+<p>Cuando el proyecto esté creado, ingresaremos al mismo y haremos click sobre &ldquo;APIs y autentificación&rdquo; y haremos click sobre &ldquo;APIs&rdquo;. Después buscaremos la que pone &ldquo;Google+&rdquo; y la activaremos.</p>
+
+<p><img src="http://fotos.subefotos.com/cb56e7e8385689f810675095cd2ef49fo.jpg" alt="Activando API" /></p>
+
+<p>Ahora vamos a &ldquo;Credenciales&rdquo; y pulsamos sobre &ldquo;Crear ID de cliente nuevo&rdquo;. Nos aparecerá un cuadro de diálogo como el siguiente. Lo dejamos como en la imagen.</p>
+
+<p><img src="http://fotos.subefotos.com/e5e607aadf411b9b5dcdc4e4914ab2f0o.jpg" alt="Crear ID" /></p>
+
+<p>Se nos pedirá personalizar el cuadro que aparecerá a los usuarios</p>
+
+<p><img src="http://fotos.subefotos.com/d5e1836446d97695dc46a03bc3f81161o.jpg" alt="Plantilla" /></p>
+
+<p>Cuando esté completo, pasamos al siguiente paso. Ahora se nos pedirá introducir los orígenes desde los que autorizaremos el uso del JavaScript. Esto evita que terceros utilicen nuestra clave como si fuese suya (consumiendo nuestros recursos). Pondremos nuestro dominio y, en caso que estemos desarrollando en local, lo dejaremos como en la imagen. También habrá que indicar a través de que puerto está escuchando nuestro servidor. Para la aplicación (<a href="https://github.com/iblancasa/BackendSI2-IV/wiki/Autentificar-a-un-usuario-utilizando-Google--y-NodeJS">ver referencia</a>) vamos a configurar así (para desarrollo local):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ORÍGENES DE JAVASCRIPT: http://localhost:3001
+</span><span class='line'>URIS DE REDIRECCIONAMIENTO: http://localhost:3001/google/auth</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://fotos.subefotos.com/b7e7d25aa79981e39692f2fe15f745f2o.jpg" alt="Orígenes de JavaScript" /></p>
+
+<p>Y, finalmente, obtendremos las claves</p>
+
+<p><img src="http://fotos.subefotos.com/103b20533e2aa8f778adf8100b4ca096o.jpg" alt="Final" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Reorganizando el proyecto]]></title>

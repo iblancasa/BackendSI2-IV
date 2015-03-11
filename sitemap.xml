@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://iblancasa.com/BackendSI2-IV/blog/2015/03/11/conseguir-las-claves-para-autentificar-con-google-plus/</loc>
+    <lastmod>2015-03-11T16:52:56+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://iblancasa.com/BackendSI2-IV/blog/2015/03/08/reorganizando-el-proyecto/</loc>
     <lastmod>2015-03-08T19:53:50+01:00</lastmod>
   </url>
   <url>
     <loc>http://iblancasa.com/BackendSI2-IV/</loc>
-    <lastmod>2015-03-11T12:07:16+01:00</lastmod>
+    <lastmod>2015-03-11T16:55:51+01:00</lastmod>
   </url>
   <url>
     <loc>http://iblancasa.com/BackendSI2-IV/blog/archives/</loc>
-    <lastmod>2015-03-11T12:07:16+01:00</lastmod>
+    <lastmod>2015-03-11T16:55:51+01:00</lastmod>
   </url>
 </urlset>

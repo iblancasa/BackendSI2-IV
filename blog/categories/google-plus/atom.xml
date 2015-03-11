@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: proyecto | BackendSI2-IV]]></title>
-  <link href="http://iblancasa.com/BackendSI2-IV/blog/categories/proyecto/atom.xml" rel="self"/>
+  <title><![CDATA[Category: google+ | BackendSI2-IV]]></title>
+  <link href="http://iblancasa.com/BackendSI2-IV/blog/categories/google-plus/atom.xml" rel="self"/>
   <link href="http://iblancasa.com/BackendSI2-IV/"/>
   <updated>2015-03-11T16:55:51+01:00</updated>
   <id>http://iblancasa.com/BackendSI2-IV/</id>
@@ -49,16 +49,6 @@ URIS DE REDIRECCIONAMIENTO: http://localhost:3001/google/auth
 <p>Y, finalmente, obtendremos las claves</p>
 
 <p><img src="http://fotos.subefotos.com/103b20533e2aa8f778adf8100b4ca096o.jpg" alt="Final" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reorganizando el proyecto]]></title>
-    <link href="http://iblancasa.com/BackendSI2-IV/blog/2015/03/08/reorganizando-el-proyecto/"/>
-    <updated>2015-03-08T19:53:50+01:00</updated>
-    <id>http://iblancasa.com/BackendSI2-IV/blog/2015/03/08/reorganizando-el-proyecto</id>
-    <content type="html"><![CDATA[<p>Actualmente estamos dándole un lavado de cara al proyecto. Nos hemos mudado a esta dirección:
-<a href="http://stable-backendsi2.rhcloud.com/">http://stable-backendsi2.rhcloud.com/</a></p>
 ]]></content>
   </entry>
   
