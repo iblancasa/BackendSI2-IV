@@ -4,7 +4,7 @@
   <title><![CDATA[BackendSI2-IV]]></title>
   <link href="http://iblancasa.com/BackendSI2-IV/atom.xml" rel="self"/>
   <link href="http://iblancasa.com/BackendSI2-IV/"/>
-  <updated>2015-03-11T16:55:51+01:00</updated>
+  <updated>2015-03-12T14:09:55+01:00</updated>
   <id>http://iblancasa.com/BackendSI2-IV/</id>
   <author>
     <name><![CDATA[Israel Blancas]]></name>
@@ -12,6 +12,106 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Configurando una BD NoSQL externa]]></title>
+    <link href="http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa/"/>
+    <updated>2015-03-12T14:06:52+01:00</updated>
+    <id>http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa</id>
+    <content type="html"><![CDATA[<p>Hay muchos &ldquo;Base de Datos como Servicio&rdquo;. Nosotros ponemos, por ejemplo, Compose.io.</p>
+
+<p>Para hacerlo necesitas los drivers de node-mongodb, que puedes instalar con <code>npm install mongodb</code></p>
+
+<p>Después ejecutaremos este archivo (lo podemos llamar node.js y en consola simplemente ejecutar <code>js node.js</code>), que hará basicamente un par de inserciones.</p>
+
+<p>Comento algunos parámetros antes:
+* en la línea 3 el parámetro para la conexión será la <a href="http://i.imgur.com/KVvnVoC.png">Mongo URI</a>, y usuario:usuario serán nombre de usuario y contraseña de un <a href="http://i.imgur.com/4EllDfJ.png">&ldquo;User&rdquo; que tengamos en nuestra base de datos</a>
+* en la línea 5 especificamos la BD</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var mongodb = require('mongodb')
+</span><span class='line'>  , MongoClient = mongodb.MongoClient
+</span><span class='line'>MongoClient.connect('mongodb://usuario:usuario@dogen.mongohq.com:10096/pruebaDB', function(err, db) {
+</span><span class='line'>  // operate on the collection named "pruebaDB"
+</span><span class='line'>  var collection = db.collection('pruebaDB')
+</span><span class='line'>
+</span><span class='line'>  // remove all records in collection (if any)
+</span><span class='line'>  console.log('removing documents...')
+</span><span class='line'>  collection.remove(function(err, result) {
+</span><span class='line'>      if (err) {
+</span><span class='line'>          return console.error(err)
+</span><span class='line'>      }
+</span><span class='line'>      console.log('collection cleared!')
+</span><span class='line'>
+</span><span class='line'>      // insert two documents
+</span><span class='line'>      console.log('inserting new documents...')
+</span><span class='line'>      collection.insert([{name: 'tester'}, {name: 'coder'}], function(err,
+</span><span class='line'>      docs) {
+</span><span class='line'>          if (err) {
+</span><span class='line'>              return console.error(err)
+</span><span class='line'>          }
+</span><span class='line'>          console.log('just inserted ', docs.length, ' new documents!')
+</span><span class='line'>          collection.find({}).toArray(function(err, docs) {
+</span><span class='line'>              if (err) {
+</span><span class='line'>                  return console.error(err)
+</span><span class='line'>              }
+</span><span class='line'>              docs.forEach(function(doc) {
+</span><span class='line'>              console.log('found document: ', doc)
+</span><span class='line'>              })
+</span><span class='line'>          })
+</span><span class='line'>      })
+</span><span class='line'>  })
+</span><span class='line'>})
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Una vez ejecutado nos indica que está correctamente conectado e insertado:</p>
+
+<p><img src="http://i.imgur.com/wF6mt1j.png" alt="insertado" /></p>
+
+<p>y también lo podemos ver en <a href="https://app.compose.io/">Compose</a>:</p>
+
+<p><img src="http://i.imgur.com/3vo3naP.png" alt="bdcompose" /></p>
+
+<p>Tutoriales de interés:</p>
+
+<p><a href="https://docs.compose.io/languages/nodejs.html">https://docs.compose.io/languages/nodejs.html</a></p>
+
+<p>y este muy básico: <a href="https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps">https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Conseguir las claves para autentificar con Google+]]></title>

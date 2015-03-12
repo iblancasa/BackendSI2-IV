@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>BackendSI2-IV</title>
+  <title>Configurando una BD NoSQL externa - BackendSI2-IV</title>
   <meta name="author" content="Israel Blancas">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://iblancasa.com/BackendSI2-IV/">
+  <link rel="canonical" href="http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa/">
   <link href="/BackendSI2-IV/favicon.png" rel="icon">
   <link href="/BackendSI2-IV/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/BackendSI2-IV/javascripts/modernizr-2.0.js"></script>
@@ -66,15 +66,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa/">Configurando Una BD NoSQL Externa</a></h1>
+      <h1 class="entry-title">Configurando Una BD NoSQL Externa</h1>
     
     
       <p class="meta">
@@ -97,7 +94,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Hay muchos &ldquo;Base de Datos como Servicio&rdquo;. Nosotros ponemos, por ejemplo, Compose.io.</p>
+<div class="entry-content"><p>Hay muchos &ldquo;Base de Datos como Servicio&rdquo;. Nosotros ponemos, por ejemplo, Compose.io.</p>
 
 <p>Para hacerlo necesitas los drivers de node-mongodb, que puedes instalar con <code>npm install mongodb</code></p>
 
@@ -190,90 +187,16 @@
 
 <p>y este muy básico: <a href="https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps">https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps</a></p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/BackendSI2-IV/blog/2015/03/11/conseguir-las-claves-para-autentificar-con-google-plus/">Conseguir Las Claves Para Autentificar Con Google+</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Israel Blancas</span></span>
 
-<time datetime="2015-03-11T16:52:56+01:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Lo primero que hay que hacer es acceder a la <a href="https://console.developers.google.com/">Consola de desarrolladores de Google</a>.</p>
-
-<p><img src="http://fotos.subefotos.com/d29e4a8bf07b9ec8cfdee4655fc8e2a7o.jpg" alt="Consola Desarrolladores de Google" /></p>
-
-<p>Una vez aquí, pulsamos sobre &ldquo;Crear proyecto&rdquo;. Nos aparecerá un cuadro de diálogo en el que deberemos escribir el nombre del proyecto.</p>
-
-<p><img src="http://fotos.subefotos.com/efb1be1db76a2e7ceec6c22f90d188cao.jpg" alt="Crear proyecto" /></p>
-
-<p>Cuando el proyecto esté creado, ingresaremos al mismo y haremos click sobre &ldquo;APIs y autentificación&rdquo; y haremos click sobre &ldquo;APIs&rdquo;. Después buscaremos la que pone &ldquo;Google+&rdquo; y la activaremos.</p>
-
-<p><img src="http://fotos.subefotos.com/cb56e7e8385689f810675095cd2ef49fo.jpg" alt="Activando API" /></p>
-
-<p>Ahora vamos a &ldquo;Credenciales&rdquo; y pulsamos sobre &ldquo;Crear ID de cliente nuevo&rdquo;. Nos aparecerá un cuadro de diálogo como el siguiente. Lo dejamos como en la imagen.</p>
-
-<p><img src="http://fotos.subefotos.com/e5e607aadf411b9b5dcdc4e4914ab2f0o.jpg" alt="Crear ID" /></p>
-
-<p>Se nos pedirá personalizar el cuadro que aparecerá a los usuarios</p>
-
-<p><img src="http://fotos.subefotos.com/d5e1836446d97695dc46a03bc3f81161o.jpg" alt="Plantilla" /></p>
-
-<p>Cuando esté completo, pasamos al siguiente paso. Ahora se nos pedirá introducir los orígenes desde los que autorizaremos el uso del JavaScript. Esto evita que terceros utilicen nuestra clave como si fuese suya (consumiendo nuestros recursos). Pondremos nuestro dominio y, en caso que estemos desarrollando en local, lo dejaremos como en la imagen. También habrá que indicar a través de que puerto está escuchando nuestro servidor. Para la aplicación (<a href="https://github.com/iblancasa/BackendSI2-IV/wiki/Autentificar-a-un-usuario-utilizando-Google--y-NodeJS">ver referencia</a>) vamos a configurar así (para desarrollo local):</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ORÍGENES DE JAVASCRIPT: http://localhost:3001
-</span><span class='line'>URIS DE REDIRECCIONAMIENTO: http://localhost:3001/google/auth</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="http://fotos.subefotos.com/b7e7d25aa79981e39692f2fe15f745f2o.jpg" alt="Orígenes de JavaScript" /></p>
-
-<p>Y, finalmente, obtendremos las claves</p>
-
-<p><img src="http://fotos.subefotos.com/103b20533e2aa8f778adf8100b4ca096o.jpg" alt="Final" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/BackendSI2-IV/blog/2015/03/08/reorganizando-el-proyecto/">Reorganizando El Proyecto</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -285,28 +208,38 @@
   
 
 
-<time datetime="2015-03-08T19:53:50+01:00" pubdate data-updated="true"></time>
-        
-      </p>
+<time datetime="2015-03-12T14:06:52+01:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/BackendSI2-IV/blog/categories/mongodb/'>mongodb</a>, <a class='category' href='/BackendSI2-IV/blog/categories/nosql/'>nosql</a>, <a class='category' href='/BackendSI2-IV/blog/categories/proyecto/'>proyecto</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Actualmente estamos dándole un lavado de cara al proyecto. Nos hemos mudado a esta dirección:
-<a href="http://stable-backendsi2.rhcloud.com/">http://stable-backendsi2.rhcloud.com/</a></p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa/" data-via="" data-counturl="http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/BackendSI2-IV/blog/2015/03/11/conseguir-las-claves-para-autentificar-con-google-plus/" title="Previous Post: Conseguir las claves para autentificar con Google+">&laquo; Conseguir las claves para autentificar con Google+</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/BackendSI2-IV/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -334,6 +267,7 @@
 
   
 </aside>
+
 
     </div>
   </div>

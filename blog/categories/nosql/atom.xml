@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nosql | BackendSI2-IV]]></title>
+  <link href="http://iblancasa.com/BackendSI2-IV/blog/categories/nosql/atom.xml" rel="self"/>
+  <link href="http://iblancasa.com/BackendSI2-IV/"/>
+  <updated>2015-03-12T14:09:55+01:00</updated>
+  <id>http://iblancasa.com/BackendSI2-IV/</id>
+  <author>
+    <name><![CDATA[Israel Blancas]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Configurando una BD NoSQL externa]]></title>
+    <link href="http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa/"/>
+    <updated>2015-03-12T14:06:52+01:00</updated>
+    <id>http://iblancasa.com/BackendSI2-IV/blog/2015/03/12/configurando-una-bd-nosql-externa</id>
+    <content type="html"><![CDATA[<p>Hay muchos &ldquo;Base de Datos como Servicio&rdquo;. Nosotros ponemos, por ejemplo, Compose.io.</p>
+
+<p>Para hacerlo necesitas los drivers de node-mongodb, que puedes instalar con <code>npm install mongodb</code></p>
+
+<p>Después ejecutaremos este archivo (lo podemos llamar node.js y en consola simplemente ejecutar <code>js node.js</code>), que hará basicamente un par de inserciones.</p>
+
+<p>Comento algunos parámetros antes:
+* en la línea 3 el parámetro para la conexión será la <a href="http://i.imgur.com/KVvnVoC.png">Mongo URI</a>, y usuario:usuario serán nombre de usuario y contraseña de un <a href="http://i.imgur.com/4EllDfJ.png">&ldquo;User&rdquo; que tengamos en nuestra base de datos</a>
+* en la línea 5 especificamos la BD</p>
+
+<pre><code>var mongodb = require('mongodb')
+    , MongoClient = mongodb.MongoClient
+MongoClient.connect('mongodb://usuario:usuario@dogen.mongohq.com:10096/pruebaDB', function(err, db) {
+    // operate on the collection named "pruebaDB"
+    var collection = db.collection('pruebaDB')
+
+    // remove all records in collection (if any)
+    console.log('removing documents...')
+    collection.remove(function(err, result) {
+        if (err) {
+            return console.error(err)
+        }
+        console.log('collection cleared!')
+
+        // insert two documents
+        console.log('inserting new documents...')
+        collection.insert([{name: 'tester'}, {name: 'coder'}], function(err,
+        docs) {
+            if (err) {
+                return console.error(err)
+            }
+            console.log('just inserted ', docs.length, ' new documents!')
+            collection.find({}).toArray(function(err, docs) {
+                if (err) {
+                    return console.error(err)
+                }
+                docs.forEach(function(doc) {
+                console.log('found document: ', doc)
+                })
+            })
+        })
+    })
+})
+</code></pre>
+
+<p>Una vez ejecutado nos indica que está correctamente conectado e insertado:</p>
+
+<p><img src="http://i.imgur.com/wF6mt1j.png" alt="insertado" /></p>
+
+<p>y también lo podemos ver en <a href="https://app.compose.io/">Compose</a>:</p>
+
+<p><img src="http://i.imgur.com/3vo3naP.png" alt="bdcompose" /></p>
+
+<p>Tutoriales de interés:</p>
+
+<p><a href="https://docs.compose.io/languages/nodejs.html">https://docs.compose.io/languages/nodejs.html</a></p>
+
+<p>y este muy básico: <a href="https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps">https://www.digitalocean.com/community/tutorials/how-to-connect-node-js-to-a-mongodb-database-on-a-vps</a></p>
+]]></content>
+  </entry>
+  
+</feed>
