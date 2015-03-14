@@ -940,3 +940,7 @@ body {
   float:right;
   z-index:100000000;
 }
+#registrar{
+  background-color: #2A0A22;
+  border-color: #6B1A57;
+}

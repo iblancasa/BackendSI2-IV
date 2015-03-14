@@ -76,7 +76,7 @@
                 <a href="/auth/facebook" class="page-scroll btn btn-xl"><i class="fa fa-facebook-official"></i> Iniciar sesión</a>
                 <a href="/auth/google" id="google" class="page-scroll btn btn-xl"><i class="fa fa-google-plus"></i> Iniciar sesión</a>
                 <a href="/auth/twitter"  id="twitter" class="page-scroll btn btn-xl"><i class="fa fa-twitter"></i> Iniciar sesión</a>
-                <a  href="#login" id="local" name="local"  class="page-scroll btn btn-xl"><i class="fa fa-key"></i> Basic Content</a>
+                <a  href="#login" id="local" name="local"  class="page-scroll btn btn-xl"><i class="fa fa-key"></i> Iniciar sesión</a>
 
 <div id="login">
 
@@ -92,7 +92,7 @@
 		</div>
 
 		<button id="loginButton" type="submit" class="page-scroll btn btn-xl">Iniciar sesión</button>
-
+    <p><a id="noCuenta" href="#">¿Todavía no tienes cuenta?</a></p>
 	</form>
 
 
@@ -450,6 +450,7 @@
                             <img class="img-responsive img-centered" src="index/img/portfolio/image-preview.png" alt="">
                             <p>Los usuarios tendrán contacto con las empresas que necesiten haciendo solo un par de clicks</p>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Volver</button>
+
                         </div>
                     </div>
                 </div>
@@ -577,6 +578,59 @@
           'display': 'none'
       });
     });
+
+    $("#noCuenta").click(function(){
+      var form = "<i id='cerrar' class='fa fa-times'></i> \
+      <form action='/signup' method='post'> \
+        <div class='form-group'> \
+          <label>Nombre</label> \
+          <input type='text' class='form-control' name='name'> \
+        </div> \
+        <div class='form-group'> \
+          <label>Email</label> \
+          <input type='text' class='form-control' name='email'> \
+        </div> \
+        <div class='form-group'> \
+          <label>Password</label> \
+          <input type='password' class='form-control' name='password'> \
+        </div> \
+        <button id='registrar' type='submit' class='page-scroll btn btn-xl'>Registrar</button> \
+      </form>";
+
+      $("#login").html(form);
+
+      $("#cerrar").click(function(){
+        $('#login').css({
+            'display': 'none'
+        });
+
+        var form="<i id='cerrar' class='fa fa-times'></i> \
+          <form action='/connect/local' method='post' style='clear:both'> \
+            <div class='form-group'> \
+              <label>Email</label> \
+              <input type='text' class='form-control' name='email'> \
+            </div> \
+            <div class='form-group'> \
+              <label>Password</label> \
+              <input type='password' class='form-control' name='password'> \
+            </div> \
+            <button id='loginButton' type='submit' class='page-scroll btn btn-xl'>Iniciar sesión</button> \
+            <p><a id='noCuenta' href='#'>¿Todavía no tienes cuenta?</a></p> \
+          </form>\
+        ";
+        $("#login").html(form);
+        $("#cerrar").click(function(){
+          $('#login').css({
+              'display': 'none'
+          });
+        });
+
+      });
+
+
+    });
+
+
 
     </script>
 

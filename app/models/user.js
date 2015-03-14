@@ -26,6 +26,10 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    perfil           :{
+        name         : String,
+        image        : String
     }
 
 });
