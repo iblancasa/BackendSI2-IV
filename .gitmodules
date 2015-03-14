@@ -1,0 +1,3 @@
+[submodule "app/static/index/leanModal"]
+	path = app/static/index/leanModal
+	url = git@github.com:FinelySliced/leanModal.js.git

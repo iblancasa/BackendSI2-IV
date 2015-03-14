@@ -195,6 +195,21 @@ fieldset[disabled] .btn-xl.active {
     background-color: #D3877D;
 }
 
+#local{
+  background-color: #2A0A22;
+  border-color: #6B1A57;
+}
+
+#local:hover,
+#local:focus,
+#local:active,
+#local.active,
+.open .dropdown-toggle #google {
+    color: #fff;
+    background-color: #6B1A57;
+}
+
+
 
 
 
@@ -881,4 +896,47 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #4C0B5F;
+}
+
+
+
+
+
+#lean_overlay {
+    position: fixed;
+    z-index: 10000;
+    width:85s%;
+    margin: 0 auto;
+    background: #000;
+    display: none;
+}
+
+#login {
+    color: #000000;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    display:none;
+    background: #FFF;
+    font-size: 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+}
+
+#login p { color: #666; text-shadow: none; }
+
+
+#loginButton{
+  background-color: #2A0A22;
+  border-color: #6B1A57;
+}
+
+#cerrar{
+  font-size: 50px;
+  float:right;
+  z-index:100000000;
 }

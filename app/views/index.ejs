@@ -14,7 +14,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="index/css/iniciomini.css" rel="stylesheet">
+    <link href="index/css/agency.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -76,6 +76,29 @@
                 <a href="/auth/facebook" class="page-scroll btn btn-xl"><i class="fa fa-facebook-official"></i> Iniciar sesión</a>
                 <a href="/auth/google" id="google" class="page-scroll btn btn-xl"><i class="fa fa-google-plus"></i> Iniciar sesión</a>
                 <a href="/auth/twitter"  id="twitter" class="page-scroll btn btn-xl"><i class="fa fa-twitter"></i> Iniciar sesión</a>
+                <a  href="#login" id="local" name="local"  class="page-scroll btn btn-xl"><i class="fa fa-key"></i> Basic Content</a>
+
+<div id="login">
+
+  <i id="cerrar" class="fa fa-times"></i>
+  <form action="/connect/local" method="post" style="clear:both">
+		<div class="form-group">
+			<label>Email</label>
+			<input type="text" class="form-control" name="email">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password">
+		</div>
+
+		<button id="loginButton" type="submit" class="page-scroll btn btn-xl">Iniciar sesión</button>
+
+	</form>
+
+
+
+</div>
+
             </div>
         </div>
     </header>
@@ -462,7 +485,6 @@
     </div>
 
 
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
@@ -472,6 +494,91 @@
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="index/js/inicio.js"></script>
+    <script>
+        (function($) {
+
+        $.fn.extend({
+
+            leanModal: function(options) {
+
+                var defaults = {
+                    top: 100,
+                    overlay: 0.5
+                }
+
+                options = $.extend(defaults, options);
+
+                return this.each(function() {
+
+                    var o = options;
+
+                    $(this).click(function(e) {
+
+                        var overlay = $("<div id='lean_overlay'></div>");
+
+                        var modal_id = $(this).attr("href");
+
+                        $("body").append(overlay);
+
+                        $("#lean_overlay").click(function() {
+                            close_modal(modal_id);
+                        });
+
+
+
+                        $('#lean_overlay').css({
+                            'display': 'block',
+                            opacity: 0
+                        });
+
+                        $('#lean_overlay').fadeTo(200, o.overlay);
+
+                        $(modal_id).css({
+
+                            'display': 'block',
+                            'position': 'fixed',
+                            'opacity': 0,
+                            'z-index': 11000,
+                            'top': o.top + "px"
+
+                        });
+
+
+                        $(modal_id).fadeTo(200, 1);
+
+                        e.preventDefault();
+
+                    });
+
+                });
+
+                function close_modal(modal_id) {
+
+                    $("#lean_overlay").fadeOut(200);
+
+                    $(modal_id).css({
+                        'display': 'none'
+                    });
+
+                }
+
+            }
+        });
+
+    })(jQuery);
+
+
+
+    $("a#local").leanModal();
+
+
+    $("#cerrar").click(function(){
+      $('#login').css({
+          'display': 'none'
+      });
+    });
+
+    </script>
 
 
 </body>
